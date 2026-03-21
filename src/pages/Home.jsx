@@ -221,7 +221,7 @@ export default function Home() {
               Two ways to climb.
             </h2>
             <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#758090', margin: '0 0 56px', lineHeight: 1.6 }}>
-              Every Summit is free. Ascending is optional but that is where real connection happens.
+              Every Summit is free. Ascending is where you sit across from one of them — just you.
             </p>
           </FadeUp>
         </div>
@@ -241,7 +241,7 @@ export default function Home() {
               {/* Who it's for */}
               <div style={{ marginBottom: '28px' }}>
                 <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, color: '#9aabb8', letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 8px' }}>Who it's for</p>
-                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.65, margin: 0 }}>Any student who wants real access to professionals who have been where they want to go.</p>
+                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.65, margin: 0 }}>Any student who wants to learn from someone who actually did it — live, in real time, this week.</p>
               </div>
 
               {/* Divider */}
@@ -249,7 +249,7 @@ export default function Home() {
 
               {/* Description */}
               <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.72, margin: '0 0 32px' }}>
-                Ten students. One verified Guide. Live every week. Interactive, intimate, and built around real conversation. New Guides rotate in with the best ones returning.
+                Think TED talk meets live course — except the speaker takes questions and knows your name. Each Summit is built around what is actually relevant in that field right now, led by a Guide who lived it. Ten students. One hour. Something different every week, from breaking into a room most people never get near to building the thing everyone is talking about.
               </p>
 
               {/* Feature rows */}
@@ -282,7 +282,7 @@ export default function Home() {
               {/* Who it's for */}
               <div style={{ marginBottom: '28px' }}>
                 <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, color: '#9aabb8', letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 8px' }}>Who it's for</p>
-                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.65, margin: 0 }}>Students who attended a Summit and want direct one on one time with their Guide and a session built entirely around them.</p>
+                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.65, margin: 0 }}>Any student who wants an hour with a specific Guide — whether you attended their Summit or not.</p>
               </div>
 
               {/* Divider */}
@@ -290,7 +290,7 @@ export default function Home() {
 
               {/* Description */}
               <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.72, margin: '0 0 32px' }}>
-                A private one on one session separate from the Summit. Your Guide builds new curriculum specifically for you before the session. You spend 40 minutes working through your specific goals, field, and next steps. You leave with a direct professional introduction.
+                Browse the Guide roster. Pick the person you want in the room with you. They build entirely new curriculum around your goals before you ever meet. You did not need to be in their Summit. You just need to want it. Forty minutes, completely personalized, built to make a real connection — not a pleasant conversation.
               </p>
 
               {/* Feature rows */}
@@ -416,12 +416,78 @@ export default function Home() {
               {[
                 { q: 'Who can join a Summit?', a: 'Any serious student who wants real career access. Summits are open and free. No application required.' },
                 { q: 'Who are the Guides?', a: 'Verified professionals who have real experience in their field. Some are 20-year-old founders. Others are senior executives, physicians, or investors with decades of experience. The range is the point.' },
-                { q: 'What happens in a Summit?', a: 'A live session with up to 10 students and one Guide. Interactive, intimate, and built around real conversation. Never recorded.' },
-                { q: 'What is Ascending?', a: 'Ascending is a private session separate from the Summit. Your Guide builds new curriculum specifically for you before the session. You spend 40 minutes working through your specific goals, field, and next steps. You leave with a direct professional introduction.' },
+                { q: 'What happens in a Summit?', a: 'An interactive live session built around what is actually happening in that field this week. Think TED talk meets live course — except the speaker takes questions and knows your name. Ten students, one verified Guide, one hour. Different topic every week, from breaking into finance to building something everyone is talking about.' },
+                { q: 'What is Ascending?', a: 'A private one on one session with any Guide on Klime — whether you attended their Summit or not. You pick the person. They build new curriculum entirely around your goals before you meet. Forty minutes that exist only for you. You leave with a real connection to a real professional.' },
                 { q: 'When do Summits start?', a: 'Soon. Sign up below and you will be the first to know when your field opens.' },
               ].map((item, i) => <FAQRow key={i} {...item} />)}
             </div>
           </FadeUp>
+        </div>
+      </section>
+
+      {/* ── MEET THE MAKERS ── white panel ── */}
+      <section style={{ background: 'rgba(255,255,255,0.96)' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '88px 40px 96px' }}>
+
+          {/* Opening header */}
+          <FadeUp>
+            <h2 style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(28px,3.6vw,48px)', color: '#0D0F14', fontWeight: 400, margin: '0 0 20px', letterSpacing: '-0.8px', lineHeight: 1.1, maxWidth: '720px' }}>
+              Klime was built by two students who were tired of being told to just network.
+            </h2>
+            <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '15px', color: '#758090', lineHeight: 1.72, margin: '0 0 72px', maxWidth: '560px' }}>
+              We are both 18. We have both watched talented people get passed over because they did not know the right person. Klime exists because we decided to fix that instead of waiting for someone else to.
+            </p>
+          </FadeUp>
+
+          {/* Ryan */}
+          <FadeUp delay={0.06}>
+            <div style={{ borderTop: '1px solid rgba(13,15,20,0.1)', paddingTop: '52px', marginBottom: '0', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '60px' }}>
+              {/* Left: name + role + bio */}
+              <div style={{ flex: 1 }}>
+                <h3 style={{ fontFamily: '"DM Serif Display",serif', fontSize: '28px', color: '#0D0F14', fontWeight: 400, margin: '0 0 8px', letterSpacing: '-0.3px' }}>Ryan Inozemcev</h3>
+                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, letterSpacing: '0.18em', color: '#2B5BFF', textTransform: 'uppercase', margin: '0 0 24px' }}>
+                  Co-Founder · Product, Technology and Brand
+                </p>
+                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.8, margin: 0, maxWidth: '600px' }}>
+                  Ryan built Klime from nothing — the product, the platform, the brand, and every line of design you see here. Before Klime he founded CollegeConnekt at 16, which grew to 16,000 students across 50 states and 9 countries without funding or a team. He is studying Computer Science at the University of Florida and has been building things since before he could drive.
+                </p>
+              </div>
+              {/* Right: stats */}
+              <div style={{ flexShrink: 0, paddingTop: '4px' }}>
+                {[
+                  { value: '16,000+', label: 'CollegeConnekt users' },
+                  { value: '50',      label: 'states reached'       },
+                  { value: '2',       label: 'companies founded before 18' },
+                ].map((s, i) => (
+                  <div key={i} style={{ marginBottom: i < 2 ? '24px' : 0, textAlign: 'right' }}>
+                    <div style={{ fontFamily: '"DM Serif Display",serif', fontSize: '28px', color: '#0D0F14', fontWeight: 400, lineHeight: 1, letterSpacing: '-0.5px' }}>{s.value}</div>
+                    <div style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', color: '#9aabb8', marginTop: '3px', lineHeight: 1.4 }}>{s.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeUp>
+
+          {/* Max */}
+          <FadeUp delay={0.1}>
+            <div style={{ borderTop: '1px solid rgba(13,15,20,0.1)', paddingTop: '52px', marginTop: '52px', paddingBottom: '0' }}>
+              <h3 style={{ fontFamily: '"DM Serif Display",serif', fontSize: '28px', color: '#0D0F14', fontWeight: 400, margin: '0 0 8px', letterSpacing: '-0.3px' }}>Max Korotkiy</h3>
+              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, letterSpacing: '0.18em', color: '#2B5BFF', textTransform: 'uppercase', margin: '0 0 24px' }}>
+                Co-Founder · Curriculum and Guide Partnerships
+              </p>
+              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.8, margin: 0, maxWidth: '600px' }}>
+                Max leads the human side of Klime — the curriculum that makes every Ascending session worth paying for, and the Guide relationships that make the platform real. He founded CyberSpace Society at West Boca and is studying Computer Science at the University of Florida.
+              </p>
+            </div>
+          </FadeUp>
+
+          {/* Closing line */}
+          <FadeUp delay={0.14}>
+            <p style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(18px,2.2vw,26px)', color: 'rgba(13,15,20,0.35)', fontStyle: 'italic', textAlign: 'center', margin: '72px 0 0', fontWeight: 400 }}>
+              Built in Florida. Built for everyone who was told to wait their turn.
+            </p>
+          </FadeUp>
+
         </div>
       </section>
 
