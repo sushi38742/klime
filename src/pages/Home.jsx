@@ -213,46 +213,107 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TWO WAYS TO CLIMB ── */}
-      <section style={{ padding: '0 40px 100px' }}>
-        <div style={wrap}>
+      {/* ── TWO WAYS TO CLIMB — white T-chart break ── */}
+      <section style={{ background: 'rgba(255,255,255,0.96)', marginTop: '20px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 80px 0' }}>
           <FadeUp>
-            <h2 style={{ ...HL, fontSize: 'clamp(26px,3.2vw,42px)', margin: '0 0 8px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>Two ways to climb.</h2>
-          </FadeUp>
-          <FadeUp delay={0.06}>
-            <p style={{ ...MUTED, margin: '0 0 48px' }}>Every Summit is free. Ascending is optional but that is where real connection happens.</p>
-          </FadeUp>
-          <FadeUp delay={0.1}>
-            {/* Two open columns, single center hairline */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0 }}>
-              {[
-                {
-                  label: 'Summit',
-                  sublabel: 'Free',
-                  desc: 'Ten students. One verified Guide. Live every week. Interactive, intimate, and built around real conversation. New Guides rotate in with the best ones returning.',
-                  tag: 'Limited spots per session',
-                  accent: false,
-                },
-                {
-                  label: 'Ascending',
-                  sublabel: '$40 per session',
-                  desc: 'A private one on one session separate from the Summit. Your Guide builds new curriculum specifically for you before the session. You spend 40 minutes working through your specific goals, field, and next steps. You leave with a direct professional introduction.',
-                  tag: 'After every Summit',
-                  accent: true,
-                },
-              ].map((col, i) => (
-                <div key={i} style={{ padding: i === 0 ? '0 48px 0 0' : '0 0 0 48px', borderLeft: i === 1 ? HAIR : 'none' }}>
-                  <div style={{ display: 'flex', alignItems: 'baseline', gap: '12px', marginBottom: '16px' }}>
-                    <span style={{ ...HL, fontSize: '26px', textShadow: 'none' }}>{col.label}</span>
-                    <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: col.accent ? '#2B5BFF' : 'rgba(255,255,255,0.45)', fontWeight: 500 }}>{col.sublabel}</span>
-                  </div>
-                  <p style={{ ...BODY, margin: '0 0 20px' }}>{col.desc}</p>
-                  <span style={MUTED}>{col.tag}</span>
-                </div>
-              ))}
-            </div>
+            <h2 style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(26px,3.2vw,42px)', color: '#0D0F14', fontWeight: 400, margin: '0 0 8px', letterSpacing: '-0.5px' }}>
+              Two ways to climb.
+            </h2>
+            <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#758090', margin: '0 0 56px', lineHeight: 1.6 }}>
+              Every Summit is free. Ascending is optional but that is where real connection happens.
+            </p>
           </FadeUp>
         </div>
+
+        {/* T-chart */}
+        <FadeUp delay={0.08}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 80px 80px', display: 'grid', gridTemplateColumns: '1fr 1fr', borderTop: '1px solid rgba(13,15,20,0.1)' }}>
+
+            {/* ── SUMMIT ── */}
+            <div style={{ padding: '52px 64px 52px 0', borderRight: '2px solid #0D0F14' }}>
+              {/* Header row */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '32px' }}>
+                <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(36px,4vw,56px)', color: '#0D0F14', fontWeight: 400, lineHeight: 1, letterSpacing: '-1px' }}>Summit</span>
+                <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: '#0D0F14', border: '1.5px solid rgba(13,15,20,0.25)', borderRadius: '3px', padding: '5px 12px', marginTop: '8px', letterSpacing: '0.04em' }}>Free</span>
+              </div>
+
+              {/* Who it's for */}
+              <div style={{ marginBottom: '28px' }}>
+                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, color: '#9aabb8', letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 8px' }}>Who it's for</p>
+                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.65, margin: 0 }}>Any student who wants real access to professionals who have been where they want to go.</p>
+              </div>
+
+              {/* Divider */}
+              <div style={{ height: '1px', background: 'rgba(13,15,20,0.08)', marginBottom: '28px' }} />
+
+              {/* Description */}
+              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.72, margin: '0 0 32px' }}>
+                Ten students. One verified Guide. Live every week. Interactive, intimate, and built around real conversation. New Guides rotate in with the best ones returning.
+              </p>
+
+              {/* Feature rows */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '40px' }}>
+                {[
+                  'Up to 10 students per session',
+                  'Live — never recorded',
+                  '45 minutes with your Guide',
+                  'Always free',
+                ].map((f, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#0D0F14', flexShrink: 0 }} />
+                    <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: '#3a4a5e' }}>{f}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Tag */}
+              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', color: '#9aabb8', letterSpacing: '0.06em', margin: 0 }}>Limited spots per session</p>
+            </div>
+
+            {/* ── ASCENDING ── */}
+            <div style={{ padding: '52px 0 52px 64px' }}>
+              {/* Header row */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '32px' }}>
+                <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(36px,4vw,56px)', color: '#0D0F14', fontWeight: 400, lineHeight: 1, letterSpacing: '-1px' }}>Ascending</span>
+                <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: '#2B5BFF', border: '1.5px solid rgba(43,91,255,0.35)', borderRadius: '3px', padding: '5px 12px', marginTop: '8px', letterSpacing: '0.04em' }}>$40 / session</span>
+              </div>
+
+              {/* Who it's for */}
+              <div style={{ marginBottom: '28px' }}>
+                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, color: '#9aabb8', letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 8px' }}>Who it's for</p>
+                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.65, margin: 0 }}>Students who attended a Summit and want direct one on one time with their Guide and a session built entirely around them.</p>
+              </div>
+
+              {/* Divider */}
+              <div style={{ height: '1px', background: 'rgba(13,15,20,0.08)', marginBottom: '28px' }} />
+
+              {/* Description */}
+              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.72, margin: '0 0 32px' }}>
+                A private one on one session separate from the Summit. Your Guide builds new curriculum specifically for you before the session. You spend 40 minutes working through your specific goals, field, and next steps. You leave with a direct professional introduction.
+              </p>
+
+              {/* Feature rows */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '40px' }}>
+                {[
+                  'Private — just you and your Guide',
+                  'New curriculum built for you',
+                  '40 minutes, one on one',
+                  'Direct professional introduction',
+                ].map((f, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#2B5BFF', flexShrink: 0 }} />
+                    <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: '#3a4a5e' }}>{f}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Tag */}
+              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', color: '#9aabb8', letterSpacing: '0.06em', margin: 0 }}>After every Summit</p>
+            </div>
+
+          </div>
+        </FadeUp>
       </section>
 
       {/* ── GUIDES ── */}
