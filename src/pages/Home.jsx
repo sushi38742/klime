@@ -316,67 +316,91 @@ export default function Home() {
         </FadeUp>
       </section>
 
-      {/* ── GUIDES ── */}
-      <section style={{ padding: '0 40px 100px' }}>
-        <div style={wrap}>
+      {/* ── GUIDES ── transparent, mountain-floating ── */}
+      <section style={{ padding: '100px 40px' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+
+          {/* Two-col intro */}
           <FadeUp>
-            <h2 style={{ ...HL, fontSize: 'clamp(24px,3vw,40px)', margin: '0 0 12px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>
-              Professionals who have already been there.
-            </h2>
-            <p style={{ ...BODY, maxWidth: '580px', margin: '0 0 40px' }}>
-              Guides on Klime are not tutors or coaches. Some are 20-year-old founders who built something real. Others are senior executives, physicians, or government advisors with decades of experience. What they share is a commitment to opening real doors for students who are ready to walk through them.
-            </p>
-
-            {/* Category plain text with hairline separators */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', marginBottom: '52px' }}>
-              {['Tech Founders', 'Business Leaders', 'Healthcare', 'Finance', 'National Security', 'Creative Directors', 'Engineers', 'Investors'].map((cat, i) => (
-                <span key={i} style={{
-                  fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.58)',
-                  padding: '6px 20px', borderLeft: i > 0 ? HAIR : 'none',
-                  lineHeight: 1,
-                }}>
-                  {cat}
-                </span>
-              ))}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', marginBottom: '64px', alignItems: 'start' }}>
+              <h2 style={{ ...HL, fontSize: 'clamp(30px,4vw,52px)', margin: 0, letterSpacing: '-1px', lineHeight: 1.08, textShadow: '0 2px 20px rgba(0,0,0,0.28)' }}>
+                Professionals who have already been there.
+              </h2>
+              <p style={{ ...BODY, margin: 0, paddingTop: '6px' }}>
+                Guides on Klime are not tutors or coaches. Some are 20-year-old founders who built something real. Others are senior executives, physicians, or government advisors with decades of experience. What they share is a commitment to opening real doors for students who are ready to walk through them.
+              </p>
             </div>
+          </FadeUp>
 
-            <div style={{ borderTop: HAIR, paddingTop: '44px' }}>
-              <h3 style={{ ...HL, fontSize: 'clamp(18px,2.2vw,28px)', margin: '0 0 32px', textShadow: 'none' }}>
+          {/* Categories — editorial grid */}
+          <FadeUp delay={0.06}>
+            <div style={{ borderTop: HAIR, marginBottom: '72px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                {[
+                  { label: 'Tech Founders',      size: 'clamp(22px,2.8vw,36px)' },
+                  { label: 'Business Leaders',   size: 'clamp(22px,2.8vw,36px)' },
+                  { label: 'Healthcare',         size: 'clamp(18px,2vw,26px)'   },
+                  { label: 'Finance',            size: 'clamp(18px,2vw,26px)'   },
+                  { label: 'National Security',  size: 'clamp(22px,2.8vw,36px)' },
+                  { label: 'Creative Directors', size: 'clamp(18px,2vw,26px)'   },
+                  { label: 'Engineers',          size: 'clamp(18px,2vw,26px)'   },
+                  { label: 'Investors',          size: 'clamp(22px,2.8vw,36px)' },
+                ].map((cat, i) => (
+                  <div key={i} style={{ borderRight: HAIR, borderBottom: HAIR, padding: '24px 36px' }}>
+                    <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: cat.size, color: 'rgba(255,255,255,0.82)', fontWeight: 400, lineHeight: 1.1, display: 'block' }}>
+                      {cat.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeUp>
+
+          {/* Screening */}
+          <FadeUp delay={0.1}>
+            <div style={{ borderTop: HAIR, paddingTop: '52px' }}>
+              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', margin: '0 0 24px' }}>
+                Screening
+              </p>
+              <h3 style={{ ...HL, fontSize: 'clamp(20px,2.4vw,32px)', margin: '0 0 48px', letterSpacing: '-0.3px', textShadow: '0 2px 12px rgba(0,0,0,0.22)', maxWidth: '600px' }}>
                 Every Guide is screened before they ever lead a session.
               </h3>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 0 }}>
                 {[
-                  { title: 'AI credential scan', desc: 'Our AI cross-references professional history, public credentials, and field relevance before a Guide is even considered.' },
-                  { title: 'Founder review', desc: 'Ryan and Max personally review every Guide application. If something feels off, the Guide does not move forward. No exceptions.' },
-                  { title: 'Ongoing monitoring', desc: 'After every Summit, AI analyzes student feedback. Guides who fall below the bar are flagged and reviewed before their next session.' },
+                  { n: '01', title: 'AI credential scan',   desc: 'Our AI cross-references professional history, public credentials, and field relevance before a Guide is even considered.' },
+                  { n: '02', title: 'Founder review',       desc: 'Ryan and Max personally review every Guide application. If something feels off, the Guide does not move forward. No exceptions.' },
+                  { n: '03', title: 'Ongoing monitoring',   desc: 'After every Summit, AI analyzes student feedback. Guides who fall below the bar are flagged and reviewed before their next session.' },
                 ].map((s, i) => (
-                  <div key={i} style={{ padding: i === 0 ? '0 32px 0 0' : '0 0 0 32px', borderLeft: i > 0 ? HAIR : 'none' }}>
-                    <h4 style={{ ...HL, fontSize: '17px', margin: '0 0 8px', textShadow: 'none' }}>{s.title}</h4>
+                  <div key={i} style={{ padding: i === 0 ? '0 40px 0 0' : '0 0 0 40px', borderLeft: i > 0 ? HAIR : 'none' }}>
+                    <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '48px', color: 'rgba(255,255,255,0.10)', lineHeight: 1, display: 'block', marginBottom: '18px', userSelect: 'none' }}>{s.n}</span>
+                    <h4 style={{ ...HL, fontSize: '16px', margin: '0 0 10px', textShadow: 'none', letterSpacing: '-0.1px' }}>{s.title}</h4>
                     <p style={{ ...MUTED, margin: 0 }}>{s.desc}</p>
                   </div>
                 ))}
               </div>
             </div>
           </FadeUp>
+
         </div>
       </section>
 
-      {/* ── THREE STEPS ── */}
-      <section style={{ padding: '0 40px 100px' }}>
-        <div style={wrap}>
+      {/* ── THREE STEPS ── white panel break ── */}
+      <section style={{ background: 'rgba(255,255,255,0.96)' }}>
+        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '80px 40px 88px' }}>
           <FadeUp>
-            <h2 style={{ ...HL, fontSize: 'clamp(24px,3vw,40px)', margin: '0 0 60px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>Three steps to the top.</h2>
+            <h2 style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(24px,3vw,40px)', color: '#0D0F14', fontWeight: 400, margin: '0 0 56px', letterSpacing: '-0.5px' }}>
+              Three steps to the top.
+            </h2>
           </FadeUp>
           {[
             { n: '01', body: 'Sign up and tell us what field you want to climb in. We match you to an upcoming Summit with a Guide in your area.' },
             { n: '02', body: 'Join a live session with up to 10 other students and a verified Guide. Interactive, intimate, and never recorded.' },
             { n: '03', body: 'Book a private Ascending session. Your Guide builds new curriculum specifically for you before you meet. You leave with a direct professional introduction.' },
-          ].map((step, i, arr) => (
+          ].map((step, i) => (
             <FadeUp key={i} delay={i * 0.08}>
-              <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', padding: '40px 0', borderTop: i === 0 ? HAIR : 'none', borderBottom: HAIR }}>
-                {/* Large muted number — 100px, barely visible */}
-                <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '100px', color: 'rgba(255,255,255,0.10)', lineHeight: 0.85, flexShrink: 0, width: '100px', userSelect: 'none' }}>{step.n}</span>
-                <p style={{ ...BODY, margin: '12px 0 0', maxWidth: '600px', fontSize: '16px', color: 'rgba(255,255,255,0.82)' }}>{step.body}</p>
+              <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', padding: '36px 0', borderTop: '1px solid rgba(13,15,20,0.09)', borderBottom: i === 2 ? '1px solid rgba(13,15,20,0.09)' : 'none' }}>
+                <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '96px', color: 'rgba(13,15,20,0.06)', lineHeight: 0.85, flexShrink: 0, width: '96px', userSelect: 'none' }}>{step.n}</span>
+                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '16px', color: '#3a4a5e', lineHeight: 1.72, margin: '10px 0 0', maxWidth: '600px' }}>{step.body}</p>
               </div>
             </FadeUp>
           ))}
