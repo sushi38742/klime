@@ -1,145 +1,203 @@
 import { useRef, useEffect } from 'react'
 
-function MidMain() {
+function SummitVsAscend() {
   return (
-    <div style={{ padding: '0 60px', width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+    <div style={{
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '60px 80px',
+      textAlign: 'center',
+    }}>
       <h2 style={{
-        fontFamily: '"DM Serif Display", serif',
-        fontSize: 'clamp(28px, 3.5vw, 46px)',
+        fontFamily: '"DM Serif Display",serif',
+        fontSize: 'clamp(26px,3.2vw,44px)',
         color: '#F0F2F7',
-        margin: '0 0 44px',
+        margin: '0 0 10px',
         letterSpacing: '-0.5px',
       }}>
         Choose how you climb.
       </h2>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, maxWidth: '760px', marginBottom: '48px' }}>
-        <div style={{ paddingRight: '44px', borderRight: '1px solid rgba(240,242,247,0.08)' }}>
-          <h3 style={{ fontFamily: '"DM Serif Display", serif', fontSize: '26px', color: '#F0F2F7', margin: '0 0 12px' }}>Summit</h3>
-          <p style={{ fontFamily: 'Sora, sans-serif', fontSize: '13px', color: 'rgba(240,242,247,0.5)', lineHeight: 1.7, margin: '0 0 14px' }}>
-            Ten Klimers. One Guide. Live every week. Interactive, intimate, and built around real conversation. New Guides rotate in with the best ones returning.
-          </p>
-          <span style={{ fontFamily: 'Sora, sans-serif', fontSize: '10px', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(240,242,247,0.28)' }}>Limited Spots</span>
-        </div>
-        <div style={{ paddingLeft: '44px' }}>
-          <h3 style={{ fontFamily: '"DM Serif Display", serif', fontSize: '26px', color: '#F0F2F7', margin: '0 0 6px' }}>Ascending</h3>
-          <p style={{ fontFamily: 'Sora, sans-serif', fontSize: '13px', color: 'rgba(43,91,255,0.85)', margin: '0 0 8px' }}>$40 per session</p>
-          <p style={{ fontFamily: 'Sora, sans-serif', fontSize: '13px', color: 'rgba(240,242,247,0.5)', lineHeight: 1.7, margin: '0 0 14px' }}>
-            Fifteen minutes directly with your Guide after the Summit. They know who you are. They just spent an hour with you. This is where real connection happens.
-          </p>
-          <span style={{ fontFamily: 'Sora, sans-serif', fontSize: '10px', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(240,242,247,0.28)' }}>Ascending</span>
-        </div>
-      </div>
+      <p style={{
+        fontFamily: 'Sora,sans-serif',
+        fontSize: '14px',
+        color: 'rgba(240,242,247,0.4)',
+        margin: '0 0 40px',
+        maxWidth: '480px',
+        lineHeight: 1.65,
+      }}>
+        Every Summit is free. Ascending is optional — but it's where real connection happens.
+      </p>
 
-      {/* Dot grids */}
-      <div style={{ display: 'flex', gap: '72px', alignItems: 'flex-end' }}>
-        <div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', maxWidth: '132px', marginBottom: '10px' }}>
-            {Array.from({ length: 10 }).map((_, i) => (
-              <div key={i} style={{ width: '11px', height: '11px', borderRadius: '50%', background: 'rgba(240,242,247,0.6)' }} />
-            ))}
+      {/* Two-column cards */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: '1px',
+        width: '100%',
+        maxWidth: '780px',
+        background: 'rgba(240,242,247,0.08)',
+        borderRadius: '2px',
+        overflow: 'hidden',
+      }}>
+        {[
+          {
+            badge: 'Free',
+            title: 'Summit',
+            price: null,
+            desc: 'Ten Klimers. One Guide. Live every week. Interactive, intimate, and built around real conversation.',
+            dot: { count: 10, size: 11, color: 'rgba(240,242,247,0.55)' },
+          },
+          {
+            badge: 'Optional',
+            title: 'Ascending',
+            price: '$40 per session',
+            desc: 'Fifteen minutes directly with your Guide after the Summit. They know who you are. This is where doors open.',
+            dot: { count: 1, size: 30, color: '#2B5BFF', glow: true },
+          },
+        ].map((card, i) => (
+          <div key={i} style={{
+            background: i === 1 ? 'rgba(43,91,255,0.06)' : 'rgba(10,16,28,0.6)',
+            padding: '36px 40px',
+            textAlign: 'left',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+              <span style={{
+                fontFamily: 'Sora,sans-serif',
+                fontSize: '10px',
+                letterSpacing: '0.16em',
+                textTransform: 'uppercase',
+                color: i === 1 ? '#2B5BFF' : 'rgba(240,242,247,0.35)',
+                border: `1px solid ${i === 1 ? 'rgba(43,91,255,0.4)' : 'rgba(240,242,247,0.15)'}`,
+                padding: '2px 8px',
+                borderRadius: '2px',
+              }}>
+                {card.badge}
+              </span>
+              {card.price && (
+                <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(43,91,255,0.8)' }}>{card.price}</span>
+              )}
+            </div>
+            <h3 style={{ fontFamily: '"DM Serif Display",serif', fontSize: '28px', color: '#F0F2F7', margin: '0 0 10px' }}>{card.title}</h3>
+            <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(240,242,247,0.45)', lineHeight: 1.7, margin: '0 0 24px' }}>{card.desc}</p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', alignItems: 'center' }}>
+              {Array.from({ length: card.dot.count }).map((_, j) => (
+                <div key={j} style={{
+                  width: card.dot.size + 'px',
+                  height: card.dot.size + 'px',
+                  borderRadius: '50%',
+                  background: card.dot.color,
+                  boxShadow: card.dot.glow ? '0 0 20px rgba(43,91,255,0.5)' : 'none',
+                }} />
+              ))}
+            </div>
           </div>
-          <span style={{ fontFamily: 'Sora, sans-serif', fontSize: '10px', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(240,242,247,0.3)' }}>Summit</span>
-        </div>
-        <div>
-          <div style={{ marginBottom: '10px' }}>
-            <div style={{ width: '26px', height: '26px', borderRadius: '50%', background: '#2B5BFF', boxShadow: '0 0 18px rgba(43,91,255,0.6)' }} />
-          </div>
-          <span style={{ fontFamily: 'Sora, sans-serif', fontSize: '10px', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(240,242,247,0.3)' }}>Ascending</span>
-        </div>
+        ))}
       </div>
     </div>
   )
 }
 
-function AILoopDiagram() {
-  const svgRef = useRef()
-  const dotRef = useRef()
-  const animRef = useRef()
-
-  useEffect(() => {
-    let t = 0
-    const nodes = [{ x: 150, y: 55 }, { x: 150, y: 195 }, { x: 150, y: 335 }]
-    const animate = () => {
-      t += 0.004
-      const progress = t % 1
-      const totalPath = 280 + 20
-      const pos = progress * totalPath
-      let x = 150, y
-
-      if (pos < 140) { y = 55 + (pos / 140) * 140 }
-      else if (pos < 280) { y = 195 + ((pos - 140) / 140) * 140 }
-      else { y = 335 + ((pos - 280) / 40) * (-280) }
-
-      if (dotRef.current) {
-        dotRef.current.setAttribute('cx', x)
-        dotRef.current.setAttribute('cy', y)
-      }
-      animRef.current = requestAnimationFrame(animate)
-    }
-    animRef.current = requestAnimationFrame(animate)
-    return () => cancelAnimationFrame(animRef.current)
-  }, [])
-
+function AILoopNode({ x, y, label }) {
   return (
-    <svg viewBox="0 0 300 420" style={{ width: '180px', height: 'auto' }}>
-      <line x1="150" y1="83" x2="150" y2="167" stroke="rgba(43,91,255,0.22)" strokeWidth="1.4" />
-      <line x1="150" y1="223" x2="150" y2="307" stroke="rgba(43,91,255,0.22)" strokeWidth="1.4" />
-      <path d="M 150 363 C 240 363 240 55 192 55" stroke="rgba(43,91,255,0.18)" strokeWidth="1.4" fill="none" strokeDasharray="4 4" />
-      <polygon points="192,51 186,61 198,61" fill="rgba(43,91,255,0.4)" />
-
-      <circle ref={dotRef} r="5" fill="#2B5BFF" cx="150" cy="55" />
-
-      {[{ y: 55, label: 'Climbers survey' }, { y: 195, label: 'AI analyzes' }, { y: 335, label: 'Guide is briefed' }].map((n, i) => (
-        <g key={i}>
-          <circle cx="150" cy={n.y} r="28" fill="none" stroke="rgba(43,91,255,0.38)" strokeWidth="1.2" />
-          <text x="150" y={n.y + 4} textAnchor="middle" fill="rgba(240,242,247,0.7)" fontSize="10" fontFamily="Sora,sans-serif">{n.label}</text>
-        </g>
-      ))}
-      <text x="150" y="408" textAnchor="middle" fill="rgba(240,242,247,0.28)" fontSize="8" fontFamily="Sora,sans-serif" letterSpacing="2">REPEATS EVERY WEEK</text>
-    </svg>
+    <g>
+      <circle cx={x} cy={y} r={32} fill="rgba(15,25,45,0.6)" stroke="rgba(43,91,255,0.35)" strokeWidth="1.2" />
+      <text x={x} y={y + 4} textAnchor="middle" fill="rgba(240,242,247,0.7)" fontSize="10" fontFamily="Sora,sans-serif">{label}</text>
+    </g>
   )
 }
 
 function AISection() {
+  const dotRef = useRef()
+  const raf = useRef()
+
+  useEffect(() => {
+    let t = 0
+    const waypoints = [{ x: 480, y: 50 }, { x: 480, y: 165 }, { x: 480, y: 280 }, { x: 480, y: 50 }]
+    const animate = () => {
+      t += 0.004
+      const p = t % 1
+      const seg = Math.floor(p * 3)
+      const segP = (p * 3) % 1
+      const a = waypoints[seg], b = waypoints[seg + 1]
+      const cx = a.x + (b.x - a.x) * segP
+      const cy = a.y + (b.y - a.y) * segP
+      if (dotRef.current) {
+        dotRef.current.setAttribute('cx', cx)
+        dotRef.current.setAttribute('cy', cy)
+      }
+      raf.current = requestAnimationFrame(animate)
+    }
+    raf.current = requestAnimationFrame(animate)
+    return () => cancelAnimationFrame(raf.current)
+  }, [])
+
   return (
-    <div style={{ padding: '0 60px', width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '60px', alignItems: 'center', maxWidth: '860px' }}>
-        <div>
-          <h2 style={{
-            fontFamily: '"DM Serif Display", serif',
-            fontSize: 'clamp(28px, 3.2vw, 42px)',
-            color: '#F0F2F7',
-            margin: '0 0 20px',
-            letterSpacing: '-0.5px',
-            lineHeight: 1.15,
-          }}>
-            Sessions that adapt to you.
-          </h2>
-          <p style={{
-            fontFamily: 'Sora, sans-serif',
-            fontSize: '14px',
-            color: 'rgba(240,242,247,0.48)',
-            lineHeight: 1.75,
-            margin: 0,
-            maxWidth: '420px',
-          }}>
-            Before every Summit, Klimers complete a short survey. Klime's AI identifies what the cohort needs and briefs the Guide before they walk in. No two Summits are the same.
-          </p>
-        </div>
-        <AILoopDiagram />
-      </div>
+    <div style={{
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '60px 80px',
+      textAlign: 'center',
+    }}>
+      <h2 style={{
+        fontFamily: '"DM Serif Display",serif',
+        fontSize: 'clamp(26px,3.2vw,44px)',
+        color: '#F0F2F7',
+        margin: '0 0 10px',
+        letterSpacing: '-0.5px',
+      }}>
+        Sessions that adapt to you.
+      </h2>
+      <p style={{
+        fontFamily: 'Sora,sans-serif',
+        fontSize: '14px',
+        color: 'rgba(240,242,247,0.42)',
+        lineHeight: 1.7,
+        margin: '0 0 40px',
+        maxWidth: '480px',
+      }}>
+        Before every Summit, Klimers complete a short survey. Klime's AI identifies what the cohort needs and briefs the Guide before they walk in.
+      </p>
+
+      <svg viewBox="0 0 960 340" style={{ width: '100%', maxWidth: '820px', height: 'auto' }}>
+        {/* Loop path */}
+        <line x1="480" y1="82" x2="480" y2="133" stroke="rgba(43,91,255,0.2)" strokeWidth="1.4" />
+        <line x1="480" y1="197" x2="480" y2="248" stroke="rgba(43,91,255,0.2)" strokeWidth="1.4" />
+        {/* Return arc */}
+        <path d="M 480 312 C 620 312 620 50 514 50" stroke="rgba(43,91,255,0.16)" strokeWidth="1.4" fill="none" strokeDasharray="4 5" />
+        <polygon points="514,46 508,58 520,58" fill="rgba(43,91,255,0.38)" />
+
+        <circle ref={dotRef} r="5.5" fill="#2B5BFF" cx="480" cy="50" />
+
+        {[{ y: 50, lbl: 'Klimers survey' }, { y: 165, lbl: 'AI analyzes' }, { y: 280, lbl: 'Guide is briefed' }].map((n, i) => (
+          <AILoopNode key={i} x={480} y={n.y} label={n.lbl} />
+        ))}
+
+        {/* Labels on the side */}
+        {[
+          { y: 50,  x: 540, text: 'Climbers answer 3 questions before Summit', anchor: 'start' },
+          { y: 165, x: 540, text: 'Patterns identified across the cohort', anchor: 'start' },
+          { y: 280, x: 540, text: 'Guide tailors their session in real time', anchor: 'start' },
+        ].map((l, i) => (
+          <text key={i} x={l.x} y={l.y + 4} textAnchor={l.anchor} fill="rgba(240,242,247,0.38)" fontSize="12" fontFamily="Sora,sans-serif">{l.text}</text>
+        ))}
+
+        <text x="480" y="332" textAnchor="middle" fill="rgba(240,242,247,0.22)" fontSize="9" fontFamily="Sora,sans-serif" letterSpacing="2">REPEATS EVERY WEEK</text>
+      </svg>
     </div>
   )
 }
 
 export default function ZoneMidMountain({ onlyFirst, onlyAI }) {
-  if (onlyFirst) return <MidMain />
+  if (onlyFirst) return <SummitVsAscend />
   if (onlyAI) return <AISection />
-  return (
-    <>
-      <MidMain />
-      <AISection />
-    </>
-  )
+  return null
 }
