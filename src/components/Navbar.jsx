@@ -5,6 +5,7 @@ const links = [
   { label: 'Home',             to: '/' },
   { label: 'Upcoming Summits', to: '/upcoming-summits' },
   { label: 'Become a Guide',   to: '/become-a-guide' },
+  { label: 'Our Story',        to: '/about' },
 ]
 
 const lnkBase = {

@@ -166,7 +166,7 @@ export default function Home() {
       <Marquee />
 
       {/* ── WHAT KLIME IS ── */}
-      <section style={{ padding: '100px 40px' }}>
+      <section style={{ padding: '100px 40px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
         <div style={wrap}>
           <FadeUp>
             <h2 style={{ ...HL, fontSize: 'clamp(24px,3vw,40px)', margin: '0 0 12px', letterSpacing: '-0.5px', maxWidth: '640px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>
@@ -213,14 +213,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TWO WAYS TO CLIMB — white T-chart break ── */}
-      <section style={{ background: 'rgba(255,255,255,0.96)', marginTop: '20px' }}>
+      {/* ── TWO WAYS TO CLIMB — mountain-floating, blurred ── */}
+      <section style={{ backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 80px 0' }}>
           <FadeUp>
-            <h2 style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(26px,3.2vw,42px)', color: '#0D0F14', fontWeight: 400, margin: '0 0 8px', letterSpacing: '-0.5px' }}>
+            <h2 style={{ ...HL, fontSize: 'clamp(26px,3.2vw,42px)', margin: '0 0 8px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>
               Two ways to climb.
             </h2>
-            <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#758090', margin: '0 0 56px', lineHeight: 1.6 }}>
+            <p style={{ ...MUTED, margin: '0 0 56px', fontSize: '14px', lineHeight: 1.6 }}>
               Every Summit is free. Ascending is where you sit across from one of them — just you.
             </p>
           </FadeUp>
@@ -228,96 +228,74 @@ export default function Home() {
 
         {/* T-chart */}
         <FadeUp delay={0.08}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 80px 80px', display: 'grid', gridTemplateColumns: '1fr 1fr', borderTop: '1px solid rgba(13,15,20,0.1)' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 80px 80px', display: 'grid', gridTemplateColumns: '1fr 1fr', borderTop: HAIR }}>
 
             {/* ── SUMMIT ── */}
-            <div style={{ padding: '52px 64px 52px 0', borderRight: '2px solid #0D0F14' }}>
-              {/* Header row */}
+            <div style={{ padding: '52px 64px 52px 0', borderRight: '2px solid rgba(255,255,255,0.3)' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '32px' }}>
-                <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(36px,4vw,56px)', color: '#0D0F14', fontWeight: 400, lineHeight: 1, letterSpacing: '-1px' }}>Summit</span>
-                <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: '#0D0F14', border: '1.5px solid rgba(13,15,20,0.25)', borderRadius: '3px', padding: '5px 12px', marginTop: '8px', letterSpacing: '0.04em' }}>Free</span>
+                <span style={{ ...HL, fontSize: 'clamp(36px,4vw,56px)', lineHeight: 1, letterSpacing: '-1px', textShadow: '0 2px 16px rgba(0,0,0,0.22)' }}>Summit</span>
+                <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.9)', border: '1.5px solid rgba(255,255,255,0.4)', borderRadius: '3px', padding: '5px 12px', marginTop: '8px', letterSpacing: '0.04em' }}>Free</span>
               </div>
 
-              {/* Who it's for */}
               <div style={{ marginBottom: '28px' }}>
-                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, color: '#9aabb8', letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 8px' }}>Who it's for</p>
-                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.65, margin: 0 }}>Any student who wants to learn from someone who actually did it — live, in real time, this week.</p>
+                <p style={{ ...MUTED, fontSize: '10px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 8px' }}>Who it's for</p>
+                <p style={{ ...BODY, fontSize: '14px', margin: 0 }}>Any student who wants to learn from someone who actually did it — live, in real time, this week.</p>
               </div>
 
-              {/* Divider */}
-              <div style={{ height: '1px', background: 'rgba(13,15,20,0.08)', marginBottom: '28px' }} />
+              <div style={{ height: '1px', background: 'rgba(255,255,255,0.15)', marginBottom: '28px' }} />
 
-              {/* Description */}
-              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.72, margin: '0 0 32px' }}>
+              <p style={{ ...BODY, fontSize: '14px', margin: '0 0 32px' }}>
                 Think TED talk meets live course — except the speaker takes questions and knows your name. Each Summit is built around what is actually relevant in that field right now, led by a Guide who lived it. Ten students. One hour. Something different every week, from breaking into a room most people never get near to building the thing everyone is talking about.
               </p>
 
-              {/* Feature rows */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '40px' }}>
-                {[
-                  'Up to 10 students per session',
-                  'Live — never recorded',
-                  '45 minutes with your Guide',
-                  'Always free',
-                ].map((f, i) => (
+                {['Up to 10 students per session', 'Live — never recorded', '45 minutes with your Guide', 'Always free'].map((f, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#0D0F14', flexShrink: 0 }} />
-                    <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: '#3a4a5e' }}>{f}</span>
+                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'rgba(255,255,255,0.65)', flexShrink: 0 }} />
+                    <span style={{ ...BODY, fontSize: '13px' }}>{f}</span>
                   </div>
                 ))}
               </div>
 
-              {/* Tag */}
-              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', color: '#9aabb8', letterSpacing: '0.06em', margin: 0 }}>Limited spots per session</p>
+              <p style={{ ...MUTED, fontSize: '11px', letterSpacing: '0.06em', margin: 0 }}>Limited spots per session</p>
             </div>
 
             {/* ── ASCENDING ── */}
             <div style={{ padding: '52px 0 52px 64px' }}>
-              {/* Header row */}
               <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '32px' }}>
-                <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(36px,4vw,56px)', color: '#0D0F14', fontWeight: 400, lineHeight: 1, letterSpacing: '-1px' }}>Ascending</span>
-                <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: '#2B5BFF', border: '1.5px solid rgba(43,91,255,0.35)', borderRadius: '3px', padding: '5px 12px', marginTop: '8px', letterSpacing: '0.04em' }}>$40 / session</span>
+                <span style={{ ...HL, fontSize: 'clamp(36px,4vw,56px)', lineHeight: 1, letterSpacing: '-1px', textShadow: '0 2px 16px rgba(0,0,0,0.22)' }}>Ascending</span>
+                <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: '#2B5BFF', border: '1.5px solid rgba(43,91,255,0.5)', borderRadius: '3px', padding: '5px 12px', marginTop: '8px', letterSpacing: '0.04em', background: 'rgba(43,91,255,0.12)' }}>$40 / session</span>
               </div>
 
-              {/* Who it's for */}
               <div style={{ marginBottom: '28px' }}>
-                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, color: '#9aabb8', letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 8px' }}>Who it's for</p>
-                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.65, margin: 0 }}>Any student who wants an hour with a specific Guide — whether you attended their Summit or not.</p>
+                <p style={{ ...MUTED, fontSize: '10px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 8px' }}>Who it's for</p>
+                <p style={{ ...BODY, fontSize: '14px', margin: 0 }}>Any student who wants an hour with a specific Guide — whether you attended their Summit or not.</p>
               </div>
 
-              {/* Divider */}
-              <div style={{ height: '1px', background: 'rgba(13,15,20,0.08)', marginBottom: '28px' }} />
+              <div style={{ height: '1px', background: 'rgba(255,255,255,0.15)', marginBottom: '28px' }} />
 
-              {/* Description */}
-              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.72, margin: '0 0 32px' }}>
+              <p style={{ ...BODY, fontSize: '14px', margin: '0 0 32px' }}>
                 Browse the Guide roster. Pick the person you want in the room with you. They build entirely new curriculum around your goals before you ever meet. You did not need to be in their Summit. You just need to want it. Forty minutes, completely personalized, built to make a real connection — not a pleasant conversation.
               </p>
 
-              {/* Feature rows */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '40px' }}>
-                {[
-                  'Private — just you and your Guide',
-                  'New curriculum built for you',
-                  '40 minutes, one on one',
-                  'Direct professional introduction',
-                ].map((f, i) => (
+                {['Private — just you and your Guide', 'New curriculum built for you', '40 minutes, one on one', 'Direct professional introduction'].map((f, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#2B5BFF', flexShrink: 0 }} />
-                    <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: '#3a4a5e' }}>{f}</span>
+                    <span style={{ ...BODY, fontSize: '13px' }}>{f}</span>
                   </div>
                 ))}
               </div>
 
-              {/* Tag */}
-              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', color: '#9aabb8', letterSpacing: '0.06em', margin: 0 }}>After every Summit</p>
+              <p style={{ ...MUTED, fontSize: '11px', letterSpacing: '0.06em', margin: 0 }}>After every Summit</p>
             </div>
 
           </div>
         </FadeUp>
       </section>
 
-      {/* ── GUIDES ── transparent, mountain-floating ── */}
-      <section style={{ padding: '100px 40px' }}>
+      {/* ── GUIDES ── */}
+      <section style={{ padding: '100px 40px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
         <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
           {/* Two-col intro */}
@@ -384,13 +362,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── THREE STEPS ── white panel break ── */}
-      <section style={{ background: 'rgba(255,255,255,0.96)' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '80px 40px 88px' }}>
+      {/* ── THREE STEPS ── mountain-floating, blurred ── */}
+      <section style={{ padding: '0 40px 100px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
+        <div style={wrap}>
           <FadeUp>
-            <h2 style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(24px,3vw,40px)', color: '#0D0F14', fontWeight: 400, margin: '0 0 56px', letterSpacing: '-0.5px' }}>
-              Three steps to the top.
-            </h2>
+            <h2 style={{ ...HL, fontSize: 'clamp(24px,3vw,40px)', margin: '0 0 56px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>Three steps to the top.</h2>
           </FadeUp>
           {[
             { n: '01', body: 'Sign up and tell us what field you want to climb in. We match you to an upcoming Summit with a Guide in your area.' },
@@ -398,9 +374,9 @@ export default function Home() {
             { n: '03', body: 'Book a private Ascending session. Your Guide builds new curriculum specifically for you before you meet. You leave with a direct professional introduction.' },
           ].map((step, i) => (
             <FadeUp key={i} delay={i * 0.08}>
-              <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', padding: '36px 0', borderTop: '1px solid rgba(13,15,20,0.09)', borderBottom: i === 2 ? '1px solid rgba(13,15,20,0.09)' : 'none' }}>
-                <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '96px', color: 'rgba(13,15,20,0.06)', lineHeight: 0.85, flexShrink: 0, width: '96px', userSelect: 'none' }}>{step.n}</span>
-                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '16px', color: '#3a4a5e', lineHeight: 1.72, margin: '10px 0 0', maxWidth: '600px' }}>{step.body}</p>
+              <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', padding: '40px 0', borderTop: i === 0 ? HAIR : 'none', borderBottom: HAIR }}>
+                <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '100px', color: 'rgba(255,255,255,0.10)', lineHeight: 0.85, flexShrink: 0, width: '100px', userSelect: 'none' }}>{step.n}</span>
+                <p style={{ ...BODY, margin: '12px 0 0', maxWidth: '600px', fontSize: '16px', color: 'rgba(255,255,255,0.82)' }}>{step.body}</p>
               </div>
             </FadeUp>
           ))}
@@ -408,7 +384,7 @@ export default function Home() {
       </section>
 
       {/* ── FAQ ── */}
-      <section style={{ padding: '0 40px 100px' }}>
+      <section style={{ padding: '0 40px 100px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
         <div style={wrap}>
           <FadeUp>
             <h2 style={{ ...HL, fontSize: 'clamp(24px,3vw,40px)', margin: '0 0 40px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>Good questions.</h2>
@@ -422,72 +398,6 @@ export default function Home() {
               ].map((item, i) => <FAQRow key={i} {...item} />)}
             </div>
           </FadeUp>
-        </div>
-      </section>
-
-      {/* ── MEET THE MAKERS ── white panel ── */}
-      <section style={{ background: 'rgba(255,255,255,0.96)' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '88px 40px 96px' }}>
-
-          {/* Opening header */}
-          <FadeUp>
-            <h2 style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(28px,3.6vw,48px)', color: '#0D0F14', fontWeight: 400, margin: '0 0 20px', letterSpacing: '-0.8px', lineHeight: 1.1, maxWidth: '720px' }}>
-              Klime was built by two students who were tired of being told to just network.
-            </h2>
-            <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '15px', color: '#758090', lineHeight: 1.72, margin: '0 0 72px', maxWidth: '560px' }}>
-              We are both 18. We have both watched talented people get passed over because they did not know the right person. Klime exists because we decided to fix that instead of waiting for someone else to.
-            </p>
-          </FadeUp>
-
-          {/* Ryan */}
-          <FadeUp delay={0.06}>
-            <div style={{ borderTop: '1px solid rgba(13,15,20,0.1)', paddingTop: '52px', marginBottom: '0', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '60px' }}>
-              {/* Left: name + role + bio */}
-              <div style={{ flex: 1 }}>
-                <h3 style={{ fontFamily: '"DM Serif Display",serif', fontSize: '28px', color: '#0D0F14', fontWeight: 400, margin: '0 0 8px', letterSpacing: '-0.3px' }}>Ryan Inozemcev</h3>
-                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, letterSpacing: '0.18em', color: '#2B5BFF', textTransform: 'uppercase', margin: '0 0 24px' }}>
-                  Co-Founder · Product, Technology and Brand
-                </p>
-                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.8, margin: 0, maxWidth: '600px' }}>
-                  Ryan built Klime from nothing — the product, the platform, the brand, and every line of design you see here. Before Klime he founded CollegeConnekt at 16, which grew to 16,000 students across 50 states and 9 countries without funding or a team. He is studying Computer Science at the University of Florida and has been building things since before he could drive.
-                </p>
-              </div>
-              {/* Right: stats */}
-              <div style={{ flexShrink: 0, paddingTop: '4px' }}>
-                {[
-                  { value: '16,000+', label: 'CollegeConnekt users' },
-                  { value: '50',      label: 'states reached'       },
-                  { value: '2',       label: 'companies founded before 18' },
-                ].map((s, i) => (
-                  <div key={i} style={{ marginBottom: i < 2 ? '24px' : 0, textAlign: 'right' }}>
-                    <div style={{ fontFamily: '"DM Serif Display",serif', fontSize: '28px', color: '#0D0F14', fontWeight: 400, lineHeight: 1, letterSpacing: '-0.5px' }}>{s.value}</div>
-                    <div style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', color: '#9aabb8', marginTop: '3px', lineHeight: 1.4 }}>{s.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </FadeUp>
-
-          {/* Max */}
-          <FadeUp delay={0.1}>
-            <div style={{ borderTop: '1px solid rgba(13,15,20,0.1)', paddingTop: '52px', marginTop: '52px', paddingBottom: '0' }}>
-              <h3 style={{ fontFamily: '"DM Serif Display",serif', fontSize: '28px', color: '#0D0F14', fontWeight: 400, margin: '0 0 8px', letterSpacing: '-0.3px' }}>Max Korotkiy</h3>
-              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, letterSpacing: '0.18em', color: '#2B5BFF', textTransform: 'uppercase', margin: '0 0 24px' }}>
-                Co-Founder · Curriculum and Guide Partnerships
-              </p>
-              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e', lineHeight: 1.8, margin: 0, maxWidth: '600px' }}>
-                Max leads the human side of Klime — the curriculum that makes every Ascending session worth paying for, and the Guide relationships that make the platform real. He founded CyberSpace Society at West Boca and is studying Computer Science at the University of Florida.
-              </p>
-            </div>
-          </FadeUp>
-
-          {/* Closing line */}
-          <FadeUp delay={0.14}>
-            <p style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(18px,2.2vw,26px)', color: 'rgba(13,15,20,0.35)', fontStyle: 'italic', textAlign: 'center', margin: '72px 0 0', fontWeight: 400 }}>
-              Built in Florida. Built for everyone who was told to wait their turn.
-            </p>
-          </FadeUp>
-
         </div>
       </section>
 
