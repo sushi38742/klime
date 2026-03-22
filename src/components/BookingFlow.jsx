@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { getSlotCounts, createBooking } from '../lib/supabase'
+import { getSlotCounts, createBooking, getBookingByEmail } from '../lib/supabase'
 import { CAPACITY, TIME_SLOTS, HOSTS } from '../data/summitSlots'
 
 const ease = [0.16, 1, 0.3, 1]
@@ -102,6 +102,15 @@ export default function BookingFlow({ hostKey, onClose }) {
       await createBooking({ host: hostKey, date, slot, name, email })
       setStep(4)
     } catch (ex) {
+      if (ex.message === 'You have already booked this session.') {
+        const existing = await getBookingByEmail(email).catch(() => null)
+        if (existing) {
+          setDate(existing.date)
+          setSlot(existing.slot)
+          setStep(4)
+          return
+        }
+      }
       setErr(ex.message)
     } finally {
       setLoading(false)

@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import FadeUp from '../components/FadeUp'
 import BookingFlow from '../components/BookingFlow'
 import FAQS from '../data/summitsFaq'
+import { getBookingByEmail } from '../lib/supabase'
+import { HOSTS } from '../data/summitSlots'
 
 const ease = [0.16, 1, 0.3, 1]
 
@@ -40,6 +42,113 @@ const SUMMITS = [
     ],
   },
 ]
+
+function fmtDate(str) {
+  return new Date(str + 'T12:00:00').toLocaleDateString('en-US', {
+    weekday: 'short', month: 'short', day: 'numeric',
+  })
+}
+
+function AlreadyBooked() {
+  const [email, setEmail] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [result, setResult] = useState(null) // null | 'not_found' | { host, date, slot, zoomLink }
+  const [open, setOpen] = useState(false)
+
+  async function lookup(e) {
+    e.preventDefault()
+    setLoading(true)
+    setResult(null)
+    const booking = await getBookingByEmail(email.trim().toLowerCase()).catch(() => null)
+    if (!booking) {
+      setResult('not_found')
+    } else {
+      const zoomLink = HOSTS[booking.host]?.zoomLink || null
+      setResult({ ...booking, zoomLink })
+    }
+    setLoading(false)
+  }
+
+  return (
+    <div style={{ marginTop: '12px' }}>
+      {!open ? (
+        <button
+          onClick={() => setOpen(true)}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.45)', padding: 0, transition: 'color 0.15s', textDecoration: 'underline', textUnderlineOffset: '3px' }}
+          onMouseEnter={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.75)' }}
+          onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.45)' }}
+        >
+          Already booked? Get your join link
+        </button>
+      ) : (
+        <AnimatePresence>
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.24 }}
+            style={{ overflow: 'hidden' }}
+          >
+            <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.14)', borderRadius: '8px', padding: '24px', maxWidth: '420px' }}>
+              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', margin: '0 0 14px' }}>
+                Retrieve your join link
+              </p>
+              <form onSubmit={lookup} style={{ display: 'flex', gap: '8px', marginBottom: result ? '16px' : 0 }}>
+                <input
+                  required
+                  type="email"
+                  placeholder="Email you booked with"
+                  value={email}
+                  onChange={e => { setEmail(e.target.value); setResult(null) }}
+                  style={{ flex: 1, background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.18)', borderRadius: '4px', padding: '10px 12px', fontFamily: 'Sora,sans-serif', fontSize: '13px', color: '#fff', outline: 'none', transition: 'border-color 0.16s' }}
+                  onFocus={e => { e.target.style.borderColor = '#2B5BFF' }}
+                  onBlur={e => { e.target.style.borderColor = 'rgba(255,255,255,0.18)' }}
+                />
+                <button
+                  type="submit"
+                  disabled={loading}
+                  style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: '#fff', background: '#2B5BFF', border: 'none', borderRadius: '4px', padding: '10px 18px', cursor: loading ? 'wait' : 'pointer', opacity: loading ? 0.7 : 1, flexShrink: 0 }}
+                >
+                  {loading ? '…' : 'Find'}
+                </button>
+              </form>
+
+              {result === 'not_found' && (
+                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.5)', margin: 0 }}>
+                  No booking found for that email.
+                </p>
+              )}
+
+              {result && result !== 'not_found' && (
+                <div>
+                  <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.65)', margin: '0 0 14px' }}>
+                    {fmtDate(result.date)} · {result.slot}
+                  </p>
+                  {result.zoomLink ? (
+                    <a
+                      href={result.zoomLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ display: 'inline-block', fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: '#fff', background: '#2B5BFF', textDecoration: 'none', borderRadius: '4px', padding: '10px 20px', boxShadow: '0 4px 16px rgba(43,91,255,0.38)', transition: 'all 0.18s ease' }}
+                      onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 8px 22px rgba(43,91,255,0.52)' }}
+                      onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 4px 16px rgba(43,91,255,0.38)' }}
+                    >
+                      Join on Zoom →
+                    </a>
+                  ) : (
+                    <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.5)', margin: 0 }}>
+                      Your join link will be sent to you before the session.
+                    </p>
+                  )}
+                </div>
+              )}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      )}
+    </div>
+  )
+}
 
 function FAQRow({ q, a }) {
   const [open, setOpen] = useState(false)
@@ -216,6 +325,13 @@ export default function UpcomingSummits() {
               </span>
             </div>
           </FadeUp>
+        </div>
+      </section>
+
+      {/* ── ALREADY BOOKED ── */}
+      <section style={{ padding: '0 40px 8px' }}>
+        <div className="wrap-pad" style={wrap}>
+          <AlreadyBooked />
         </div>
       </section>
 

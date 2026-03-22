@@ -24,6 +24,21 @@ export async function getSlotCounts(host, dates) {
   return counts
 }
 
+export async function getBookingByEmail(email) {
+  if (!supabase) return null
+
+  const { data, error } = await supabase
+    .from('bookings')
+    .select('host, date, slot')
+    .eq('email', email)
+    .order('date', { ascending: true })
+    .limit(1)
+    .maybeSingle()
+
+  if (error) return null
+  return data
+}
+
 export async function createBooking({ host, date, slot, name, email }) {
   if (!supabase) throw new Error('Booking is not configured yet. Check back soon.')
 
