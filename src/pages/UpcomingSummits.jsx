@@ -216,17 +216,6 @@ function SummitCard({ summit, i }) {
               <p style={{ ...BODY, fontSize: '13px', color: 'rgba(255,255,255,0.72)', margin: 0 }}>{summit.host}</p>
             </div>
 
-            <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
-              <div>
-                <p style={{ ...MUTED, fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 4px', color: 'rgba(255,255,255,0.5)' }}>When</p>
-                <p style={{ ...BODY, fontSize: '14px', margin: 0 }}>Multiple times this week</p>
-              </div>
-              <div style={{ width: '1px', height: '32px', background: 'rgba(255,255,255,0.18)' }} />
-              <div>
-                <p style={{ ...MUTED, fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 4px', color: 'rgba(255,255,255,0.5)' }}>Capacity</p>
-                <p style={{ ...BODY, fontSize: '14px', margin: 0 }}>10 spots per session</p>
-              </div>
-            </div>
           </div>
 
           {/* Right */}
