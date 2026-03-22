@@ -7,8 +7,8 @@ const ease = [0.16, 1, 0.3, 1]
 
 // ─── Text on mountain — all light ───
 const HL   = { fontFamily: '"DM Serif Display",serif', color: '#fff', fontWeight: 400 }
-const BODY  = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.75)', fontSize: '15px', lineHeight: 1.72 }
-const MUTED = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.48)', fontSize: '13px', lineHeight: 1.65 }
+const BODY  = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.92)', fontSize: '15px', lineHeight: 1.72 }
+const MUTED = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.68)', fontSize: '13px', lineHeight: 1.65 }
 const HAIR  = '1px solid rgba(255,255,255,0.18)'
 const wrap  = { maxWidth: '1100px', margin: '0 auto', padding: '0 40px' }
 
@@ -166,7 +166,7 @@ export default function Home() {
       <Marquee />
 
       {/* ── WHAT KLIME IS ── */}
-      <section className="sec-v" style={{ padding: '100px 40px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
+      <section className="sec-v" style={{ padding: '100px 40px', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', background: 'rgba(0,0,0,0.28)' }}>
         <div className="wrap-pad" style={wrap}>
           <FadeUp>
             <h2 style={{ ...HL, fontSize: 'clamp(24px,3vw,40px)', margin: '0 0 12px', letterSpacing: '-0.5px', maxWidth: '640px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>
@@ -214,7 +214,7 @@ export default function Home() {
       </section>
 
       {/* ── TWO WAYS TO CLIMB — mountain-floating, blurred ── */}
-      <section style={{ backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
+      <section style={{ backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', background: 'rgba(0,0,0,0.28)' }}>
         <div className="tw-header-pad" style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 80px 0' }}>
           <FadeUp>
             <h2 style={{ ...HL, fontSize: 'clamp(26px,3.2vw,42px)', margin: '0 0 8px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>
@@ -295,7 +295,7 @@ export default function Home() {
       </section>
 
       {/* ── GUIDES ── */}
-      <section className="sec-v" style={{ padding: '100px 40px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
+      <section className="sec-v" style={{ padding: '100px 40px', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', background: 'rgba(0,0,0,0.28)' }}>
         <div className="wrap-pad" style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
           {/* Two-col intro */}
@@ -338,7 +338,7 @@ export default function Home() {
       </section>
 
       {/* ── THREE STEPS ── mountain-floating, blurred ── */}
-      <section className="sec-bot" style={{ padding: '0 40px 100px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
+      <section className="sec-bot" style={{ padding: '0 40px 100px', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', background: 'rgba(0,0,0,0.28)' }}>
         <div className="wrap-pad" style={wrap}>
           <FadeUp>
             <h2 style={{ ...HL, fontSize: 'clamp(24px,3vw,40px)', margin: '0 0 56px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>Three steps to the top.</h2>
@@ -359,7 +359,7 @@ export default function Home() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="sec-bot" style={{ padding: '0 40px 100px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
+      <section className="sec-bot" style={{ padding: '0 40px 100px', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', background: 'rgba(0,0,0,0.28)' }}>
         <div className="wrap-pad" style={wrap}>
           <FadeUp>
             <h2 style={{ ...HL, fontSize: 'clamp(24px,3vw,40px)', margin: '0 0 40px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>Good questions.</h2>
@@ -404,7 +404,7 @@ export default function Home() {
       {/* Footer */}
       <footer style={{ borderTop: HAIR, padding: '28px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '18px', color: 'rgba(255,255,255,0.45)' }}>Klime</span>
-        <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.28)' }}>&copy; 2025 Klime</span>
+        <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.28)' }}>&copy; 2026 Klime</span>
       </footer>
     </main>
   )
