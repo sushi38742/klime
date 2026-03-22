@@ -94,6 +94,9 @@ h1, h2, h3, h4 {
   .tw-summit     { padding: 40px 0 !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.3) !important; }
   .tw-ascending  { padding: 40px 0 0 !important; }
 
+  /* Summit card grid → stack on mobile */
+  .summit-card-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+
   /* Steps staircase → vertical on mobile */
   .steps-grid { grid-template-columns: 1fr !important; }
   .steps-grid > * { margin-top: 0 !important; padding: 32px 0 !important; border-top: 1px solid rgba(255,255,255,0.18) !important; }
