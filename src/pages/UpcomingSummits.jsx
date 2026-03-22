@@ -264,14 +264,12 @@ export default function UpcomingSummits() {
       {/* ── FAQ ── */}
       <section style={{ padding: '0 40px 80px' }}>
         <div className="wrap-pad" style={wrap}>
-          <FadeUp>
-            <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 36px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>
-              Questions about the sessions.
-            </h2>
-            <div style={{ borderTop: HAIR }}>
-              {FAQS.map((item, i) => <FAQRow key={i} {...item} />)}
-            </div>
-          </FadeUp>
+          <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 36px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>
+            Questions about the sessions.
+          </h2>
+          <div style={{ borderTop: HAIR }}>
+            {FAQS.map((item, i) => <FAQRow key={i} {...item} />)}
+          </div>
         </div>
       </section>
 
