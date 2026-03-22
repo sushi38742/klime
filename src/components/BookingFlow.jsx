@@ -236,7 +236,7 @@ export default function BookingFlow({ hostKey, onClose }) {
               <h3 style={{ ...HL, fontSize: '22px', margin: '0 0 8px' }}>You're in.</h3>
               <p style={{ ...BODY, margin: '0 0 4px' }}>{fmtDate(date)} · {slot}</p>
               <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.5)', margin: 0 }}>
-                Confirmation sent to {email}.
+                See you then.
               </p>
             </motion.div>
           )}
