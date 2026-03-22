@@ -202,14 +202,6 @@ export default function UpcomingSummits() {
           >
             This week's summits.
           </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.25, duration: 0.5 }}
-            style={{ ...BODY, color: 'rgba(255,255,255,0.82)', margin: 0, maxWidth: '520px' }}
-          >
-            Free intro meetings with the Klime founders. Pick a time that works, show up, and ask anything.
-          </motion.p>
         </div>
       </section>
 
