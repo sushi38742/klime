@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import BecomeGuide from './pages/BecomeGuide'
 import UpcomingSummits from './pages/UpcomingSummits'
 import About from './pages/About'
+import FAQ from './pages/FAQ'
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="/become-a-guide"    element={<BecomeGuide />} />
           <Route path="/upcoming-summits"  element={<UpcomingSummits />} />
           <Route path="/about"             element={<About />} />
+          <Route path="/faq"               element={<FAQ />} />
         </Routes>
       </div>
     </>

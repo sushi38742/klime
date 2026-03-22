@@ -94,10 +94,10 @@ h1, h2, h3, h4 {
   .tw-summit     { padding: 40px 0 !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.3) !important; }
   .tw-ascending  { padding: 40px 0 0 !important; }
 
-  /* Steps horizontal → vertical on mobile */
+  /* Steps staircase → vertical on mobile */
   .steps-grid { grid-template-columns: 1fr !important; }
-  .steps-grid > * { padding: 32px 0 !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.18) !important; }
-  .steps-grid > *:last-child { border-bottom: none !important; }
+  .steps-grid > * { margin-top: 0 !important; padding: 32px 0 !important; border-top: 1px solid rgba(255,255,255,0.18) !important; }
+  .steps-grid > *:last-child { border-bottom: 1px solid rgba(255,255,255,0.18) !important; }
 
   /* BecomeGuide / About panels */
   .panel-pad  { padding: 40px 24px !important; }

@@ -4,11 +4,11 @@ import FadeUp from '../components/FadeUp'
 
 const ease = [0.16, 1, 0.3, 1]
 
-const panel = { background: 'rgba(255,255,255,0.88)', borderRadius: '8px', padding: '60px 64px' }
-const HL = { fontFamily: '"DM Serif Display",serif', color: '#0D0F14', fontWeight: 400 }
-const BODY = { fontFamily: 'Sora,sans-serif', color: '#1e2d3d', fontSize: '15px', lineHeight: 1.72 }
-const MUTED = { fontFamily: 'Sora,sans-serif', color: '#4a5a6a', fontSize: '13px', lineHeight: 1.65 }
-const HAIRLINE = { borderLeft: '1px solid rgba(13,15,20,0.1)' }
+const panel = {}
+const HL = { fontFamily: '"DM Serif Display",serif', color: '#fff', fontWeight: 400 }
+const BODY = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.90)', fontSize: '15px', lineHeight: 1.72 }
+const MUTED = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.72)', fontSize: '13px', lineHeight: 1.65 }
+const HAIRLINE = { borderLeft: '1px solid rgba(255,255,255,0.18)' }
 const wrap = { maxWidth: '1100px', margin: '0 auto', padding: '0 40px' }
 
 const inputStyle = {
@@ -131,7 +131,7 @@ export default function BecomeGuide() {
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
                 {['Tech Founders', 'Business Leaders', 'Healthcare', 'Finance', 'National Security', 'Creative'].map((cat, i) => (
-                  <span key={i} style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: '#3a4a5e', border: '1px solid rgba(13,15,20,0.12)', borderRadius: '4px', padding: '8px 16px' }}>{cat}</span>
+                  <span key={i} style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.85)', border: '1px solid rgba(255,255,255,0.25)', borderRadius: '4px', padding: '8px 16px' }}>{cat}</span>
                 ))}
               </div>
             </div>
@@ -197,7 +197,7 @@ export default function BecomeGuide() {
                       <label style={{ ...MUTED, display: 'block', marginBottom: '10px' }}>Which sessions are you interested in?</label>
                       <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                         {['Summit sessions', 'Ascending sessions', 'Both'].map(opt => (
-                          <label key={opt} style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontFamily: 'Sora,sans-serif', fontSize: '14px', color: '#3a4a5e' }}>
+                          <label key={opt} style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', fontFamily: 'Sora,sans-serif', fontSize: '14px', color: 'rgba(255,255,255,0.88)' }}>
                             <input type="radio" name="session" value={opt} onChange={set('session')} checked={form.session === opt} style={{ accentColor: '#2B5BFF' }} />
                             {opt}
                           </label>

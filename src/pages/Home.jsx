@@ -271,7 +271,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── TWO WAYS TO CLIMB — mountain-floating, blurred ── */}
+      {/* ── TWO WAYS TO CLIMB ── */}
       <section style={{ }}>
         <div className="tw-header-pad" style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 80px 0' }}>
           <FadeUp>
@@ -279,65 +279,56 @@ export default function Home() {
               Two ways to climb.
             </h2>
             <p style={{ ...MUTED, margin: '0 0 56px', fontSize: '14px', lineHeight: 1.6 }}>
-              Every Summit is free. Ascending is where you sit across from one of them — just you.
+              One is where you start. The other is what Klime is actually built for.
             </p>
           </FadeUp>
         </div>
 
-        {/* T-chart */}
         <FadeUp delay={0.08}>
-          <div className="tw-grid" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 80px 80px', display: 'grid', gridTemplateColumns: '1fr 1fr', borderTop: HAIR }}>
+          <div className="tw-grid" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 80px 80px', display: 'grid', gridTemplateColumns: '2fr 3fr', borderTop: HAIR }}>
 
-            {/* ── SUMMIT ── */}
-            <div className="tw-summit" style={{ padding: '52px 64px 52px 0', borderRight: '2px solid rgba(255,255,255,0.3)' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '32px' }}>
-                <span style={{ ...HL, fontSize: 'clamp(36px,4vw,56px)', lineHeight: 1, letterSpacing: '-1px', textShadow: '0 2px 16px rgba(0,0,0,0.22)' }}>Summit</span>
-                <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.9)', border: '1.5px solid rgba(255,255,255,0.4)', borderRadius: '3px', padding: '5px 12px', marginTop: '8px', letterSpacing: '0.04em' }}>Free</span>
+            {/* ── SUMMIT — secondary ── */}
+            <div className="tw-summit" style={{ padding: '52px 64px 52px 0', borderRight: '1px solid rgba(255,255,255,0.18)' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '24px' }}>
+                <span style={{ ...HL, fontSize: 'clamp(28px,3vw,40px)', lineHeight: 1, letterSpacing: '-0.5px', color: 'rgba(255,255,255,0.7)' }}>Summit</span>
+                <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.25)', borderRadius: '3px', padding: '4px 10px', marginTop: '6px', letterSpacing: '0.04em' }}>Free</span>
               </div>
 
-              <div style={{ marginBottom: '28px' }}>
-                <p style={{ ...MUTED, fontSize: '10px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 8px' }}>Who it's for</p>
-                <p style={{ ...BODY, fontSize: '14px', margin: 0 }}>Any student who wants to learn from someone who actually did it — live, in real time, this week.</p>
-              </div>
-
-              <div style={{ height: '1px', background: 'rgba(255,255,255,0.15)', marginBottom: '28px' }} />
-
-              <p style={{ ...BODY, fontSize: '14px', margin: '0 0 32px' }}>
-                Think TED talk meets live course — except the speaker takes questions and knows your name. Each Summit is built around what is actually relevant in that field right now, led by a Guide who lived it. Ten students. One hour. Something different every week, from breaking into a room most people never get near to building the thing everyone is talking about.
+              <p style={{ ...BODY, fontSize: '14px', color: 'rgba(255,255,255,0.68)', margin: '0 0 24px', lineHeight: 1.7 }}>
+                A free live session with up to nine other students and a verified professional. Real questions, real answers, never recorded. A good place to start — and a glimpse of what Ascending feels like.
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '40px' }}>
-                {['Up to 10 students per session', 'Live — never recorded', '45 minutes with your Guide', 'Always free'].map((f, i) => (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                {['Up to 10 students', 'Live — never recorded', '45 minutes', 'Always free'].map((f, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'rgba(255,255,255,0.65)', flexShrink: 0 }} />
-                    <span style={{ ...BODY, fontSize: '13px' }}>{f}</span>
+                    <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: 'rgba(255,255,255,0.35)', flexShrink: 0 }} />
+                    <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.6)' }}>{f}</span>
                   </div>
                 ))}
               </div>
-
-              <p style={{ ...MUTED, fontSize: '11px', letterSpacing: '0.06em', margin: 0 }}>Limited spots per session</p>
             </div>
 
-            {/* ── ASCENDING ── */}
+            {/* ── ASCENDING — dominant ── */}
             <div className="tw-ascending" style={{ padding: '52px 0 52px 64px' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '32px' }}>
-                <span style={{ ...HL, fontSize: 'clamp(36px,4vw,56px)', lineHeight: 1, letterSpacing: '-1px', textShadow: '0 2px 16px rgba(0,0,0,0.22)' }}>Ascending</span>
-                <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: '#2B5BFF', border: '1.5px solid rgba(43,91,255,0.5)', borderRadius: '3px', padding: '5px 12px', marginTop: '8px', letterSpacing: '0.04em', background: 'rgba(43,91,255,0.12)' }}>$40 / session</span>
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '24px' }}>
+                <span style={{ ...HL, fontSize: 'clamp(36px,4.5vw,64px)', lineHeight: 1, letterSpacing: '-1.5px', textShadow: '0 2px 16px rgba(0,0,0,0.22)' }}>Ascending</span>
+                <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: '#2B5BFF', border: '1.5px solid rgba(43,91,255,0.5)', borderRadius: '3px', padding: '5px 12px', marginTop: '10px', letterSpacing: '0.04em', background: 'rgba(43,91,255,0.12)' }}>$40 / session</span>
               </div>
 
-              <div style={{ marginBottom: '28px' }}>
-                <p style={{ ...MUTED, fontSize: '10px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', margin: '0 0 8px' }}>Who it's for</p>
-                <p style={{ ...BODY, fontSize: '14px', margin: 0 }}>Any student who wants an hour with a specific Guide — whether you attended their Summit or not.</p>
-              </div>
-
-              <div style={{ height: '1px', background: 'rgba(255,255,255,0.15)', marginBottom: '28px' }} />
-
-              <p style={{ ...BODY, fontSize: '14px', margin: '0 0 32px' }}>
-                Browse the Guide roster. Pick the person you want in the room with you. They build entirely new curriculum around your goals before you ever meet. You did not need to be in their Summit. You just need to want it. Forty minutes, completely personalized, built to make a real connection — not a pleasant conversation.
+              <p style={{ ...BODY, fontSize: '15px', margin: '0 0 28px' }}>
+                This is what Klime is actually built for. You choose a Guide from our roster. They build a curriculum from scratch — specifically around your goals — before you ever meet. One room. Two people. Forty minutes that exist for no one else.
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '40px' }}>
-                {['Private — just you and your Guide', 'New curriculum built for you', '40 minutes, one on one', 'Direct professional introduction'].map((f, i) => (
+              {/* 99% callout */}
+              <div style={{ borderTop: HAIR, borderBottom: HAIR, padding: '24px 0', margin: '0 0 28px' }}>
+                <div style={{ ...HL, fontSize: 'clamp(52px,6vw,80px)', lineHeight: 1, marginBottom: '8px', textShadow: '0 2px 12px rgba(0,0,0,0.2)' }}>99%</div>
+                <p style={{ ...MUTED, margin: 0, fontSize: '14px', lineHeight: 1.6, color: 'rgba(255,255,255,0.78)' }}>
+                  of students in pre-testing scheduled a follow-up session with their Guide. The ones who didn't had already gotten what they came for.
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '36px' }}>
+                {['Private — just you and your Guide', 'New curriculum built for you before you meet', '40 minutes, one on one', 'Direct professional introduction'].map((f, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#2B5BFF', flexShrink: 0 }} />
                     <span style={{ ...BODY, fontSize: '13px' }}>{f}</span>
@@ -345,7 +336,12 @@ export default function Home() {
                 ))}
               </div>
 
-              <p style={{ ...MUTED, fontSize: '11px', letterSpacing: '0.06em', margin: 0 }}>After every Summit</p>
+              <Link to="/upcoming-summits" style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', fontWeight: 500, color: '#fff', background: '#2B5BFF', textDecoration: 'none', borderRadius: '4px', padding: '12px 28px', display: 'inline-block', transition: 'all 0.18s ease' }}
+                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(43,91,255,0.48)' }}
+                onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '' }}
+              >
+                Start with a Summit
+              </Link>
             </div>
 
           </div>
@@ -378,14 +374,14 @@ export default function Home() {
         <div className="wrap-pad" style={wrap}>
           <FadeUp>
             <h2 style={{ ...HL, fontSize: 'clamp(24px,3vw,40px)', margin: '0 0 56px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>Three steps to the top.</h2>
-            <div className="steps-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderTop: HAIR }}>
+            <div className="steps-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', alignItems: 'start' }}>
               {[
                 { n: '01', body: 'Sign up and tell us what field you want to climb in. We match you to an upcoming Summit with a Guide in your area.' },
                 { n: '02', body: 'Join a live session with up to 10 other students and a verified Guide. Interactive, intimate, and never recorded.' },
                 { n: '03', body: 'Book a private Ascending session. Your Guide builds new curriculum specifically for you before you meet. You leave with a direct professional introduction.' },
               ].map((step, i) => (
-                <div key={i} style={{ padding: '40px', paddingLeft: i === 0 ? '0' : '40px', paddingRight: i === 2 ? '0' : '40px', borderRight: i < 2 ? HAIR : 'none' }}>
-                  <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '72px', color: 'rgba(255,255,255,0.12)', lineHeight: 1, display: 'block', marginBottom: '24px', userSelect: 'none' }}>{step.n}</span>
+                <div key={i} style={{ marginTop: `${i * 88}px`, paddingTop: '32px', paddingBottom: '48px', paddingLeft: i === 0 ? '0' : '40px', paddingRight: i === 2 ? '0' : '40px', borderTop: HAIR }}>
+                  <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '64px', color: 'rgba(255,255,255,0.12)', lineHeight: 1, display: 'block', marginBottom: '20px', userSelect: 'none' }}>{step.n}</span>
                   <p style={{ ...BODY, margin: 0, fontSize: '15px', color: 'rgba(255,255,255,0.90)' }}>{step.body}</p>
                 </div>
               ))}
@@ -406,7 +402,19 @@ export default function Home() {
                 { q: 'What happens in a Summit?', a: 'An interactive live session built around what is actually happening in that field this week. Think TED talk meets live course — except the speaker takes questions and knows your name. Ten students, one verified Guide, one hour. Different topic every week, from breaking into finance to building something everyone is talking about.' },
                 { q: 'What is Ascending?', a: 'A private one on one session with any Guide on Klime — whether you attended their Summit or not. You pick the person. They build new curriculum entirely around your goals before you meet. Forty minutes that exist only for you. You leave with a real connection to a real professional.' },
                 { q: 'When do Summits start?', a: 'Soon. Sign up below and you will be the first to know when your field opens.' },
+                { q: 'Do I need to attend a Summit before Ascending?', a: 'No. You can book an Ascending session with any Guide on Klime regardless of whether you have attended their Summit. You simply browse the roster, pick the professional you want in the room with you, and book.' },
+                { q: 'How do Guides prepare for Ascending sessions?', a: 'Before every Ascending session, your Guide reviews your stated goals and builds an entirely new curriculum around them. It has never been used before and will never be used again. It exists only for that session.' },
+                { q: 'Is there a cost to create an account?', a: 'No. Signing up and attending Summits is completely free. You only pay for Ascending sessions, which are $40 each.' },
+                { q: 'What if I am not sure which field I want to explore?', a: 'Start with a Summit. They are free, cover a wide range of fields, and give you a direct look at what it is actually like to work in a given industry. Most students find clarity within a session or two.' },
               ].map((item, i) => <FAQRow key={i} {...item} />)}
+            </div>
+            <div style={{ paddingTop: '28px' }}>
+              <Link to="/faq" style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', fontWeight: 500, color: 'rgba(255,255,255,0.65)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.3)', paddingBottom: '2px', transition: 'color 0.15s' }}
+                onMouseEnter={e => e.currentTarget.style.color = '#fff'}
+                onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.65)'}
+              >
+                View all questions →
+              </Link>
             </div>
           </FadeUp>
         </div>
