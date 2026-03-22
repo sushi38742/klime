@@ -334,31 +334,6 @@ export default function Home() {
             </div>
           </FadeUp>
 
-          {/* Screening */}
-          <FadeUp delay={0.1}>
-            <div style={{ borderTop: HAIR, paddingTop: '52px' }}>
-              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', margin: '0 0 24px' }}>
-                Screening
-              </p>
-              <h3 style={{ ...HL, fontSize: 'clamp(20px,2.4vw,32px)', margin: '0 0 48px', letterSpacing: '-0.3px', textShadow: '0 2px 12px rgba(0,0,0,0.22)', maxWidth: '600px' }}>
-                Every Guide is screened before they ever lead a session.
-              </h3>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 0 }}>
-                {[
-                  { n: '01', title: 'AI credential scan',   desc: 'Our AI cross-references professional history, public credentials, and field relevance before a Guide is even considered.' },
-                  { n: '02', title: 'Founder review',       desc: 'Ryan and Max personally review every Guide application. If something feels off, the Guide does not move forward. No exceptions.' },
-                  { n: '03', title: 'Ongoing monitoring',   desc: 'After every Summit, AI analyzes student feedback. Guides who fall below the bar are flagged and reviewed before their next session.' },
-                ].map((s, i) => (
-                  <div key={i} style={{ padding: i === 0 ? '0 40px 0 0' : '0 0 0 40px', borderLeft: i > 0 ? HAIR : 'none' }}>
-                    <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '48px', color: 'rgba(255,255,255,0.10)', lineHeight: 1, display: 'block', marginBottom: '18px', userSelect: 'none' }}>{s.n}</span>
-                    <h4 style={{ ...HL, fontSize: '16px', margin: '0 0 10px', textShadow: 'none', letterSpacing: '-0.1px' }}>{s.title}</h4>
-                    <p style={{ ...MUTED, margin: 0 }}>{s.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </FadeUp>
-
         </div>
       </section>
 

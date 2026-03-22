@@ -48,28 +48,14 @@ export default function About() {
 
           {/* Ryan */}
           <FadeUp>
-            <div style={{ borderTop: HAIR, paddingTop: '56px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '60px' }}>
-              <div style={{ flex: 1 }}>
-                <h2 style={{ ...HL, fontSize: '28px', margin: '0 0 8px', letterSpacing: '-0.3px' }}>Ryan Inozemcev</h2>
-                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, letterSpacing: '0.18em', color: '#2B5BFF', textTransform: 'uppercase', margin: '0 0 28px' }}>
-                  Co-Founder · Product, Technology and Brand
-                </p>
-                <p style={{ ...BODY, margin: 0, maxWidth: '600px' }}>
-                  Ryan built Klime from nothing — the product, the platform, the brand, and every line of design you see here. Before Klime he founded CollegeConnekt at 16, which grew to 16,000 students across 50 states and 9 countries without funding or a team. He is studying Computer Science at the University of Florida and has been building things since before he could drive.
-                </p>
-              </div>
-              <div style={{ flexShrink: 0, paddingTop: '4px' }}>
-                {[
-                  { value: '16,000+', label: 'CollegeConnekt users'        },
-                  { value: '50',      label: 'states reached'               },
-                  { value: '2',       label: 'companies founded before 18'  },
-                ].map((s, i) => (
-                  <div key={i} style={{ marginBottom: i < 2 ? '28px' : 0, textAlign: 'right' }}>
-                    <div style={{ ...HL, fontSize: '30px', lineHeight: 1, letterSpacing: '-0.5px' }}>{s.value}</div>
-                    <div style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', color: '#9aabb8', marginTop: '4px', lineHeight: 1.4 }}>{s.label}</div>
-                  </div>
-                ))}
-              </div>
+            <div style={{ borderTop: HAIR, paddingTop: '56px' }}>
+              <h2 style={{ ...HL, fontSize: '28px', margin: '0 0 8px', letterSpacing: '-0.3px' }}>Ryan Inozemcev</h2>
+              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, letterSpacing: '0.18em', color: '#2B5BFF', textTransform: 'uppercase', margin: '0 0 28px' }}>
+                Co-Founder · Product, Technology and Brand
+              </p>
+              <p style={{ ...BODY, margin: 0, maxWidth: '620px' }}>
+                Ryan is responsible for the majority of what Klime is. He designed the product, built the platform, created the brand, and wrote every line of code powering what you see here. He founded CollegeConnekt at 16 — his first company — which grew to tens of thousands of students across fifty states and nine countries with no funding and no team. He is studying Computer Science at the University of Florida and has been building things since before he could drive.
+              </p>
             </div>
           </FadeUp>
 
@@ -80,8 +66,8 @@ export default function About() {
               <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, letterSpacing: '0.18em', color: '#2B5BFF', textTransform: 'uppercase', margin: '0 0 28px' }}>
                 Co-Founder · Curriculum and Guide Partnerships
               </p>
-              <p style={{ ...BODY, margin: 0, maxWidth: '600px' }}>
-                Max leads the human side of Klime — the curriculum that makes every Ascending session worth paying for, and the Guide relationships that make the platform real. He founded CyberSpace Society at West Boca and is studying Computer Science at the University of Florida.
+              <p style={{ ...BODY, margin: 0, maxWidth: '620px' }}>
+                Max owns the substance of every Ascending session. He designs the curriculum frameworks that make one-on-one sessions actually worth paying for, and he personally manages every Guide relationship that makes Klime real. Without Guides there is no platform, and without Max there are no Guides. He founded CyberSpace Society at West Boca and is studying Computer Science at the University of Florida.
               </p>
             </div>
           </FadeUp>
