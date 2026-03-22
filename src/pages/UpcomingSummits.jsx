@@ -212,7 +212,7 @@ export default function UpcomingSummits() {
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.16)', borderRadius: '6px', padding: '12px 18px' }}>
               <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#2B5BFF', flexShrink: 0 }} />
               <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.78)', lineHeight: 1.5 }}>
-                Currently US-based time slots. International sessions coming soon. Multiple sessions run throughout the week — find one that fits your schedule.
+                US only for now — international is in the works.
               </span>
             </div>
           </FadeUp>
