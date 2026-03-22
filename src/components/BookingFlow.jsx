@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { getSlotCounts, createBooking } from '../lib/supabase'
 import { CAPACITY, TIME_SLOTS, HOSTS } from '../data/summitSlots'
+import { sendEmail, TEMPLATE } from '../lib/emailjs'
 
 const ease = [0.16, 1, 0.3, 1]
 const HL   = { fontFamily: '"DM Serif Display",serif', color: '#fff', fontWeight: 400 }
@@ -100,6 +101,13 @@ export default function BookingFlow({ hostKey, onClose }) {
     setErr(null)
     try {
       await createBooking({ host: hostKey, date, slot, name, email })
+      sendEmail(TEMPLATE.BOOKING, {
+        to_name:  name,
+        to_email: email,
+        date:     fmtDate(date),
+        slot,
+        host:     host.name,
+      }).catch(() => {})
       setStep(4)
     } catch (ex) {
       setErr(ex.message)

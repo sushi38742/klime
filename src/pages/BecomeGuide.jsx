@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import FadeUp from '../components/FadeUp'
+import { sendEmail, TEMPLATE } from '../lib/emailjs'
 
 const ease = [0.16, 1, 0.3, 1]
 
@@ -28,7 +29,19 @@ export default function BecomeGuide() {
   const [done, setDone] = useState(false)
 
   const set = k => e => setForm(f => ({ ...f, [k]: e.target.value }))
-  const submit = e => { e.preventDefault(); if (form.name && form.email) setDone(true) }
+  const submit = e => {
+    e.preventDefault()
+    if (form.name && form.email) {
+      sendEmail(TEMPLATE.GUIDE_APPLY, {
+        to_name:  form.name,
+        to_email: form.email,
+        field:    form.field,
+        session:  form.session || 'Not specified',
+        linkedin: form.linkedin || 'Not provided',
+      }).catch(() => {})
+      setDone(true)
+    }
+  }
 
   return (
     <main>
