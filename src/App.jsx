@@ -8,6 +8,8 @@ import UpcomingSummits from './pages/UpcomingSummits'
 import About from './pages/About'
 import FAQ from './pages/FAQ'
 
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
+
 function ScrollToTop() {
   const { pathname } = useLocation()
   useEffect(() => { window.scrollTo(0, 0) }, [pathname])
