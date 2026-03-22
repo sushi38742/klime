@@ -34,7 +34,7 @@ export default function UpcomingSummits() {
             fontWeight: 500,
             letterSpacing: '0.18em',
             textTransform: 'uppercase',
-            color: 'rgba(255,255,255,0.5)',
+            color: 'rgba(255,255,255,0.78)',
             marginBottom: '28px',
           }}
         >
@@ -68,7 +68,7 @@ export default function UpcomingSummits() {
           style={{
             fontFamily: 'Sora,sans-serif',
             fontSize: 'clamp(14px,1.5vw,17px)',
-            color: 'rgba(255,255,255,0.65)',
+            color: 'rgba(255,255,255,0.88)',
             lineHeight: 1.68,
             margin: '0 0 44px',
             textShadow: '0 1px 8px rgba(0,0,0,0.18)',
@@ -132,7 +132,7 @@ export default function UpcomingSummits() {
               >
                 Notify Me
               </button>
-              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.4)', margin: 0 }}>
+              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.65)', margin: 0 }}>
                 No spam. Just your Summit.
               </p>
             </form>

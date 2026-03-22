@@ -8,7 +8,7 @@ const ease = [0.16, 1, 0.3, 1]
 // ─── Text on mountain — all light ───
 const HL   = { fontFamily: '"DM Serif Display",serif', color: '#fff', fontWeight: 400 }
 const BODY  = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.92)', fontSize: '15px', lineHeight: 1.72 }
-const MUTED = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.68)', fontSize: '13px', lineHeight: 1.65 }
+const MUTED = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.82)', fontSize: '13px', lineHeight: 1.65 }
 const HAIR  = '1px solid rgba(255,255,255,0.18)'
 const wrap  = { maxWidth: '1100px', margin: '0 auto', padding: '0 40px' }
 
@@ -50,7 +50,7 @@ function WaveProfessionals() {
                     <span key={j} style={{
                       fontFamily: '"DM Serif Display",serif',
                       fontSize: i % 2 === 0 ? 'clamp(20px,2.4vw,30px)' : 'clamp(16px,1.8vw,24px)',
-                      color: j % 3 === 0 ? 'rgba(255,255,255,0.82)' : j % 3 === 1 ? 'rgba(255,255,255,0.52)' : 'rgba(255,255,255,0.65)',
+                      color: j % 3 === 0 ? 'rgba(255,255,255,0.95)' : j % 3 === 1 ? 'rgba(255,255,255,0.72)' : 'rgba(255,255,255,0.82)',
                       padding: '10px 36px',
                       display: 'inline-block',
                       fontWeight: 400,
@@ -77,7 +77,7 @@ function Marquee() {
     <div style={{ borderTop: HAIR, borderBottom: HAIR, overflow: 'hidden', padding: '12px 0' }}>
       <div className="marquee-track" style={{ display: 'flex', whiteSpace: 'nowrap', width: 'max-content' }}>
         {[1, 2].map(n => (
-          <span key={n} style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 500, letterSpacing: '0.18em', color: 'rgba(255,255,255,0.48)' }}>
+          <span key={n} style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 500, letterSpacing: '0.18em', color: 'rgba(255,255,255,0.68)' }}>
             {text}{text}
           </span>
         ))}
@@ -134,7 +134,7 @@ function FAQRow({ q, a }) {
           width="16" height="16" viewBox="0 0 16 16" fill="none"
           style={{ flexShrink: 0 }}
         >
-          <path d="M3 6l5 5 5-5" stroke="rgba(255,255,255,0.45)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M3 6l5 5 5-5" stroke="rgba(255,255,255,0.7)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </motion.svg>
       </button>
       <AnimatePresence>
@@ -175,7 +175,7 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.25, duration: 0.6 }}
-          style={{ ...BODY, fontSize: 'clamp(15px,1.6vw,18px)', color: 'rgba(255,255,255,0.72)', margin: '0 0 40px', maxWidth: '560px', textShadow: '0 1px 8px rgba(0,0,0,0.18)', position: 'relative' }}
+          style={{ ...BODY, fontSize: 'clamp(15px,1.6vw,18px)', color: 'rgba(255,255,255,0.88)', margin: '0 0 40px', maxWidth: '560px', textShadow: '0 1px 8px rgba(0,0,0,0.18)', position: 'relative' }}
         >
           Join a Summit with up to 10 other students and a verified Guide. Then Ascend for a private one on one session with new curriculum built around you.
         </motion.p>
@@ -373,24 +373,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── THREE STEPS ── mountain-floating, blurred ── */}
-      <section className="sec-bot" style={{ padding: '0 40px 100px', }}>
+      {/* ── THREE STEPS ── */}
+      <section className="sec-bot" style={{ padding: '0 40px 100px' }}>
         <div className="wrap-pad" style={wrap}>
           <FadeUp>
             <h2 style={{ ...HL, fontSize: 'clamp(24px,3vw,40px)', margin: '0 0 56px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>Three steps to the top.</h2>
+            <div className="steps-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', borderTop: HAIR }}>
+              {[
+                { n: '01', body: 'Sign up and tell us what field you want to climb in. We match you to an upcoming Summit with a Guide in your area.' },
+                { n: '02', body: 'Join a live session with up to 10 other students and a verified Guide. Interactive, intimate, and never recorded.' },
+                { n: '03', body: 'Book a private Ascending session. Your Guide builds new curriculum specifically for you before you meet. You leave with a direct professional introduction.' },
+              ].map((step, i) => (
+                <div key={i} style={{ padding: '40px', paddingLeft: i === 0 ? '0' : '40px', paddingRight: i === 2 ? '0' : '40px', borderRight: i < 2 ? HAIR : 'none' }}>
+                  <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '72px', color: 'rgba(255,255,255,0.12)', lineHeight: 1, display: 'block', marginBottom: '24px', userSelect: 'none' }}>{step.n}</span>
+                  <p style={{ ...BODY, margin: 0, fontSize: '15px', color: 'rgba(255,255,255,0.90)' }}>{step.body}</p>
+                </div>
+              ))}
+            </div>
           </FadeUp>
-          {[
-            { n: '01', body: 'Sign up and tell us what field you want to climb in. We match you to an upcoming Summit with a Guide in your area.' },
-            { n: '02', body: 'Join a live session with up to 10 other students and a verified Guide. Interactive, intimate, and never recorded.' },
-            { n: '03', body: 'Book a private Ascending session. Your Guide builds new curriculum specifically for you before you meet. You leave with a direct professional introduction.' },
-          ].map((step, i) => (
-            <FadeUp key={i} delay={i * 0.08}>
-              <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', padding: '40px 0', borderTop: i === 0 ? HAIR : 'none', borderBottom: HAIR }}>
-                <span className="step-num" style={{ fontFamily: '"DM Serif Display",serif', fontSize: '100px', color: 'rgba(255,255,255,0.10)', lineHeight: 0.85, flexShrink: 0, width: '100px', userSelect: 'none' }}>{step.n}</span>
-                <p style={{ ...BODY, margin: '12px 0 0', maxWidth: '600px', fontSize: '16px', color: 'rgba(255,255,255,0.82)' }}>{step.body}</p>
-              </div>
-            </FadeUp>
-          ))}
         </div>
       </section>
 

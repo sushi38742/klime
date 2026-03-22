@@ -6,8 +6,8 @@ const ease = [0.16, 1, 0.3, 1]
 
 const panel = { background: 'rgba(255,255,255,0.88)', borderRadius: '8px', padding: '60px 64px' }
 const HL = { fontFamily: '"DM Serif Display",serif', color: '#0D0F14', fontWeight: 400 }
-const BODY = { fontFamily: 'Sora,sans-serif', color: '#3a4a5e', fontSize: '15px', lineHeight: 1.72 }
-const MUTED = { fontFamily: 'Sora,sans-serif', color: '#758090', fontSize: '13px', lineHeight: 1.65 }
+const BODY = { fontFamily: 'Sora,sans-serif', color: '#1e2d3d', fontSize: '15px', lineHeight: 1.72 }
+const MUTED = { fontFamily: 'Sora,sans-serif', color: '#4a5a6a', fontSize: '13px', lineHeight: 1.65 }
 const HAIRLINE = { borderLeft: '1px solid rgba(13,15,20,0.1)' }
 const wrap = { maxWidth: '1100px', margin: '0 auto', padding: '0 40px' }
 
@@ -48,7 +48,7 @@ export default function BecomeGuide() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.25, duration: 0.6 }}
-          style={{ fontFamily: 'Sora,sans-serif', fontSize: 'clamp(14px,1.5vw,17px)', color: 'rgba(255,255,255,0.74)', lineHeight: 1.7, margin: '0 0 40px', maxWidth: '580px', textShadow: '0 1px 8px rgba(0,0,0,0.2)' }}
+          style={{ fontFamily: 'Sora,sans-serif', fontSize: 'clamp(14px,1.5vw,17px)', color: 'rgba(255,255,255,0.90)', lineHeight: 1.7, margin: '0 0 40px', maxWidth: '580px', textShadow: '0 1px 8px rgba(0,0,0,0.2)' }}
         >
           Guides on Klime lead live Summit sessions and private Ascending sessions for serious students who are ready to work. Some Guides are 20-year-old founders. Others have decades of experience. What they share is a commitment to opening real doors.
         </motion.p>

@@ -4,8 +4,8 @@ import FadeUp from '../components/FadeUp'
 const ease = [0.16, 1, 0.3, 1]
 
 const HL   = { fontFamily: '"DM Serif Display",serif', color: '#0D0F14', fontWeight: 400 }
-const BODY  = { fontFamily: 'Sora,sans-serif', color: '#3a4a5e', fontSize: '14px', lineHeight: 1.8 }
-const MUTED = { fontFamily: 'Sora,sans-serif', color: '#758090', fontSize: '13px', lineHeight: 1.65 }
+const BODY  = { fontFamily: 'Sora,sans-serif', color: '#1e2d3d', fontSize: '15px', lineHeight: 1.8 }
+const MUTED = { fontFamily: 'Sora,sans-serif', color: '#4a5a6a', fontSize: '13px', lineHeight: 1.65 }
 const HAIR  = '1px solid rgba(13,15,20,0.1)'
 
 export default function About() {
@@ -19,7 +19,7 @@ export default function About() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', margin: '0 0 24px' }}
+            style={{ fontFamily: 'Sora,sans-serif', fontSize: '10px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.72)', margin: '0 0 24px' }}
           >
             Our Story
           </motion.p>
@@ -35,7 +35,7 @@ export default function About() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
-            style={{ fontFamily: 'Sora,sans-serif', fontSize: 'clamp(14px,1.6vw,17px)', color: 'rgba(255,255,255,0.65)', lineHeight: 1.72, margin: 0, maxWidth: '520px', textShadow: '0 1px 8px rgba(0,0,0,0.18)' }}
+            style={{ fontFamily: 'Sora,sans-serif', fontSize: 'clamp(14px,1.6vw,17px)', color: 'rgba(255,255,255,0.88)', lineHeight: 1.72, margin: 0, maxWidth: '520px', textShadow: '0 1px 8px rgba(0,0,0,0.18)' }}
           >
             We are both 18. We have both watched talented people get passed over because they did not know the right person. Klime exists because we decided to fix that instead of waiting for someone else to.
           </motion.p>
@@ -74,7 +74,7 @@ export default function About() {
 
           {/* Closing */}
           <FadeUp delay={0.1}>
-            <p style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(18px,2.2vw,26px)', color: 'rgba(13,15,20,0.3)', fontStyle: 'italic', textAlign: 'center', margin: '80px 0 0', fontWeight: 400 }}>
+            <p style={{ fontFamily: '"DM Serif Display",serif', fontSize: 'clamp(18px,2.2vw,26px)', color: 'rgba(13,15,20,0.55)', fontStyle: 'italic', textAlign: 'center', margin: '80px 0 0', fontWeight: 400 }}>
               Built in Florida. Built for everyone who was told to wait their turn.
             </p>
           </FadeUp>

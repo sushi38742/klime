@@ -16,6 +16,7 @@ body {
   background: #8aaec4;
   color: #0D0F14;
   font-family: 'Sora', sans-serif;
+  font-weight: 450;
   overflow-x: hidden;
   max-width: 100%;
 }
@@ -93,8 +94,10 @@ h1, h2, h3, h4 {
   .tw-summit     { padding: 40px 0 !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.3) !important; }
   .tw-ascending  { padding: 40px 0 0 !important; }
 
-  /* Step numbers */
-  .step-num { font-size: 56px !important; width: 56px !important; }
+  /* Steps horizontal → vertical on mobile */
+  .steps-grid { grid-template-columns: 1fr !important; }
+  .steps-grid > * { padding: 32px 0 !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.18) !important; }
+  .steps-grid > *:last-child { border-bottom: none !important; }
 
   /* BecomeGuide / About panels */
   .panel-pad  { padding: 40px 24px !important; }
