@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
 import MountainSVG from './components/MountainSVG'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
@@ -6,6 +7,12 @@ import BecomeGuide from './pages/BecomeGuide'
 import UpcomingSummits from './pages/UpcomingSummits'
 import About from './pages/About'
 import FAQ from './pages/FAQ'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
+}
 
 export default function App() {
   return (
@@ -16,6 +23,8 @@ export default function App() {
         {/* 15% dark overlay for text readability */}
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.42)' }} />
       </div>
+
+      <ScrollToTop />
 
       {/* Fixed navbar */}
       <Navbar />
