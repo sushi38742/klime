@@ -12,6 +12,64 @@ const MUTED = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.68)', 
 const HAIR  = '1px solid rgba(255,255,255,0.18)'
 const wrap  = { maxWidth: '1100px', margin: '0 auto', padding: '0 40px' }
 
+// ─── Wave of professionals ───
+const PROF_ROWS = [
+  ['Tech Founder', 'Investment Banker', 'Neurosurgeon', 'Film Director', 'Venture Capitalist', 'Naval Intelligence Officer'],
+  ['Aerospace Engineer', 'Cardiac Surgeon', 'Portfolio Manager', 'War Correspondent', 'Diplomat', 'Intelligence Analyst'],
+  ['Private Equity Partner', 'Climate Scientist', 'Nuclear Engineer', 'Brand Strategist', 'Biotech CEO', 'Cryptographer'],
+  ['Criminal Defense Attorney', 'Marine Biologist', 'Art Director', 'Epidemiologist', 'Formula 1 Engineer', 'Forensic Accountant'],
+  ['Quantum Physicist', 'Defense Contractor', 'Sports Agent', 'Central Banker', 'UN Policy Advisor', 'Government Advisor'],
+]
+const SPEEDS = ['32s', '26s', '36s', '28s', '30s']
+
+function WaveProfessionals() {
+  return (
+    <div style={{ overflow: 'hidden', padding: '8px 0 48px', position: 'relative' }}>
+      {PROF_ROWS.map((row, i) => {
+        const reverse = i % 2 === 1
+        const waveDelay = `${-i * 1}s`
+        return (
+          <div
+            key={i}
+            style={{
+              overflow: 'hidden',
+              marginBottom: '4px',
+              animation: `wave-bob 5s ease-in-out infinite`,
+              animationDelay: waveDelay,
+            }}
+          >
+            <div style={{
+              display: 'flex',
+              whiteSpace: 'nowrap',
+              width: 'max-content',
+              animation: `${reverse ? 'marquee-rev' : 'marquee-fwd'} ${SPEEDS[i]} linear infinite`,
+            }}>
+              {[0, 1].map(n => (
+                <span key={n} style={{ display: 'inline-flex' }}>
+                  {row.map((prof, j) => (
+                    <span key={j} style={{
+                      fontFamily: '"DM Serif Display",serif',
+                      fontSize: i % 2 === 0 ? 'clamp(20px,2.4vw,30px)' : 'clamp(16px,1.8vw,24px)',
+                      color: j % 3 === 0 ? 'rgba(255,255,255,0.82)' : j % 3 === 1 ? 'rgba(255,255,255,0.52)' : 'rgba(255,255,255,0.65)',
+                      padding: '10px 36px',
+                      display: 'inline-block',
+                      fontWeight: 400,
+                      lineHeight: 1.2,
+                    }}>
+                      {prof}
+                      <span style={{ color: 'rgba(255,255,255,0.18)', paddingLeft: '36px' }}>·</span>
+                    </span>
+                  ))}
+                </span>
+              ))}
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
 // ─── Marquee ───
 function Marquee() {
   const text = 'FREE WEEKLY SUMMITS\u00a0\u00a0·\u00a0\u00a0LIVE WITH REAL GUIDES\u00a0\u00a0·\u00a0\u00a0UP TO 10 STUDENTS PER SESSION\u00a0\u00a0·\u00a0\u00a0ASCEND FOR A PRIVATE SESSION\u00a0\u00a0·\u00a0\u00a0'
@@ -310,29 +368,7 @@ export default function Home() {
             </div>
           </FadeUp>
 
-          {/* Categories — editorial grid */}
-          <FadeUp delay={0.06}>
-            <div style={{ borderTop: HAIR, marginBottom: '72px' }}>
-              <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                {[
-                  { label: 'Tech Founders',      size: 'clamp(22px,2.8vw,36px)' },
-                  { label: 'Business Leaders',   size: 'clamp(22px,2.8vw,36px)' },
-                  { label: 'Healthcare',         size: 'clamp(18px,2vw,26px)'   },
-                  { label: 'Finance',            size: 'clamp(18px,2vw,26px)'   },
-                  { label: 'National Security',  size: 'clamp(22px,2.8vw,36px)' },
-                  { label: 'Creative Directors', size: 'clamp(18px,2vw,26px)'   },
-                  { label: 'Engineers',          size: 'clamp(18px,2vw,26px)'   },
-                  { label: 'Investors',          size: 'clamp(22px,2.8vw,36px)' },
-                ].map((cat, i) => (
-                  <div key={i} style={{ borderRight: HAIR, borderBottom: HAIR, padding: '24px 36px' }}>
-                    <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: cat.size, color: 'rgba(255,255,255,0.82)', fontWeight: 400, lineHeight: 1.1, display: 'block' }}>
-                      {cat.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </FadeUp>
+          <WaveProfessionals />
 
         </div>
       </section>

@@ -43,6 +43,19 @@ h1, h2, h3, h4 {
   animation-play-state: paused;
 }
 
+@keyframes marquee-fwd {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-rev {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+@keyframes wave-bob {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-13px); }
+}
+
 /* ── RESPONSIVE ─────────────────────────────────────────── */
 
 /* Hide nav links + CTAs, show hamburger below 900px */
