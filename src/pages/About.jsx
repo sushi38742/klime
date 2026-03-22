@@ -44,7 +44,7 @@ export default function About() {
 
       {/* ── FOUNDERS ── white editorial panel ── */}
       <section style={{ background: 'rgba(255,255,255,0.96)' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '88px 40px 96px' }}>
+        <div className="about-founders-pad wrap-pad" style={{ maxWidth: '1100px', margin: '0 auto', padding: '88px 40px 96px' }}>
 
           {/* Ryan */}
           <FadeUp>
@@ -83,7 +83,7 @@ export default function About() {
       </section>
 
       {/* Footer */}
-      <footer style={{ borderTop: '1px solid rgba(255,255,255,0.15)', padding: '28px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <footer className="footer-row" style={{ borderTop: '1px solid rgba(255,255,255,0.15)', padding: '28px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '18px', color: 'rgba(255,255,255,0.45)' }}>Klime</span>
         <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.28)' }}>&copy; 2025 Klime</span>
       </footer>

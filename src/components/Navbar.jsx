@@ -64,7 +64,7 @@ export default function Navbar() {
         </Link>
 
         {/* Center links */}
-        <div style={{
+        <div className="nav-links" style={{
           position: 'absolute', left: '50%', transform: 'translateX(-50%)',
           display: 'flex', gap: '36px', alignItems: 'center',
         }}>
@@ -72,7 +72,7 @@ export default function Navbar() {
         </div>
 
         {/* CTAs */}
-        <div style={{ marginLeft: 'auto', display: 'flex', gap: '10px', alignItems: 'center' }}>
+        <div className="nav-ctas" style={{ marginLeft: 'auto', display: 'flex', gap: '10px', alignItems: 'center' }}>
           <Link to="/upcoming-summits" style={{
             fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 500,
             color: '#2B5BFF', textDecoration: 'none',

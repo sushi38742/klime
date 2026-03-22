@@ -166,8 +166,8 @@ export default function Home() {
       <Marquee />
 
       {/* ── WHAT KLIME IS ── */}
-      <section style={{ padding: '100px 40px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
-        <div style={wrap}>
+      <section className="sec-v" style={{ padding: '100px 40px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
+        <div className="wrap-pad" style={wrap}>
           <FadeUp>
             <h2 style={{ ...HL, fontSize: 'clamp(24px,3vw,40px)', margin: '0 0 12px', letterSpacing: '-0.5px', maxWidth: '640px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>
               TED inspires you. MasterClass teaches you. Klime connects you.
@@ -176,7 +176,7 @@ export default function Home() {
               We took the energy of a TED stage, the caliber of a MasterClass professional, and built something neither offers. A live room where you talk back, get heard, and leave with a real connection.
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 0 }}>
+            <div className="g3" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 0 }}>
               {[
                 { name: 'MasterClass', accent: false, rows: ['Pre-recorded videos', 'Watch celebrities talk', 'No interaction', 'No personal access'] },
                 { name: 'TED',         accent: false, rows: ['Inspiring talks', 'One-way broadcast', 'No follow-up', 'No direct connection'] },
@@ -195,16 +195,16 @@ export default function Home() {
       </section>
 
       {/* ── STATS ── */}
-      <section style={{ padding: '0 40px 100px' }}>
-        <div style={wrap}>
+      <section className="sec-bot" style={{ padding: '0 40px 100px' }}>
+        <div className="wrap-pad" style={wrap}>
           <FadeUp>
-            <div style={{ display: 'flex', borderTop: HAIR, borderBottom: HAIR, padding: '48px 0' }}>
+            <div className="stats-row" style={{ display: 'flex', borderTop: HAIR, borderBottom: HAIR, padding: '48px 0' }}>
               {[
                 { value: 10,    label: 'Students per Summit' },
                 { value: 1,     label: 'Verified Guide' },
                 { value: 'Live', label: 'Never recorded' },
               ].map((s, i) => (
-                <div key={i} style={{ flex: 1, padding: '0 40px', borderLeft: i > 0 ? HAIR : 'none' }}>
+                <div key={i} className="stats-item" style={{ flex: 1, padding: '0 40px', borderLeft: i > 0 ? HAIR : 'none' }}>
                   <Stat value={s.value} label={s.label} />
                 </div>
               ))}
@@ -215,7 +215,7 @@ export default function Home() {
 
       {/* ── TWO WAYS TO CLIMB — mountain-floating, blurred ── */}
       <section style={{ backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 80px 0' }}>
+        <div className="tw-header-pad" style={{ maxWidth: '1200px', margin: '0 auto', padding: '80px 80px 0' }}>
           <FadeUp>
             <h2 style={{ ...HL, fontSize: 'clamp(26px,3.2vw,42px)', margin: '0 0 8px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>
               Two ways to climb.
@@ -228,10 +228,10 @@ export default function Home() {
 
         {/* T-chart */}
         <FadeUp delay={0.08}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 80px 80px', display: 'grid', gridTemplateColumns: '1fr 1fr', borderTop: HAIR }}>
+          <div className="tw-grid" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 80px 80px', display: 'grid', gridTemplateColumns: '1fr 1fr', borderTop: HAIR }}>
 
             {/* ── SUMMIT ── */}
-            <div style={{ padding: '52px 64px 52px 0', borderRight: '2px solid rgba(255,255,255,0.3)' }}>
+            <div className="tw-summit" style={{ padding: '52px 64px 52px 0', borderRight: '2px solid rgba(255,255,255,0.3)' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '32px' }}>
                 <span style={{ ...HL, fontSize: 'clamp(36px,4vw,56px)', lineHeight: 1, letterSpacing: '-1px', textShadow: '0 2px 16px rgba(0,0,0,0.22)' }}>Summit</span>
                 <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.9)', border: '1.5px solid rgba(255,255,255,0.4)', borderRadius: '3px', padding: '5px 12px', marginTop: '8px', letterSpacing: '0.04em' }}>Free</span>
@@ -261,7 +261,7 @@ export default function Home() {
             </div>
 
             {/* ── ASCENDING ── */}
-            <div style={{ padding: '52px 0 52px 64px' }}>
+            <div className="tw-ascending" style={{ padding: '52px 0 52px 64px' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '32px' }}>
                 <span style={{ ...HL, fontSize: 'clamp(36px,4vw,56px)', lineHeight: 1, letterSpacing: '-1px', textShadow: '0 2px 16px rgba(0,0,0,0.22)' }}>Ascending</span>
                 <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: '#2B5BFF', border: '1.5px solid rgba(43,91,255,0.5)', borderRadius: '3px', padding: '5px 12px', marginTop: '8px', letterSpacing: '0.04em', background: 'rgba(43,91,255,0.12)' }}>$40 / session</span>
@@ -295,12 +295,12 @@ export default function Home() {
       </section>
 
       {/* ── GUIDES ── */}
-      <section style={{ padding: '100px 40px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
-        <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+      <section className="sec-v" style={{ padding: '100px 40px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
+        <div className="wrap-pad" style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
           {/* Two-col intro */}
           <FadeUp>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', marginBottom: '64px', alignItems: 'start' }}>
+            <div className="g2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', marginBottom: '64px', alignItems: 'start' }}>
               <h2 style={{ ...HL, fontSize: 'clamp(30px,4vw,52px)', margin: 0, letterSpacing: '-1px', lineHeight: 1.08, textShadow: '0 2px 20px rgba(0,0,0,0.28)' }}>
                 Professionals who have already been there.
               </h2>
@@ -338,8 +338,8 @@ export default function Home() {
       </section>
 
       {/* ── THREE STEPS ── mountain-floating, blurred ── */}
-      <section style={{ padding: '0 40px 100px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
-        <div style={wrap}>
+      <section className="sec-bot" style={{ padding: '0 40px 100px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
+        <div className="wrap-pad" style={wrap}>
           <FadeUp>
             <h2 style={{ ...HL, fontSize: 'clamp(24px,3vw,40px)', margin: '0 0 56px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>Three steps to the top.</h2>
           </FadeUp>
@@ -350,7 +350,7 @@ export default function Home() {
           ].map((step, i) => (
             <FadeUp key={i} delay={i * 0.08}>
               <div style={{ display: 'flex', gap: '24px', alignItems: 'flex-start', padding: '40px 0', borderTop: i === 0 ? HAIR : 'none', borderBottom: HAIR }}>
-                <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '100px', color: 'rgba(255,255,255,0.10)', lineHeight: 0.85, flexShrink: 0, width: '100px', userSelect: 'none' }}>{step.n}</span>
+                <span className="step-num" style={{ fontFamily: '"DM Serif Display",serif', fontSize: '100px', color: 'rgba(255,255,255,0.10)', lineHeight: 0.85, flexShrink: 0, width: '100px', userSelect: 'none' }}>{step.n}</span>
                 <p style={{ ...BODY, margin: '12px 0 0', maxWidth: '600px', fontSize: '16px', color: 'rgba(255,255,255,0.82)' }}>{step.body}</p>
               </div>
             </FadeUp>
@@ -359,8 +359,8 @@ export default function Home() {
       </section>
 
       {/* ── FAQ ── */}
-      <section style={{ padding: '0 40px 100px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
-        <div style={wrap}>
+      <section className="sec-bot" style={{ padding: '0 40px 100px', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
+        <div className="wrap-pad" style={wrap}>
           <FadeUp>
             <h2 style={{ ...HL, fontSize: 'clamp(24px,3vw,40px)', margin: '0 0 40px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>Good questions.</h2>
             <div style={{ borderTop: HAIR }}>
@@ -377,8 +377,8 @@ export default function Home() {
       </section>
 
       {/* ── FOOTER CTA ── */}
-      <section style={{ padding: '0 40px 120px', textAlign: 'center' }}>
-        <div style={wrap}>
+      <section className="sec-bot" style={{ padding: '0 40px 120px', textAlign: 'center' }}>
+        <div className="wrap-pad" style={wrap}>
           <FadeUp>
             <h2 style={{ ...HL, fontSize: 'clamp(30px,4vw,56px)', margin: '0 0 16px', letterSpacing: '-1px', textShadow: '0 2px 20px rgba(0,0,0,0.3)' }}>
               Your Summit is waiting.

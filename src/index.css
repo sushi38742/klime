@@ -37,3 +37,53 @@ h1, h2, h3, h4 {
 .marquee-track:hover {
   animation-play-state: paused;
 }
+
+/* ── RESPONSIVE ─────────────────────────────────────────── */
+
+/* Hide nav links + CTAs, show hamburger below 900px */
+@media (max-width: 900px) {
+  .nav-links  { display: none !important; }
+  .nav-ctas   { display: none !important; }
+  .hamburger-btn { display: flex !important; }
+}
+
+@media (max-width: 768px) {
+
+  /* Section padding */
+  .sec-v      { padding-top: 64px !important; padding-bottom: 64px !important; }
+  .sec-bot    { padding-bottom: 64px !important; }
+
+  /* wrap inner padding */
+  .wrap-pad   { padding-left: 20px !important; padding-right: 20px !important; }
+
+  /* 3-col → 1-col */
+  .g3 { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .g3 > * { padding-left: 0 !important; border-left: none !important; }
+  /* 2-col → 1-col */
+  .g2 { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .g2 > * { padding-left: 0 !important; border-left: none !important; }
+
+  /* Stats row → column */
+  .stats-row  { flex-direction: column !important; }
+  .stats-item { border-left: none !important; padding: 28px 0 0 0 !important; }
+  .stats-item:first-child { padding-top: 0 !important; }
+
+  /* Two Ways */
+  .tw-outer-pad  { padding-left: 20px !important; padding-right: 20px !important; }
+  .tw-header-pad { padding: 52px 20px 0 !important; }
+  .tw-grid       { grid-template-columns: 1fr !important; padding: 0 20px 52px !important; }
+  .tw-summit     { padding: 40px 0 !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.3) !important; }
+  .tw-ascending  { padding: 40px 0 0 !important; }
+
+  /* Step numbers */
+  .step-num { font-size: 56px !important; width: 56px !important; }
+
+  /* BecomeGuide / About panels */
+  .panel-pad  { padding: 40px 24px !important; }
+
+  /* About founders section */
+  .about-founders-pad { padding: 60px 24px 72px !important; }
+
+  /* Footer row */
+  .footer-row { flex-direction: column !important; gap: 10px !important; text-align: center !important; }
+}

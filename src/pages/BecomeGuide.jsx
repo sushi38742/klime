@@ -70,12 +70,12 @@ export default function BecomeGuide() {
       </section>
 
       {/* ── WHY BECOME A GUIDE ── */}
-      <section style={{ padding: '100px 40px' }}>
-        <div style={wrap}>
+      <section className="sec-v" style={{ padding: '100px 40px' }}>
+        <div className="wrap-pad" style={wrap}>
           <FadeUp>
-            <div style={panel}>
+            <div className="panel-pad" style={panel}>
               <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 40px', letterSpacing: '-0.4px' }}>Why become a Guide.</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 0 }}>
+              <div className="g3" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 0 }}>
                 {[
                   { title: 'Give back', body: 'Share what you know with students who are serious enough to earn it.' },
                   { title: 'Build your profile', body: 'Every session adds to your verified Guide profile on Klime.' },
@@ -93,12 +93,12 @@ export default function BecomeGuide() {
       </section>
 
       {/* ── WHAT GUIDES DO ── */}
-      <section style={{ padding: '0 40px 100px' }}>
-        <div style={wrap}>
+      <section className="sec-bot" style={{ padding: '0 40px 100px' }}>
+        <div className="wrap-pad" style={wrap}>
           <FadeUp>
-            <div style={panel}>
+            <div className="panel-pad" style={panel}>
               <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 40px', letterSpacing: '-0.4px' }}>What Guides do.</h2>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0 }}>
+              <div className="g2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0 }}>
                 {[
                   {
                     title: 'Summit Sessions',
@@ -121,10 +121,10 @@ export default function BecomeGuide() {
       </section>
 
       {/* ── WHO CAN BE A GUIDE ── */}
-      <section style={{ padding: '0 40px 100px' }}>
-        <div style={wrap}>
+      <section className="sec-bot" style={{ padding: '0 40px 100px' }}>
+        <div className="wrap-pad" style={wrap}>
           <FadeUp>
-            <div style={panel}>
+            <div className="panel-pad" style={panel}>
               <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 16px', letterSpacing: '-0.4px' }}>Who can be a Guide.</h2>
               <p style={{ ...BODY, maxWidth: '620px', margin: '0 0 32px' }}>
                 Guides on Klime range from 20-year-old tech founders to senior executives, physicians, government advisors, and investors. If you have real experience in your field and are committed to opening doors, you belong here.
@@ -140,14 +140,14 @@ export default function BecomeGuide() {
       </section>
 
       {/* ── SCREENING ── */}
-      <section style={{ padding: '0 40px 100px' }}>
-        <div style={wrap}>
+      <section className="sec-bot" style={{ padding: '0 40px 100px' }}>
+        <div className="wrap-pad" style={wrap}>
           <FadeUp>
-            <div style={panel}>
+            <div className="panel-pad" style={panel}>
               <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 36px', letterSpacing: '-0.4px' }}>
                 Every Guide is screened before they ever lead a session.
               </h2>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 0 }}>
+              <div className="g3" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 0 }}>
                 {[
                   { title: 'AI credential scan', body: 'Our AI cross-references professional history, public credentials, and field relevance before a Guide is even considered.' },
                   { title: 'Founder review', body: 'Ryan and Max personally review every Guide application. If something feels off, the Guide does not move forward. No exceptions.' },
@@ -165,15 +165,15 @@ export default function BecomeGuide() {
       </section>
 
       {/* ── APPLICATION FORM ── */}
-      <section id="apply" style={{ padding: '0 40px 120px' }}>
-        <div style={wrap}>
+      <section id="apply" className="sec-bot" style={{ padding: '0 40px 120px' }}>
+        <div className="wrap-pad" style={wrap}>
           <FadeUp>
-            <div style={panel}>
+            <div className="panel-pad" style={panel}>
               {!done ? (
                 <>
                   <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 8px', letterSpacing: '-0.4px' }}>Apply to become a Guide.</h2>
                   <p style={{ ...MUTED, margin: '0 0 40px' }}>We review every application personally. Expect to hear back within a week.</p>
-                  <form onSubmit={submit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                  <form onSubmit={submit} className="g2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                     <div>
                       <label style={{ ...MUTED, display: 'block', marginBottom: '6px' }}>Full name *</label>
                       <input required type="text" value={form.name} onChange={set('name')} style={inputStyle} onFocus={e => e.target.style.borderColor = '#2B5BFF'} onBlur={e => e.target.style.borderColor = 'rgba(13,15,20,0.14)'} />
@@ -234,7 +234,7 @@ export default function BecomeGuide() {
       </section>
 
       {/* Footer */}
-      <footer style={{ borderTop: '1px solid rgba(255,255,255,0.15)', padding: '28px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <footer className="footer-row" style={{ borderTop: '1px solid rgba(255,255,255,0.15)', padding: '28px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '18px', color: 'rgba(255,255,255,0.6)' }}>Klime</span>
         <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.35)' }}>&copy; 2025 Klime</span>
       </footer>
