@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import FadeUp from '../components/FadeUp'
+import BookingFlow from '../components/BookingFlow'
 import FAQS from '../data/summitsFaq'
 
 const ease = [0.16, 1, 0.3, 1]
@@ -13,6 +14,7 @@ const wrap = { maxWidth: '1100px', margin: '0 auto', padding: '0 40px' }
 
 const SUMMITS = [
   {
+    key: 'ryan',
     title: 'Intro Meeting with Ryan',
     host: 'Ryan — Co-Founder, Klime',
     recommended: true,
@@ -25,10 +27,11 @@ const SUMMITS = [
     ],
   },
   {
+    key: 'max',
     title: 'Intro Meeting with Max',
     host: 'Max — Co-Founder, Klime',
     recommended: false,
-    description: 'Max co-founded Klime and runs the same intro session with a different set of time slots throughout the week. Same content, different schedule — if none of Ryan\'s times work for you, this is your option.',
+    description: "Max co-founded Klime and runs the same intro session with a different set of time slots throughout the week. Same content, different schedule — if none of Ryan's times work for you, this is your option.",
     details: [
       'Full walkthrough of how Klime works',
       'What to expect from your first Summit',
@@ -74,6 +77,8 @@ function FAQRow({ q, a }) {
 }
 
 function SummitCard({ summit, i }) {
+  const [open, setOpen] = useState(false)
+
   return (
     <FadeUp delay={i * 0.08}>
       <div style={{ borderTop: HAIR, padding: '52px 0' }}>
@@ -132,31 +137,40 @@ function SummitCard({ summit, i }) {
               ))}
             </div>
 
-            <a
-              href="#notify"
+            <button
+              onClick={() => setOpen(o => !o)}
               style={{
                 fontFamily: 'Sora,sans-serif', fontSize: '14px', fontWeight: 500,
                 color: '#fff',
-                background: summit.recommended ? '#2B5BFF' : 'transparent',
-                border: summit.recommended ? 'none' : '1.5px solid rgba(255,255,255,0.3)',
-                textDecoration: 'none',
-                borderRadius: '4px', padding: '12px 28px', display: 'inline-block',
+                background: open ? 'rgba(255,255,255,0.1)' : summit.recommended ? '#2B5BFF' : 'transparent',
+                border: summit.recommended ? (open ? '1.5px solid rgba(255,255,255,0.3)' : 'none') : '1.5px solid rgba(255,255,255,0.3)',
+                borderRadius: '4px', padding: '12px 28px', cursor: 'pointer',
                 transition: 'all 0.18s ease',
-                boxShadow: summit.recommended ? '0 4px 20px rgba(43,91,255,0.38)' : 'none',
+                boxShadow: !open && summit.recommended ? '0 4px 20px rgba(43,91,255,0.38)' : 'none',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.transform = 'translateY(-2px)'
-                e.currentTarget.style.boxShadow = summit.recommended ? '0 8px 28px rgba(43,91,255,0.55)' : 'none'
-                if (!summit.recommended) e.currentTarget.style.background = 'rgba(255,255,255,0.08)'
+                if (!open) {
+                  e.currentTarget.style.transform = 'translateY(-2px)'
+                  if (summit.recommended) e.currentTarget.style.boxShadow = '0 8px 28px rgba(43,91,255,0.55)'
+                  else e.currentTarget.style.background = 'rgba(255,255,255,0.08)'
+                }
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.transform = ''
-                e.currentTarget.style.boxShadow = summit.recommended ? '0 4px 20px rgba(43,91,255,0.38)' : 'none'
-                if (!summit.recommended) e.currentTarget.style.background = 'transparent'
+                if (!open) {
+                  e.currentTarget.style.boxShadow = summit.recommended ? '0 4px 20px rgba(43,91,255,0.38)' : 'none'
+                  if (!summit.recommended) e.currentTarget.style.background = 'transparent'
+                }
               }}
             >
-              Reserve my spot
-            </a>
+              {open ? 'Close' : 'Reserve my spot'}
+            </button>
+
+            <AnimatePresence>
+              {open && (
+                <BookingFlow hostKey={summit.key} onClose={() => setOpen(false)} />
+              )}
+            </AnimatePresence>
           </div>
 
         </div>
@@ -165,11 +179,7 @@ function SummitCard({ summit, i }) {
   )
 }
 
-
 export default function UpcomingSummits() {
-  const [email, setEmail] = useState('')
-  const [done, setDone] = useState(false)
-
   return (
     <main>
 
@@ -220,12 +230,12 @@ export default function UpcomingSummits() {
       {/* ── LISTINGS ── */}
       <section style={{ padding: '0 40px 80px' }}>
         <div className="wrap-pad" style={wrap}>
-          {SUMMITS.map((s, i) => <SummitCard key={i} summit={s} i={i} />)}
+          {SUMMITS.map((s, i) => <SummitCard key={s.key} summit={s} i={i} />)}
         </div>
       </section>
 
       {/* ── FAQ ── */}
-      <section style={{ padding: '0 40px 80px' }}>
+      <section style={{ padding: '0 40px 120px' }}>
         <div className="wrap-pad" style={wrap}>
           <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 36px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>
             Questions about the sessions.
@@ -233,71 +243,6 @@ export default function UpcomingSummits() {
           <div style={{ borderTop: HAIR }}>
             {FAQS.map((item, i) => <FAQRow key={i} {...item} />)}
           </div>
-        </div>
-      </section>
-
-      {/* ── EMAIL NOTIFY ── */}
-      <section id="notify" style={{ padding: '0 40px 120px' }}>
-        <div className="wrap-pad" style={{ ...wrap, maxWidth: '560px' }}>
-          <FadeUp>
-            <div style={{ borderTop: HAIR, paddingTop: '64px', textAlign: 'center' }}>
-              <h2 style={{ ...HL, fontSize: 'clamp(26px,3.5vw,44px)', margin: '0 0 12px', letterSpacing: '-0.8px' }}>
-                Reserve your spot.
-              </h2>
-              <p style={{ ...BODY, color: 'rgba(255,255,255,0.80)', margin: '0 0 36px' }}>
-                Drop your email and we will send you the time options before spots open to the public.
-              </p>
-
-              {!done ? (
-                <form
-                  onSubmit={e => { e.preventDefault(); if (email) setDone(true) }}
-                  style={{ display: 'flex', flexDirection: 'column', gap: '12px', maxWidth: '380px', margin: '0 auto' }}
-                >
-                  <input
-                    type="email"
-                    required
-                    placeholder="Your email"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
-                    style={{
-                      width: '100%', background: 'rgba(255,255,255,0.92)', border: '1px solid rgba(255,255,255,0.4)',
-                      borderRadius: '4px', padding: '15px 18px', fontFamily: 'Sora,sans-serif', fontSize: '14px',
-                      color: '#0D0F14', outline: 'none', textAlign: 'center', transition: 'border-color 0.18s, box-shadow 0.18s', boxSizing: 'border-box',
-                    }}
-                    onFocus={e => { e.target.style.borderColor = '#2B5BFF'; e.target.style.boxShadow = '0 0 0 3px rgba(43,91,255,0.15)' }}
-                    onBlur={e => { e.target.style.borderColor = 'rgba(255,255,255,0.4)'; e.target.style.boxShadow = '' }}
-                  />
-                  <button
-                    type="submit"
-                    style={{
-                      width: '100%', fontFamily: 'Sora,sans-serif', fontSize: '15px', fontWeight: 500,
-                      color: '#fff', background: '#2B5BFF', border: 'none', borderRadius: '4px',
-                      padding: '15px', cursor: 'pointer', boxShadow: '0 4px 20px rgba(43,91,255,0.38)', transition: 'all 0.18s ease',
-                    }}
-                    onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 32px rgba(43,91,255,0.52)' }}
-                    onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 4px 20px rgba(43,91,255,0.38)' }}
-                  >
-                    Send me the times
-                  </button>
-                  <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.65)', margin: 0 }}>
-                    No spam. Just your session.
-                  </p>
-                </form>
-              ) : (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.96 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, ease }}
-                  style={{ background: 'rgba(255,255,255,0.12)', borderRadius: '8px', padding: '36px 40px', border: '1px solid rgba(255,255,255,0.2)' }}
-                >
-                  <h3 style={{ ...HL, fontSize: '26px', margin: '0 0 10px' }}>You are on the list.</h3>
-                  <p style={{ ...BODY, fontSize: '14px', color: 'rgba(255,255,255,0.78)', margin: 0 }}>
-                    We will send you the available times shortly. The ascent begins soon.
-                  </p>
-                </motion.div>
-              )}
-            </div>
-          </FadeUp>
         </div>
       </section>
 
