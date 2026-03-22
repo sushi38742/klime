@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { getSlotCounts, createBooking } from '../lib/supabase'
 import { CAPACITY, TIME_SLOTS, HOSTS } from '../data/summitSlots'
-import { sendEmail, TEMPLATE } from '../lib/emailjs'
 
 const ease = [0.16, 1, 0.3, 1]
 const HL   = { fontFamily: '"DM Serif Display",serif', color: '#fff', fontWeight: 400 }
@@ -101,13 +100,6 @@ export default function BookingFlow({ hostKey, onClose }) {
     setErr(null)
     try {
       await createBooking({ host: hostKey, date, slot, name, email })
-      sendEmail(TEMPLATE.BOOKING, {
-        to_name:  name,
-        to_email: email,
-        date:     fmtDate(date),
-        slot,
-        host:     host.name,
-      }).catch(() => {})
       setStep(4)
     } catch (ex) {
       setErr(ex.message)
@@ -241,10 +233,35 @@ export default function BookingFlow({ hostKey, onClose }) {
                   <path d="M2.5 7l3.5 3.5 5.5-6.5" stroke="#2B5BFF" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </div>
-              <h3 style={{ ...HL, fontSize: '22px', margin: '0 0 8px' }}>You're in.</h3>
-              <p style={{ ...BODY, margin: '0 0 4px' }}>{fmtDate(date)} · {slot}</p>
-              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.5)', margin: 0 }}>
-                See you then.
+              <h3 style={{ ...HL, fontSize: '22px', margin: '0 0 6px' }}>You're in.</h3>
+              <p style={{ ...BODY, fontSize: '14px', margin: '0 0 24px', color: 'rgba(255,255,255,0.65)' }}>
+                {fmtDate(date)} · {slot}
+              </p>
+
+              {host.zoomLink ? (
+                <a
+                  href={host.zoomLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-block', fontFamily: 'Sora,sans-serif', fontSize: '14px', fontWeight: 600,
+                    color: '#fff', background: '#2B5BFF', textDecoration: 'none',
+                    borderRadius: '4px', padding: '12px 24px', marginBottom: '20px',
+                    boxShadow: '0 4px 18px rgba(43,91,255,0.38)', transition: 'all 0.18s ease',
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(43,91,255,0.52)' }}
+                  onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 4px 18px rgba(43,91,255,0.38)' }}
+                >
+                  Join on Zoom →
+                </a>
+              ) : (
+                <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.55)', margin: '0 0 20px' }}>
+                  Your join link will be sent to <span style={{ color: 'rgba(255,255,255,0.85)' }}>{email}</span> before the session.
+                </p>
+              )}
+
+              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.38)', margin: 0, lineHeight: 1.6 }}>
+                Save this link — it's the same every session. See you then.
               </p>
             </motion.div>
           )}
