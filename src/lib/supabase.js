@@ -24,6 +24,19 @@ export async function getSlotCounts(host, dates) {
   return counts
 }
 
+export async function submitAscendingInterest(email) {
+  if (!supabase) throw new Error('Not configured.')
+
+  const { error } = await supabase
+    .from('ascending_interest')
+    .insert({ email })
+
+  if (error) {
+    if (error.code === '23505') return // already signed up — silent success
+    throw new Error('Something went wrong. Please try again.')
+  }
+}
+
 export async function getBookingByEmail(email) {
   if (!supabase) return null
 

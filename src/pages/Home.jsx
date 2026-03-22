@@ -336,11 +336,11 @@ export default function Home() {
                 ))}
               </div>
 
-              <Link to="/upcoming-summits" style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', fontWeight: 500, color: '#fff', background: '#2B5BFF', textDecoration: 'none', borderRadius: '4px', padding: '12px 28px', display: 'inline-block', transition: 'all 0.18s ease' }}
+              <Link to="/ascending" style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', fontWeight: 500, color: '#fff', background: '#2B5BFF', textDecoration: 'none', borderRadius: '4px', padding: '12px 28px', display: 'inline-block', transition: 'all 0.18s ease' }}
                 onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(43,91,255,0.48)' }}
                 onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '' }}
               >
-                Start with a Summit
+                Learn about Ascending
               </Link>
             </div>
 

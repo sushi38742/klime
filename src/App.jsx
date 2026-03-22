@@ -7,6 +7,7 @@ import BecomeGuide from './pages/BecomeGuide'
 import UpcomingSummits from './pages/UpcomingSummits'
 import About from './pages/About'
 import FAQ from './pages/FAQ'
+import Ascending from './pages/Ascending'
 
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
 
@@ -39,6 +40,7 @@ export default function App() {
           <Route path="/upcoming-summits"  element={<UpcomingSummits />} />
           <Route path="/about"             element={<About />} />
           <Route path="/faq"               element={<FAQ />} />
+          <Route path="/ascending"         element={<Ascending />} />
         </Routes>
       </div>
     </>
