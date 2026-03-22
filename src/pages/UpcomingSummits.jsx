@@ -70,14 +70,17 @@ function AlreadyBooked() {
   }
 
   return (
-    <div style={{ marginTop: '12px' }}>
+    <div>
       {!open ? (
         <button
           onClick={() => setOpen(true)}
-          style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.45)', padding: 0, transition: 'color 0.15s', textDecoration: 'underline', textUnderlineOffset: '3px' }}
-          onMouseEnter={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.75)' }}
-          onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.45)' }}
+          style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.18)', borderRadius: '6px', cursor: 'pointer', fontFamily: 'Sora,sans-serif', fontSize: '14px', fontWeight: 500, color: 'rgba(255,255,255,0.82)', padding: '13px 22px', transition: 'all 0.18s ease', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.32)' }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.06)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.18)' }}
         >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{ flexShrink: 0 }}>
+            <path d="M2.5 7l3.5 3.5 5.5-6.5" stroke="rgba(255,255,255,0.7)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
           Already booked? Get your join link
         </button>
       ) : (
@@ -202,11 +205,6 @@ function SummitCard({ summit, i }) {
               <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, color: 'rgba(255,255,255,0.88)', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '3px', padding: '3px 9px', letterSpacing: '0.04em' }}>
                 Free
               </span>
-              {summit.recommended && (
-                <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, color: '#2B5BFF', background: 'rgba(43,91,255,0.14)', border: '1px solid rgba(43,91,255,0.4)', borderRadius: '3px', padding: '3px 9px', letterSpacing: '0.04em' }}>
-                  Start here
-                </span>
-              )}
             </div>
 
             <h2 style={{ ...HL, fontSize: 'clamp(26px,3vw,40px)', lineHeight: 1.1, letterSpacing: '-0.8px', margin: '0 0 20px', textShadow: '0 2px 16px rgba(0,0,0,0.28)' }}>
@@ -314,22 +312,9 @@ export default function UpcomingSummits() {
         </div>
       </section>
 
-      {/* ── TIME ZONE NOTE ── */}
-      <section style={{ padding: '0 40px 16px' }}>
-        <div className="wrap-pad" style={wrap}>
-          <FadeUp>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.16)', borderRadius: '6px', padding: '12px 18px' }}>
-              <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#2B5BFF', flexShrink: 0 }} />
-              <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.78)', lineHeight: 1.5 }}>
-                US only for now — international is in the works.
-              </span>
-            </div>
-          </FadeUp>
-        </div>
-      </section>
 
       {/* ── ALREADY BOOKED ── */}
-      <section style={{ padding: '0 40px 8px' }}>
+      <section style={{ padding: '0 40px 40px' }}>
         <div className="wrap-pad" style={wrap}>
           <AlreadyBooked />
         </div>
