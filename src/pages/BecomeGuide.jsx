@@ -4,24 +4,23 @@ import FadeUp from '../components/FadeUp'
 
 const ease = [0.16, 1, 0.3, 1]
 
-const panel = {}
 const HL = { fontFamily: '"DM Serif Display",serif', color: '#fff', fontWeight: 400 }
 const BODY = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.90)', fontSize: '15px', lineHeight: 1.72 }
 const MUTED = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.88)', fontSize: '13px', lineHeight: 1.65 }
-const HAIRLINE = { borderLeft: '1px solid rgba(255,255,255,0.18)' }
+const HAIR = '1px solid rgba(255,255,255,0.22)'
+const HAIRLINE = { borderLeft: '1px solid rgba(255,255,255,0.22)' }
 const wrap = { maxWidth: '1100px', margin: '0 auto', padding: '0 40px' }
 
+const label = {
+  fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600,
+  letterSpacing: '0.18em', textTransform: 'uppercase',
+  color: 'rgba(255,255,255,0.5)', margin: '0 0 20px', display: 'block',
+}
+
 const inputStyle = {
-  width: '100%',
-  background: '#fff',
-  border: '1px solid rgba(13,15,20,0.14)',
-  borderRadius: '4px',
-  padding: '13px 16px',
-  fontFamily: 'Sora,sans-serif',
-  fontSize: '14px',
-  color: '#0D0F14',
-  outline: 'none',
-  transition: 'border-color 0.18s',
+  width: '100%', background: '#fff', border: '1px solid rgba(13,15,20,0.14)',
+  borderRadius: '4px', padding: '13px 16px', fontFamily: 'Sora,sans-serif',
+  fontSize: '14px', color: '#0D0F14', outline: 'none', transition: 'border-color 0.18s',
 }
 
 export default function BecomeGuide() {
@@ -40,7 +39,7 @@ export default function BecomeGuide() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease }}
-          style={{ ...HL, fontSize: 'clamp(36px,5.5vw,72px)', lineHeight: 1.1, letterSpacing: '-1.5px', margin: '0 0 24px', maxWidth: '740px', color: '#fff', textShadow: '0 2px 20px rgba(0,0,0,0.25)' }}
+          style={{ ...HL, fontSize: 'clamp(36px,5.5vw,72px)', lineHeight: 1.1, letterSpacing: '-1.5px', margin: '0 0 24px', maxWidth: '740px', textShadow: '0 2px 20px rgba(0,0,0,0.25)' }}
         >
           You have already made it. Now help someone else get there.
         </motion.h1>
@@ -70,11 +69,14 @@ export default function BecomeGuide() {
       </section>
 
       {/* ── WHY BECOME A GUIDE ── */}
-      <section className="sec-v" style={{ padding: '100px 40px' }}>
+      <section style={{ padding: '0 40px 100px' }}>
         <div className="wrap-pad" style={wrap}>
           <FadeUp>
-            <div className="panel-pad" style={panel}>
-              <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 40px', letterSpacing: '-0.4px' }}>Why become a Guide.</h2>
+            <div style={{ borderTop: HAIR, paddingTop: '56px' }}>
+              <span style={label}>Why become a Guide</span>
+              <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 48px', letterSpacing: '-0.4px' }}>
+                Give back. Build your profile. Open doors.
+              </h2>
               <div className="g3" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 0 }}>
                 {[
                   { title: 'Give back', body: 'Share what you know with students who are serious enough to earn it.' },
@@ -82,7 +84,7 @@ export default function BecomeGuide() {
                   { title: 'Open doors', body: 'The connections you make as a Guide go both ways.' },
                 ].map((col, i) => (
                   <div key={i} style={{ padding: '0 32px', ...(i > 0 ? HAIRLINE : {}) }}>
-                    <h3 style={{ ...HL, fontSize: '22px', margin: '0 0 10px' }}>{col.title}</h3>
+                    <h3 style={{ ...HL, fontSize: '20px', margin: '0 0 10px' }}>{col.title}</h3>
                     <p style={{ ...BODY, margin: 0 }}>{col.body}</p>
                   </div>
                 ))}
@@ -93,11 +95,14 @@ export default function BecomeGuide() {
       </section>
 
       {/* ── WHAT GUIDES DO ── */}
-      <section className="sec-bot" style={{ padding: '0 40px 100px' }}>
+      <section style={{ padding: '0 40px 100px' }}>
         <div className="wrap-pad" style={wrap}>
           <FadeUp>
-            <div className="panel-pad" style={panel}>
-              <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 40px', letterSpacing: '-0.4px' }}>What Guides do.</h2>
+            <div style={{ borderTop: HAIR, paddingTop: '56px' }}>
+              <span style={label}>What Guides do</span>
+              <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 48px', letterSpacing: '-0.4px' }}>
+                Two kinds of sessions. Both live. Both yours to lead.
+              </h2>
               <div className="g2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0 }}>
                 {[
                   {
@@ -110,7 +115,7 @@ export default function BecomeGuide() {
                   },
                 ].map((col, i) => (
                   <div key={i} style={{ padding: '0 40px', ...(i > 0 ? HAIRLINE : {}) }}>
-                    <h3 style={{ ...HL, fontSize: '24px', margin: '0 0 12px' }}>{col.title}</h3>
+                    <h3 style={{ ...HL, fontSize: '22px', margin: '0 0 12px' }}>{col.title}</h3>
                     <p style={{ ...BODY, margin: 0 }}>{col.body}</p>
                   </div>
                 ))}
@@ -121,18 +126,25 @@ export default function BecomeGuide() {
       </section>
 
       {/* ── WHO CAN BE A GUIDE ── */}
-      <section className="sec-bot" style={{ padding: '0 40px 100px' }}>
+      <section style={{ padding: '0 40px 100px' }}>
         <div className="wrap-pad" style={wrap}>
           <FadeUp>
-            <div className="panel-pad" style={panel}>
-              <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 16px', letterSpacing: '-0.4px' }}>Who can be a Guide.</h2>
-              <p style={{ ...BODY, maxWidth: '620px', margin: '0 0 32px' }}>
-                Guides on Klime range from 20-year-old tech founders to senior executives, physicians, government advisors, and investors. If you have real experience in your field and are committed to opening doors, you belong here.
-              </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-                {['Tech Founders', 'Business Leaders', 'Healthcare', 'Finance', 'National Security', 'Creative'].map((cat, i) => (
-                  <span key={i} style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.85)', border: '1px solid rgba(255,255,255,0.25)', borderRadius: '4px', padding: '8px 16px' }}>{cat}</span>
-                ))}
+            <div style={{ borderTop: HAIR, paddingTop: '56px' }}>
+              <span style={label}>Who can be a Guide</span>
+              <div className="g2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}>
+                <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: 0, letterSpacing: '-0.4px', lineHeight: 1.15 }}>
+                  If you have done the work, you belong here.
+                </h2>
+                <div>
+                  <p style={{ ...BODY, margin: '0 0 28px' }}>
+                    Guides on Klime range from 20-year-old tech founders to senior executives, physicians, government advisors, and investors. If you have real experience in your field and are committed to opening doors, you belong here.
+                  </p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                    {['Tech Founders', 'Business Leaders', 'Healthcare', 'Finance', 'National Security', 'Creative'].map((cat, i) => (
+                      <span key={i} style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.85)', border: '1px solid rgba(255,255,255,0.25)', borderRadius: '4px', padding: '8px 16px' }}>{cat}</span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </FadeUp>
@@ -140,11 +152,12 @@ export default function BecomeGuide() {
       </section>
 
       {/* ── SCREENING ── */}
-      <section className="sec-bot" style={{ padding: '0 40px 100px' }}>
+      <section style={{ padding: '0 40px 100px' }}>
         <div className="wrap-pad" style={wrap}>
           <FadeUp>
-            <div className="panel-pad" style={panel}>
-              <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 36px', letterSpacing: '-0.4px' }}>
+            <div style={{ borderTop: HAIR, paddingTop: '56px' }}>
+              <span style={label}>How we screen Guides</span>
+              <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 48px', letterSpacing: '-0.4px', maxWidth: '640px' }}>
                 Every Guide is screened before they ever lead a session.
               </h2>
               <div className="g3" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 0 }}>
@@ -154,7 +167,7 @@ export default function BecomeGuide() {
                   { title: 'Ongoing monitoring', body: 'After every Summit, AI analyzes student feedback. Guides who fall below the bar are flagged and reviewed before their next session.' },
                 ].map((s, i) => (
                   <div key={i} style={{ padding: '0 28px', ...(i > 0 ? HAIRLINE : {}) }}>
-                    <h4 style={{ ...HL, fontSize: '18px', margin: '0 0 8px' }}>{s.title}</h4>
+                    <h4 style={{ ...HL, fontSize: '18px', margin: '0 0 10px' }}>{s.title}</h4>
                     <p style={{ ...MUTED, margin: 0 }}>{s.body}</p>
                   </div>
                 ))}
@@ -165,10 +178,11 @@ export default function BecomeGuide() {
       </section>
 
       {/* ── APPLICATION FORM ── */}
-      <section id="apply" className="sec-bot" style={{ padding: '0 40px 120px' }}>
+      <section id="apply" style={{ padding: '0 40px 120px' }}>
         <div className="wrap-pad" style={wrap}>
           <FadeUp>
-            <div className="panel-pad" style={panel}>
+            <div style={{ borderTop: HAIR, paddingTop: '56px' }}>
+              <span style={label}>Apply</span>
               {!done ? (
                 <>
                   <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 8px', letterSpacing: '-0.4px' }}>Apply to become a Guide.</h2>
@@ -233,11 +247,12 @@ export default function BecomeGuide() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="footer-row" style={{ borderTop: '1px solid rgba(255,255,255,0.15)', padding: '28px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '18px', color: 'rgba(255,255,255,0.6)' }}>Klime</span>
-        <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.35)' }}>&copy; 2026 Klime</span>
+      {/* ── FOOTER ── */}
+      <footer className="footer-row" style={{ borderTop: HAIR, padding: '28px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '18px', color: 'rgba(255,255,255,0.75)' }}>Klime</span>
+        <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.55)' }}>&copy; 2026 Klime</span>
       </footer>
+
     </main>
   )
 }
