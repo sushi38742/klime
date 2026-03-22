@@ -10,112 +10,6 @@ const MUTED= { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.72)', f
 const HAIR = '1px solid rgba(255,255,255,0.22)'
 const wrap = { maxWidth: '1100px', margin: '0 auto', padding: '0 40px' }
 
-const SUMMITS = [
-  {
-    type: 'Intro Meeting',
-    title: 'Intro Meeting with Ryan',
-    host: 'Ryan — Co-Founder, Klime',
-    description: 'A casual, no-pressure session where Ryan walks you through exactly what Klime is, how Summits and Ascending work, and answers any questions you have before your first session. Come curious. No prep needed.',
-    details: [
-      'What Klime is and why we built it',
-      'How Summits work — what to expect in the room',
-      'What makes Ascending different',
-      'Open Q&A — nothing is off limits',
-    ],
-    date: 'Multiple times this week',
-    spots: '10 spots per session',
-  },
-  {
-    type: 'Intro Meeting',
-    title: 'Intro Meeting with Max',
-    host: 'Max — Co-Founder, Klime',
-    description: 'Same ground as Ryan\'s session, different time slots. Max walks through how Klime works, what a Summit actually feels like from the inside, and how to get the most out of Ascending. Pick whichever time works for you.',
-    details: [
-      'A full walkthrough of the Klime experience',
-      'What to expect from your first Summit',
-      'How Ascending is built around you specifically',
-      'Live Q&A with one of the founders',
-    ],
-    date: 'Multiple times this week',
-    spots: '10 spots per session',
-  },
-]
-
-function SummitCard({ summit, i }) {
-  return (
-    <FadeUp delay={i * 0.1}>
-      <div style={{ borderTop: HAIR, padding: '52px 0' }}>
-        <div className="summit-card-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: '80px', alignItems: 'start' }}>
-
-          {/* Left — meta */}
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
-              <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.72)' }}>
-                {summit.type}
-              </span>
-              <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, color: 'rgba(255,255,255,0.88)', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '3px', padding: '3px 9px', letterSpacing: '0.04em' }}>
-                Free
-              </span>
-            </div>
-
-            <h2 style={{ ...HL, fontSize: 'clamp(26px,3vw,40px)', lineHeight: 1.1, letterSpacing: '-0.8px', margin: '0 0 20px', textShadow: '0 2px 16px rgba(0,0,0,0.28)' }}>
-              {summit.title}
-            </h2>
-
-            <div style={{ marginBottom: '24px' }}>
-              <p style={{ ...MUTED, fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 6px', color: 'rgba(255,255,255,0.5)' }}>Your Host</p>
-              <p style={{ ...BODY, fontSize: '13px', color: 'rgba(255,255,255,0.72)', margin: 0 }}>{summit.host}</p>
-            </div>
-
-            <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
-              <div>
-                <p style={{ ...MUTED, fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 4px', color: 'rgba(255,255,255,0.5)' }}>When</p>
-                <p style={{ ...BODY, fontSize: '14px', margin: 0 }}>{summit.date}</p>
-              </div>
-              <div style={{ width: '1px', height: '32px', background: 'rgba(255,255,255,0.18)' }} />
-              <div>
-                <p style={{ ...MUTED, fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 4px', color: 'rgba(255,255,255,0.5)' }}>Capacity</p>
-                <p style={{ ...BODY, fontSize: '14px', margin: 0 }}>{summit.spots}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right — description */}
-          <div>
-            <p style={{ ...BODY, fontSize: '15px', margin: '0 0 28px', color: 'rgba(255,255,255,0.92)' }}>
-              {summit.description}
-            </p>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '36px' }}>
-              {summit.details.map((d, j) => (
-                <div key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                  <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#2B5BFF', flexShrink: 0, marginTop: '8px' }} />
-                  <span style={{ ...BODY, fontSize: '14px' }}>{d}</span>
-                </div>
-              ))}
-            </div>
-
-            <a
-              href="#notify"
-              style={{
-                fontFamily: 'Sora,sans-serif', fontSize: '14px', fontWeight: 500,
-                color: '#fff', background: '#2B5BFF', textDecoration: 'none',
-                borderRadius: '4px', padding: '12px 28px', display: 'inline-block',
-                transition: 'all 0.18s ease',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(43,91,255,0.5)' }}
-              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '' }}
-            >
-              Reserve my spot
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </FadeUp>
-  )
-}
-
 export default function UpcomingSummits() {
   const [email, setEmail] = useState('')
   const [done, setDone] = useState(false)
@@ -167,10 +61,127 @@ export default function UpcomingSummits() {
         </div>
       </section>
 
-      {/* ── SUMMIT LISTINGS ── */}
+      {/* ── PRIMARY: RYAN ── */}
+      <section style={{ padding: '0 40px 0' }}>
+        <div className="wrap-pad" style={wrap}>
+          <FadeUp>
+            <div style={{
+              borderTop: HAIR,
+              marginTop: '40px',
+              padding: '56px 0 64px',
+            }}>
+              {/* Label row */}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '28px' }}>
+                <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.72)' }}>
+                  Intro Meeting
+                </span>
+                <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, color: 'rgba(255,255,255,0.88)', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '3px', padding: '3px 9px', letterSpacing: '0.04em' }}>
+                  Free
+                </span>
+              </div>
+
+              {/* Two-col layout */}
+              <div className="summit-card-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: '80px', alignItems: 'start' }}>
+
+                {/* Left */}
+                <div>
+                  <h2 style={{ ...HL, fontSize: 'clamp(34px,4.5vw,60px)', lineHeight: 1.05, letterSpacing: '-1.2px', margin: '0 0 24px', textShadow: '0 2px 20px rgba(0,0,0,0.32)' }}>
+                    Intro Meeting with Ryan
+                  </h2>
+
+                  <div style={{ marginBottom: '28px' }}>
+                    <p style={{ ...MUTED, fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 6px', color: 'rgba(255,255,255,0.5)' }}>Your Host</p>
+                    <p style={{ ...BODY, fontSize: '14px', color: 'rgba(255,255,255,0.88)', margin: 0 }}>Ryan — Co-Founder, Klime</p>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
+                    <div>
+                      <p style={{ ...MUTED, fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 4px', color: 'rgba(255,255,255,0.5)' }}>When</p>
+                      <p style={{ ...BODY, fontSize: '14px', margin: 0 }}>Multiple times this week</p>
+                    </div>
+                    <div style={{ width: '1px', height: '32px', background: 'rgba(255,255,255,0.18)' }} />
+                    <div>
+                      <p style={{ ...MUTED, fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 4px', color: 'rgba(255,255,255,0.5)' }}>Capacity</p>
+                      <p style={{ ...BODY, fontSize: '14px', margin: 0 }}>10 spots per session</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right */}
+                <div>
+                  <p style={{ ...BODY, fontSize: '16px', margin: '0 0 32px', color: 'rgba(255,255,255,0.95)', lineHeight: 1.75 }}>
+                    A casual, no-pressure session where Ryan walks you through exactly what Klime is, how Summits and Ascending work, and answers any questions you have before your first session. Come curious. No prep needed.
+                  </p>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '40px' }}>
+                    {[
+                      'What Klime is and why we built it',
+                      'How Summits work — what to expect in the room',
+                      'What makes Ascending different',
+                      'Open Q&A — nothing is off limits',
+                    ].map((d, j) => (
+                      <div key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                        <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#2B5BFF', flexShrink: 0, marginTop: '8px' }} />
+                        <span style={{ ...BODY, fontSize: '15px' }}>{d}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <a
+                    href="#notify"
+                    style={{
+                      fontFamily: 'Sora,sans-serif', fontSize: '15px', fontWeight: 600,
+                      color: '#fff', background: '#2B5BFF', textDecoration: 'none',
+                      borderRadius: '4px', padding: '15px 36px', display: 'inline-block',
+                      transition: 'all 0.18s ease',
+                      boxShadow: '0 4px 24px rgba(43,91,255,0.42)',
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 36px rgba(43,91,255,0.6)' }}
+                    onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 4px 24px rgba(43,91,255,0.42)' }}
+                  >
+                    Reserve my spot
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </FadeUp>
+        </div>
+      </section>
+
+      {/* ── SECONDARY: MAX ── */}
       <section style={{ padding: '0 40px 80px' }}>
         <div className="wrap-pad" style={wrap}>
-          {SUMMITS.map((s, i) => <SummitCard key={i} summit={s} i={i} />)}
+          <FadeUp delay={0.08}>
+            <div style={{ borderTop: HAIR, padding: '28px 0 0' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                  <div>
+                    <p style={{ ...MUTED, fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 4px', color: 'rgba(255,255,255,0.4)' }}>Also this week</p>
+                    <p style={{ ...HL, fontSize: 'clamp(17px,2vw,22px)', margin: 0, color: 'rgba(255,255,255,0.62)', letterSpacing: '-0.3px' }}>Intro Meeting with Max</p>
+                  </div>
+                  <div style={{ width: '1px', height: '32px', background: 'rgba(255,255,255,0.14)' }} />
+                  <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.48)', margin: 0, maxWidth: '360px', lineHeight: 1.6 }}>
+                    Same session, different time slots — if Ryan's times don't work for you.
+                  </p>
+                </div>
+                <a
+                  href="#notify"
+                  style={{
+                    fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 500,
+                    color: 'rgba(255,255,255,0.6)', textDecoration: 'none',
+                    border: '1px solid rgba(255,255,255,0.2)', borderRadius: '4px',
+                    padding: '10px 22px', display: 'inline-block', transition: 'all 0.18s ease',
+                    whiteSpace: 'nowrap',
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.45)' }}
+                  onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.6)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)' }}
+                >
+                  Reserve a spot
+                </a>
+              </div>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
