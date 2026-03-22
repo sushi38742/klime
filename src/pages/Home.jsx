@@ -177,7 +177,7 @@ export default function Home() {
           transition={{ delay: 0.25, duration: 0.6 }}
           style={{ ...BODY, fontSize: 'clamp(15px,1.6vw,18px)', color: 'rgba(255,255,255,0.88)', margin: '0 0 40px', maxWidth: '560px', textShadow: '0 1px 8px rgba(0,0,0,0.18)', position: 'relative' }}
         >
-          Join a Summit with up to 10 other students and a verified Guide. Then Ascend for a private one on one session with new curriculum built around you.
+          A free live session with up to 10 students and a verified professional. Ask real questions, get real answers. Then Ascend for a private one-on-one — new curriculum built around you.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -401,7 +401,7 @@ export default function Home() {
                 { q: 'Who are the Guides?', a: 'Verified professionals who have real experience in their field. Some are 20-year-old founders. Others are senior executives, physicians, or investors with decades of experience. The range is the point.' },
                 { q: 'What happens in a Summit?', a: 'An interactive live session built around what is actually happening in that field this week. Think TED talk meets live course — except the speaker takes questions and knows your name. Ten students, one verified Guide, one hour. Different topic every week, from breaking into finance to building something everyone is talking about.' },
                 { q: 'What is Ascending?', a: 'A private one on one session with any Guide on Klime — whether you attended their Summit or not. You pick the person. They build new curriculum entirely around your goals before you meet. Forty minutes that exist only for you. You leave with a real connection to a real professional.' },
-                { q: 'When do Summits start?', a: 'Soon. Sign up below and you will be the first to know when your field opens.' },
+                { q: 'When do Summits start?', a: 'This week. Start with a free intro meeting hosted by one of the founders — Ryan or Max — to see how it all works before your first Summit. Multiple time slots available throughout the week.' },
                 { q: 'Do I need to attend a Summit before Ascending?', a: 'No. You can book an Ascending session with any Guide on Klime regardless of whether you have attended their Summit. You simply browse the roster, pick the professional you want in the room with you, and book.' },
                 { q: 'How do Guides prepare for Ascending sessions?', a: 'Before every Ascending session, your Guide reviews your stated goals and builds an entirely new curriculum around them. It has never been used before and will never be used again. It exists only for that session.' },
                 { q: 'Is there a cost to create an account?', a: 'No. Signing up and attending Summits is completely free. You only pay for Ascending sessions, which are $40 each.' },
@@ -428,7 +428,7 @@ export default function Home() {
               Your Summit is waiting.
             </h2>
             <p style={{ ...MUTED, fontSize: '16px', margin: '0 0 36px', color: 'rgba(255,255,255,0.82)' }}>
-              Early students get matched first.
+              Start with a free intro meeting this week.
             </p>
             <Link to="/upcoming-summits" style={{
               fontFamily: 'Sora,sans-serif', fontSize: '15px', fontWeight: 500,

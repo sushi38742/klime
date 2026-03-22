@@ -12,22 +12,32 @@ const wrap = { maxWidth: '1100px', margin: '0 auto', padding: '0 40px' }
 
 const SUMMITS = [
   {
-    field: 'Cybersecurity',
-    title: 'How to Think Like a Hacker',
-    guide: 'A verified cybersecurity professional — red teamer, penetration tester, or national infrastructure defender. Guide announced before registration opens.',
-    description: 'This is not a course on memorizing CVEs. This Summit covers how real attackers think — the mental model, the reconnaissance, the patience. Whether you want to break into security professionally or just understand what you are actually up against, this is the session to be in.',
-    details: ['Attack surface thinking', 'How real breaches actually happen', 'Breaking in as a career — what it actually takes', 'Live Q&A with a working professional'],
-    date: 'Coming soon',
-    spots: '10 spots',
+    type: 'Intro Meeting',
+    title: 'Intro Meeting with Ryan',
+    host: 'Ryan — Co-Founder, Klime',
+    description: 'A casual, no-pressure session where Ryan walks you through exactly what Klime is, how Summits and Ascending work, and answers any questions you have before your first session. Come curious. No prep needed.',
+    details: [
+      'What Klime is and why we built it',
+      'How Summits work — what to expect in the room',
+      'What makes Ascending different',
+      'Open Q&A — nothing is off limits',
+    ],
+    date: 'Multiple times this week',
+    spots: '10 spots per session',
   },
   {
-    field: 'National Security',
-    title: 'Spy Skills — How Intelligence Actually Works',
-    guide: 'A former intelligence officer or national security professional with direct operational experience. Guide identity revealed to registered students.',
-    description: 'What the CIA, NSA, and DIA actually do — and what the movies get completely wrong. This Summit covers the real tradecraft: how intelligence is collected, analyzed, and acted on, and what a career in national security looks like from the inside.',
-    details: ['How HUMINT, SIGINT, and OSINT actually work', 'The career paths nobody talks about', 'What clearances mean and how to get one', 'How decisions get made at the highest levels'],
-    date: 'Coming soon',
-    spots: '10 spots',
+    type: 'Intro Meeting',
+    title: 'Intro Meeting with Max',
+    host: 'Max — Co-Founder, Klime',
+    description: 'Same ground as Ryan\'s session, different time slots. Max walks through how Klime works, what a Summit actually feels like from the inside, and how to get the most out of Ascending. Pick whichever time works for you.',
+    details: [
+      'A full walkthrough of the Klime experience',
+      'What to expect from your first Summit',
+      'How Ascending is built around you specifically',
+      'Live Q&A with one of the founders',
+    ],
+    date: 'Multiple times this week',
+    spots: '10 spots per session',
   },
 ]
 
@@ -41,7 +51,7 @@ function SummitCard({ summit, i }) {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
               <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.72)' }}>
-                {summit.field}
+                {summit.type}
               </span>
               <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, color: 'rgba(255,255,255,0.88)', border: '1px solid rgba(255,255,255,0.3)', borderRadius: '3px', padding: '3px 9px', letterSpacing: '0.04em' }}>
                 Free
@@ -53,13 +63,13 @@ function SummitCard({ summit, i }) {
             </h2>
 
             <div style={{ marginBottom: '24px' }}>
-              <p style={{ ...MUTED, fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 6px', color: 'rgba(255,255,255,0.5)' }}>Your Guide</p>
-              <p style={{ ...BODY, fontSize: '13px', color: 'rgba(255,255,255,0.72)', margin: 0 }}>{summit.guide}</p>
+              <p style={{ ...MUTED, fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 6px', color: 'rgba(255,255,255,0.5)' }}>Your Host</p>
+              <p style={{ ...BODY, fontSize: '13px', color: 'rgba(255,255,255,0.72)', margin: 0 }}>{summit.host}</p>
             </div>
 
             <div style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
               <div>
-                <p style={{ ...MUTED, fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 4px', color: 'rgba(255,255,255,0.5)' }}>Date</p>
+                <p style={{ ...MUTED, fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', margin: '0 0 4px', color: 'rgba(255,255,255,0.5)' }}>When</p>
                 <p style={{ ...BODY, fontSize: '14px', margin: 0 }}>{summit.date}</p>
               </div>
               <div style={{ width: '1px', height: '32px', background: 'rgba(255,255,255,0.18)' }} />
@@ -114,7 +124,7 @@ export default function UpcomingSummits() {
     <main>
 
       {/* ── HERO ── */}
-      <section style={{ padding: '100px 40px 72px' }}>
+      <section style={{ padding: '100px 40px 56px' }}>
         <div className="wrap-pad" style={wrap}>
           <motion.p
             initial={{ opacity: 0 }}
@@ -122,7 +132,7 @@ export default function UpcomingSummits() {
             transition={{ duration: 0.5 }}
             style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.72)', margin: '0 0 20px' }}
           >
-            Upcoming Summits
+            Summits
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -130,7 +140,7 @@ export default function UpcomingSummits() {
             transition={{ duration: 0.65, ease }}
             style={{ ...HL, fontSize: 'clamp(36px,5vw,68px)', lineHeight: 1.08, letterSpacing: '-1.5px', margin: '0 0 16px', maxWidth: '720px', textShadow: '0 2px 24px rgba(0,0,0,0.28)' }}
           >
-            Two Summits. Free. Limited to ten.
+            This week's summits.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
@@ -138,8 +148,22 @@ export default function UpcomingSummits() {
             transition={{ delay: 0.25, duration: 0.5 }}
             style={{ ...BODY, color: 'rgba(255,255,255,0.82)', margin: 0, maxWidth: '520px' }}
           >
-            Live sessions with verified professionals. Dates announced to registered students first. Reserve your spot below.
+            Free intro meetings with the Klime founders. Pick a time that works, show up, and ask anything.
           </motion.p>
+        </div>
+      </section>
+
+      {/* ── TIME ZONE NOTE ── */}
+      <section style={{ padding: '0 40px 16px' }}>
+        <div className="wrap-pad" style={wrap}>
+          <FadeUp>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.16)', borderRadius: '6px', padding: '12px 18px' }}>
+              <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#2B5BFF', flexShrink: 0 }} />
+              <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.78)', lineHeight: 1.5 }}>
+                Currently US-based time slots. International sessions coming soon. Multiple sessions run throughout the week — find one that fits your schedule.
+              </span>
+            </div>
+          </FadeUp>
         </div>
       </section>
 
@@ -159,7 +183,7 @@ export default function UpcomingSummits() {
                 Reserve your spot.
               </h2>
               <p style={{ ...BODY, color: 'rgba(255,255,255,0.80)', margin: '0 0 36px' }}>
-                Dates go to registered students first. Enter your email and we will reach out before spots open to the public.
+                Drop your email and we will send you the time options before spots open to the public.
               </p>
 
               {!done ? (
@@ -191,10 +215,10 @@ export default function UpcomingSummits() {
                     onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 32px rgba(43,91,255,0.52)' }}
                     onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 4px 20px rgba(43,91,255,0.38)' }}
                   >
-                    Notify Me
+                    Send me the times
                   </button>
                   <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.65)', margin: 0 }}>
-                    No spam. Just your Summit.
+                    No spam. Just your session.
                   </p>
                 </form>
               ) : (
@@ -206,7 +230,7 @@ export default function UpcomingSummits() {
                 >
                   <h3 style={{ ...HL, fontSize: '26px', margin: '0 0 10px' }}>You are on the list.</h3>
                   <p style={{ ...BODY, fontSize: '14px', color: 'rgba(255,255,255,0.78)', margin: 0 }}>
-                    We will reach out before spots open. The ascent begins soon.
+                    We will send you the available times shortly. The ascent begins soon.
                   </p>
                 </motion.div>
               )}
