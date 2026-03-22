@@ -380,7 +380,7 @@ export default function Home() {
                 { n: '02', body: 'Join a live session with up to 10 other students and a verified Guide. Interactive, intimate, and never recorded.' },
                 { n: '03', body: 'Book a private Ascending session. Your Guide builds new curriculum specifically for you before you meet. You leave with a direct professional introduction.' },
               ].map((step, i) => (
-                <div key={i} style={{ marginTop: `${i * 88}px`, paddingTop: '32px', paddingBottom: '48px', paddingLeft: i === 0 ? '0' : '40px', paddingRight: i === 2 ? '0' : '40px', borderTop: HAIR }}>
+                <div key={i} style={{ marginTop: `${(2 - i) * 88}px`, paddingTop: '32px', paddingBottom: '48px', paddingLeft: i === 0 ? '0' : '40px', paddingRight: i === 2 ? '0' : '40px', borderTop: HAIR }}>
                   <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '64px', color: 'rgba(255,255,255,0.12)', lineHeight: 1, display: 'block', marginBottom: '20px', userSelect: 'none' }}>{step.n}</span>
                   <p style={{ ...BODY, margin: 0, fontSize: '15px', color: 'rgba(255,255,255,0.90)' }}>{step.body}</p>
                 </div>
