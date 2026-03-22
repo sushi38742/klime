@@ -14,7 +14,7 @@ export default function App() {
       <div style={{ position: 'fixed', inset: 0, zIndex: 0 }}>
         <MountainSVG />
         {/* 15% dark overlay for text readability */}
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.15)' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.42)' }} />
       </div>
 
       {/* Fixed navbar */}

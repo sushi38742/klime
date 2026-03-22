@@ -5,7 +5,7 @@ const ease = [0.16, 1, 0.3, 1]
 
 const HL   = { fontFamily: '"DM Serif Display",serif', color: '#0D0F14', fontWeight: 400 }
 const BODY  = { fontFamily: 'Sora,sans-serif', color: '#1e2d3d', fontSize: '15px', lineHeight: 1.8 }
-const MUTED = { fontFamily: 'Sora,sans-serif', color: '#4a5a6a', fontSize: '13px', lineHeight: 1.65 }
+const MUTED = { fontFamily: 'Sora,sans-serif', color: '#2a3a4a', fontSize: '13px', lineHeight: 1.65 }
 const HAIR  = '1px solid rgba(13,15,20,0.1)'
 
 export default function About() {
@@ -84,8 +84,8 @@ export default function About() {
 
       {/* Footer */}
       <footer className="footer-row" style={{ borderTop: '1px solid rgba(255,255,255,0.15)', padding: '28px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '18px', color: 'rgba(255,255,255,0.45)' }}>Klime</span>
-        <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.28)' }}>&copy; 2026 Klime</span>
+        <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '18px', color: 'rgba(255,255,255,0.75)' }}>Klime</span>
+        <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.55)' }}>&copy; 2026 Klime</span>
       </footer>
 
     </main>

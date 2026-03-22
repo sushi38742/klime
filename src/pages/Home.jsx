@@ -7,9 +7,9 @@ const ease = [0.16, 1, 0.3, 1]
 
 // ─── Text on mountain — all light ───
 const HL   = { fontFamily: '"DM Serif Display",serif', color: '#fff', fontWeight: 400 }
-const BODY  = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.92)', fontSize: '15px', lineHeight: 1.72 }
-const MUTED = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.82)', fontSize: '13px', lineHeight: 1.65 }
-const HAIR  = '1px solid rgba(255,255,255,0.18)'
+const BODY  = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.96)', fontSize: '15px', lineHeight: 1.72 }
+const MUTED = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.88)', fontSize: '13px', lineHeight: 1.65 }
+const HAIR  = '1px solid rgba(255,255,255,0.22)'
 const wrap  = { maxWidth: '1100px', margin: '0 auto', padding: '0 40px' }
 
 // ─── Wave of professionals ───
@@ -241,9 +241,9 @@ export default function Home() {
                 { name: 'Klime',       accent: true,  rows: ['Live every session', 'You ask the questions', 'Your Guide knows your name', 'You walk away connected'] },
               ].map((col, i) => (
                 <div key={i} style={{ padding: '0 0 0 32px', borderLeft: i > 0 ? HAIR : 'none', paddingLeft: i === 0 ? '0' : '32px' }}>
-                  <div style={{ fontFamily: '"DM Serif Display",serif', fontSize: '20px', color: col.accent ? '#2B5BFF' : 'rgba(255,255,255,0.38)', marginBottom: '16px', fontWeight: 400 }}>{col.name}</div>
+                  <div style={{ fontFamily: '"DM Serif Display",serif', fontSize: '20px', color: col.accent ? '#2B5BFF' : 'rgba(255,255,255,0.72)', marginBottom: '16px', fontWeight: 400 }}>{col.name}</div>
                   {col.rows.map((r, j) => (
-                    <p key={j} style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: col.accent ? 'rgba(255,255,255,0.78)' : 'rgba(255,255,255,0.35)', margin: '0 0 9px', lineHeight: 1.6 }}>{r}</p>
+                    <p key={j} style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: col.accent ? 'rgba(255,255,255,0.96)' : 'rgba(255,255,255,0.68)', margin: '0 0 9px', lineHeight: 1.6 }}>{r}</p>
                   ))}
                 </div>
               ))}
@@ -294,15 +294,15 @@ export default function Home() {
                 <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', fontWeight: 600, color: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.25)', borderRadius: '3px', padding: '4px 10px', marginTop: '6px', letterSpacing: '0.04em' }}>Free</span>
               </div>
 
-              <p style={{ ...BODY, fontSize: '14px', color: 'rgba(255,255,255,0.68)', margin: '0 0 24px', lineHeight: 1.7 }}>
+              <p style={{ ...BODY, fontSize: '14px', color: 'rgba(255,255,255,0.88)', margin: '0 0 24px', lineHeight: 1.7 }}>
                 A free live session with up to nine other students and a verified professional. Real questions, real answers, never recorded. A good place to start — and a glimpse of what Ascending feels like.
               </p>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {['Up to 10 students', 'Live — never recorded', '45 minutes', 'Always free'].map((f, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: 'rgba(255,255,255,0.35)', flexShrink: 0 }} />
-                    <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.6)' }}>{f}</span>
+                    <div style={{ width: '3px', height: '3px', borderRadius: '50%', background: 'rgba(255,255,255,0.65)', flexShrink: 0 }} />
+                    <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.85)' }}>{f}</span>
                   </div>
                 ))}
               </div>
@@ -427,7 +427,7 @@ export default function Home() {
             <h2 style={{ ...HL, fontSize: 'clamp(30px,4vw,56px)', margin: '0 0 16px', letterSpacing: '-1px', textShadow: '0 2px 20px rgba(0,0,0,0.3)' }}>
               Your Summit is waiting.
             </h2>
-            <p style={{ ...MUTED, fontSize: '16px', margin: '0 0 36px', color: 'rgba(255,255,255,0.55)' }}>
+            <p style={{ ...MUTED, fontSize: '16px', margin: '0 0 36px', color: 'rgba(255,255,255,0.82)' }}>
               Early students get matched first.
             </p>
             <Link to="/upcoming-summits" style={{
@@ -447,8 +447,8 @@ export default function Home() {
 
       {/* Footer */}
       <footer style={{ borderTop: HAIR, padding: '28px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '18px', color: 'rgba(255,255,255,0.45)' }}>Klime</span>
-        <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.28)' }}>&copy; 2026 Klime</span>
+        <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '18px', color: 'rgba(255,255,255,0.75)' }}>Klime</span>
+        <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.55)' }}>&copy; 2026 Klime</span>
       </footer>
     </main>
   )

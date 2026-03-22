@@ -7,7 +7,7 @@ const ease = [0.16, 1, 0.3, 1]
 const panel = {}
 const HL = { fontFamily: '"DM Serif Display",serif', color: '#fff', fontWeight: 400 }
 const BODY = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.90)', fontSize: '15px', lineHeight: 1.72 }
-const MUTED = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.72)', fontSize: '13px', lineHeight: 1.65 }
+const MUTED = { fontFamily: 'Sora,sans-serif', color: 'rgba(255,255,255,0.88)', fontSize: '13px', lineHeight: 1.65 }
 const HAIRLINE = { borderLeft: '1px solid rgba(255,255,255,0.18)' }
 const wrap = { maxWidth: '1100px', margin: '0 auto', padding: '0 40px' }
 
