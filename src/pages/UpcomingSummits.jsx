@@ -1,11 +1,12 @@
+import Footer from '../components/Footer'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import FadeUp from '../components/FadeUp'
 import BookingFlow from '../components/BookingFlow'
-import NOTES from '../data/summitsNotes'
 import { getBookingByEmail } from '../lib/supabase'
 import { HOSTS } from '../data/summitSlots'
+import { POLICY_CARDS } from '../data/policyPages'
 
 const ease = [0.16, 1, 0.3, 1]
 
@@ -154,16 +155,28 @@ function AlreadyBooked() {
   )
 }
 
-function NoteItem({ label, body }) {
+function PolicyCard({ slug, label, summary, i }) {
   return (
-    <div style={{ borderTop: HAIR, padding: '28px 0' }}>
-      <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', margin: '0 0 10px' }}>
-        {label}
-      </p>
-      <p style={{ ...BODY, fontSize: '14px', color: 'rgba(255,255,255,0.8)', margin: 0, maxWidth: '480px', lineHeight: 1.68 }}>
-        {body}
-      </p>
-    </div>
+    <FadeUp delay={i * 0.06}>
+      <div style={{ borderTop: HAIR, padding: '32px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '40px' }}>
+        <div style={{ flex: 1 }}>
+          <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', margin: '0 0 10px' }}>
+            {label}
+          </p>
+          <p style={{ ...BODY, fontSize: '14px', color: 'rgba(255,255,255,0.78)', margin: 0, maxWidth: '520px', lineHeight: 1.7 }}>
+            {summary}
+          </p>
+        </div>
+        <Link
+          to={`/policy/${slug}`}
+          style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 500, color: 'rgba(255,255,255,0.6)', textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, paddingTop: '2px', transition: 'color 0.15s ease' }}
+          onMouseEnter={e => { e.currentTarget.style.color = '#fff' }}
+          onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.6)' }}
+        >
+          Read more →
+        </Link>
+      </div>
+    </FadeUp>
   )
 }
 
@@ -292,25 +305,26 @@ export default function UpcomingSummits() {
         </div>
       </section>
 
-      {/* ── POLICY ── */}
+      {/* ── POLICY CARDS ── */}
       <section style={{ padding: '0 40px 120px' }}>
         <div className="wrap-pad" style={wrap}>
-          <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', margin: '0 0 48px' }}>
-            Policy
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '0 80px' }}>
-            {NOTES.map((item, i) => <NoteItem key={i} {...item} />)}
+          <FadeUp>
+            <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', margin: '0 0 8px' }}>
+              Policy
+            </p>
+            <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: 'rgba(255,255,255,0.55)', margin: '0 0 0', maxWidth: '480px', lineHeight: 1.6 }}>
+              Questions about cancellations, refunds, conduct, or accessibility — every policy has its own page.
+            </p>
+          </FadeUp>
+          <div style={{ marginTop: '8px' }}>
+            {POLICY_CARDS.map((card, i) => (
+              <PolicyCard key={card.slug} {...card} i={i} />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
-      <footer className="footer-row" style={{ borderTop: HAIR, padding: '28px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '18px', color: 'rgba(255,255,255,0.75)' }}>Klime</span>
-        <Link to="/legal" style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>Legal</Link>
-        <Link to="/contact" style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>Contact</Link>
-        <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.55)' }}>&copy; 2026 Klime</span>
-      </footer>
+      <Footer />
 
     </main>
   )
