@@ -246,6 +246,10 @@ function SummitCard({ summit, i }) {
                 <BookingFlow hostKey={summit.key} onClose={() => setOpen(false)} />
               )}
             </AnimatePresence>
+
+            <div style={{ marginTop: '20px' }}>
+              <AlreadyBooked />
+            </div>
           </div>
 
         </div>
@@ -281,13 +285,6 @@ export default function UpcomingSummits() {
       </section>
 
 
-      {/* ── ALREADY BOOKED ── */}
-      <section style={{ padding: '0 40px 40px' }}>
-        <div className="wrap-pad" style={wrap}>
-          <AlreadyBooked />
-        </div>
-      </section>
-
       {/* ── LISTINGS ── */}
       <section style={{ padding: '0 40px 80px' }}>
         <div className="wrap-pad" style={wrap}>
@@ -311,6 +308,7 @@ export default function UpcomingSummits() {
       <footer className="footer-row" style={{ borderTop: HAIR, padding: '28px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '18px', color: 'rgba(255,255,255,0.75)' }}>Klime</span>
         <Link to="/legal" style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>Legal</Link>
+        <Link to="/contact" style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}>Contact</Link>
         <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.55)' }}>&copy; 2026 Klime</span>
       </footer>
 
