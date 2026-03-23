@@ -26,7 +26,27 @@ const inputStyle = {
   boxSizing: 'border-box',
 }
 
-const TYPES = ['Problem', 'Feedback', 'General question', 'Data or privacy request']
+const TYPES = [
+  'Cancellation',
+  'Refund request',
+  'Accessibility',
+  'Financial access',
+  'Conduct or report',
+  'Data or privacy',
+  'General question',
+  'Feedback',
+]
+
+const TYPE_HINTS = {
+  'Cancellation':      'Tell us the session date, your email, and whether the cancellation was yours or ours.',
+  'Refund request':    'Include your booking email, the session date, and a brief reason. We respond within 2 business days.',
+  'Accessibility':     'Describe what you need and when your session is. No documentation required.',
+  'Financial access':  'Tell us a bit about where you are and why cost is a barrier. There is no formal criteria.',
+  'Conduct or report': 'Include the session date and a description of what happened. Every report is reviewed.',
+  'Data or privacy':   'Let us know if you are requesting access, a correction, or full deletion. We respond within 30 days.',
+  'General question':  'Ask us anything.',
+  'Feedback':          'Tell us what worked, what did not, or what you would change.',
+}
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', type: '', message: '' })
@@ -153,6 +173,12 @@ export default function Contact() {
                     ))}
                   </div>
                 </div>
+
+                {form.type && TYPE_HINTS[form.type] && (
+                  <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.45)', margin: '-12px 0 0', lineHeight: 1.6 }}>
+                    {TYPE_HINTS[form.type]}
+                  </p>
+                )}
 
                 <div>
                   <label style={labelStyle}>Message</label>

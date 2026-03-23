@@ -7,6 +7,7 @@ import BookingFlow from '../components/BookingFlow'
 import { getBookingByEmail } from '../lib/supabase'
 import { HOSTS } from '../data/summitSlots'
 import { POLICY_CARDS } from '../data/policyPages'
+import PolicyCard from '../components/PolicyCard'
 
 const ease = [0.16, 1, 0.3, 1]
 
@@ -155,30 +156,6 @@ function AlreadyBooked() {
   )
 }
 
-function PolicyCard({ slug, label, summary, i }) {
-  return (
-    <FadeUp delay={i * 0.06}>
-      <div style={{ borderTop: HAIR, padding: '32px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '40px' }}>
-        <div style={{ flex: 1 }}>
-          <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', margin: '0 0 10px' }}>
-            {label}
-          </p>
-          <p style={{ ...BODY, fontSize: '14px', color: 'rgba(255,255,255,0.78)', margin: 0, maxWidth: '520px', lineHeight: 1.7 }}>
-            {summary}
-          </p>
-        </div>
-        <Link
-          to={`/policy/${slug}`}
-          style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 500, color: 'rgba(255,255,255,0.6)', textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, paddingTop: '2px', transition: 'color 0.15s ease' }}
-          onMouseEnter={e => { e.currentTarget.style.color = '#fff' }}
-          onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.6)' }}
-        >
-          Read more →
-        </Link>
-      </div>
-    </FadeUp>
-  )
-}
 
 function SummitCard({ summit, i }) {
   const [open, setOpen] = useState(false)

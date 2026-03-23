@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import FadeUp from '../components/FadeUp'
 import { submitAscendingInterest } from '../lib/supabase'
+import { POLICY_CARDS } from '../data/policyPages'
+import PolicyCard from '../components/PolicyCard'
 
 const ease = [0.16, 1, 0.3, 1]
 const HL   = { fontFamily: '"DM Serif Display",serif', color: '#fff', fontWeight: 400 }
@@ -159,6 +161,25 @@ export default function Ascending() {
               </p>
             </div>
           </FadeUp>
+        </div>
+      </section>
+
+      {/* ── POLICY CARDS ── */}
+      <section style={{ padding: '0 40px 120px' }}>
+        <div className="wrap-pad" style={wrap}>
+          <FadeUp>
+            <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', margin: '0 0 8px' }}>
+              Policy
+            </p>
+            <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: 'rgba(255,255,255,0.55)', margin: '0 0 0', maxWidth: '480px', lineHeight: 1.6 }}>
+              Questions about cancellations, refunds, conduct, or accessibility — every policy has its own page.
+            </p>
+          </FadeUp>
+          <div style={{ marginTop: '8px' }}>
+            {POLICY_CARDS.map((card, i) => (
+              <PolicyCard key={card.slug} {...card} i={i} />
+            ))}
+          </div>
         </div>
       </section>
 
