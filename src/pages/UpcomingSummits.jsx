@@ -328,6 +328,27 @@ export default function UpcomingSummits() {
         </div>
       </section>
 
+      {/* ── MANIFESTO ── */}
+      <FadeUp>
+        <section style={{ padding: '80px 40px 120px', borderTop: HAIR }}>
+          <div className="wrap-pad" style={wrap}>
+            <p style={{
+              fontFamily: '"DM Serif Display",serif',
+              fontSize: 'clamp(28px,4.5vw,60px)',
+              lineHeight: 1.18,
+              letterSpacing: '-0.5px',
+              color: '#fff',
+              margin: '0 auto',
+              maxWidth: '820px',
+              fontWeight: 400,
+              textShadow: '0 2px 24px rgba(0,0,0,0.28)',
+            }}>
+              You're not behind because you're not smart enough. You're behind because no one ever put you in the room.
+            </p>
+          </div>
+        </section>
+      </FadeUp>
+
       {/* ── FOOTER ── */}
       <footer className="footer-row" style={{ borderTop: HAIR, padding: '28px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <span style={{ fontFamily: '"DM Serif Display",serif', fontSize: '18px', color: 'rgba(255,255,255,0.75)' }}>Klime</span>
