@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import FadeUp from '../components/FadeUp'
 import BookingFlow from '../components/BookingFlow'
-import NOTES from '../data/summitsNotes'
+import { notes as NOTES, conduct as CONDUCT } from '../data/summitsNotes'
 import { getBookingByEmail } from '../lib/supabase'
 import { HOSTS } from '../data/summitSlots'
 
@@ -294,11 +294,11 @@ export default function UpcomingSummits() {
         </div>
       </section>
 
-      {/* ── NOTES ── */}
-      <section style={{ padding: '0 40px 120px' }}>
+      {/* ── SESSION POLICY ── */}
+      <section style={{ padding: '0 40px 80px' }}>
         <div className="wrap-pad" style={wrap}>
           <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', margin: '0 0 48px' }}>
-            Good to know
+            Session policy
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '0 80px' }}>
             {NOTES.map((item, i) => <NoteItem key={i} {...item} />)}
@@ -306,26 +306,17 @@ export default function UpcomingSummits() {
         </div>
       </section>
 
-      {/* ── MANIFESTO ── */}
-      <FadeUp>
-        <section style={{ padding: '80px 40px 120px', borderTop: HAIR }}>
-          <div className="wrap-pad" style={wrap}>
-            <p style={{
-              fontFamily: '"DM Serif Display",serif',
-              fontSize: 'clamp(28px,4.5vw,60px)',
-              lineHeight: 1.18,
-              letterSpacing: '-0.5px',
-              color: '#fff',
-              margin: '0 auto',
-              maxWidth: '820px',
-              fontWeight: 400,
-              textShadow: '0 2px 24px rgba(0,0,0,0.28)',
-            }}>
-              You're not behind because you're not smart enough. You're behind because no one ever put you in the room.
-            </p>
+      {/* ── CONDUCT ── */}
+      <section style={{ padding: '0 40px 120px', borderTop: HAIR }}>
+        <div className="wrap-pad" style={{ ...wrap, paddingTop: '64px' }}>
+          <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', margin: '0 0 48px' }}>
+            Conduct & expectations
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '0 80px' }}>
+            {CONDUCT.map((item, i) => <NoteItem key={i} {...item} />)}
           </div>
-        </section>
-      </FadeUp>
+        </div>
+      </section>
 
       {/* ── FOOTER ── */}
       <footer className="footer-row" style={{ borderTop: HAIR, padding: '28px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>

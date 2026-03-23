@@ -1,28 +1,45 @@
-const notes = [
+export const notes = [
   {
     label: 'Group size',
-    body: 'Every talk is capped at ten people. That limit is not a formality — it is the whole point.',
+    body: 'Every Summit is capped at ten attendees. Spots are held on a first-come basis and are not transferable.',
   },
   {
-    label: 'Who you will meet',
-    body: 'Guides are actively working in their fields. Not retired, not coaching as a side hustle. Klime vets every one of them before they ever host a session.',
+    label: 'Duration',
+    body: 'Summits run for approximately sixty minutes. The Guide determines when the session closes — there is no hard cutoff.',
   },
   {
-    label: 'No recording, ever',
-    body: 'Nothing on Klime is recorded. Any talk, any session. If you want what was said, you had to be there.',
+    label: 'Recording',
+    body: 'No session on Klime is recorded under any circumstances. Attendance is the only way to access what is said.',
   },
   {
-    label: 'What it costs',
-    body: 'All talks are free. Ascending — a private forty-minute session built around your situation — is $40. That is all.',
+    label: 'Cancellation',
+    body: 'If a Summit is cancelled by the Guide or Klime, registered attendees will be notified by email and offered priority access to a rescheduled date.',
   },
   {
-    label: 'Preparation',
-    body: 'None required. Come with questions if you have them, but these are conversations, not interviews.',
+    label: 'No-shows',
+    body: 'If you cannot attend, no action is needed. Your spot will be released automatically at the scheduled start time.',
   },
   {
-    label: 'Your join link',
-    body: 'You will receive a link by email before the session starts. If anything goes wrong, reach us at hello@klime.co.',
+    label: 'Contact',
+    body: 'For questions about a specific session, reach us at hello@klime.co. We respond to every message.',
   },
 ]
 
-export default notes
+export const conduct = [
+  {
+    label: 'Respect the Guide\'s time',
+    body: 'Come prepared. These sessions are not open-ended consultations — they are structured conversations with a working professional.',
+  },
+  {
+    label: 'No solicitation',
+    body: 'Attendees may not solicit Guides for free work, referrals, or ongoing advisory relationships outside of Klime.',
+  },
+  {
+    label: 'Confidentiality',
+    body: 'What is shared in a session is shared in confidence. Do not reproduce, publish, or distribute anything said by a Guide without their written permission.',
+  },
+  {
+    label: 'Removal',
+    body: 'Klime reserves the right to remove any attendee from a session and revoke access to the platform for conduct that disrupts the experience of others.',
+  },
+]
