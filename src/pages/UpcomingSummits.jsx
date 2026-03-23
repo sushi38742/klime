@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import FadeUp from '../components/FadeUp'
 import BookingFlow from '../components/BookingFlow'
-import FAQS from '../data/summitsFaq'
+import NOTES from '../data/summitsNotes'
 import { getBookingByEmail } from '../lib/supabase'
 import { HOSTS } from '../data/summitSlots'
 
@@ -153,37 +153,15 @@ function AlreadyBooked() {
   )
 }
 
-function FAQRow({ q, a }) {
-  const [open, setOpen] = useState(false)
+function NoteItem({ label, body }) {
   return (
-    <div style={{ borderBottom: HAIR }}>
-      <button
-        onClick={() => setOpen(!open)}
-        style={{ width: '100%', background: 'none', border: 'none', padding: '20px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', textAlign: 'left', gap: '20px' }}
-      >
-        <span style={{ ...HL, fontSize: 'clamp(14px,1.6vw,17px)', textShadow: 'none' }}>{q}</span>
-        <motion.svg
-          animate={{ rotate: open ? 180 : 0 }}
-          transition={{ duration: 0.22, ease }}
-          width="15" height="15" viewBox="0 0 16 16" fill="none"
-          style={{ flexShrink: 0 }}
-        >
-          <path d="M3 6l5 5 5-5" stroke="rgba(255,255,255,0.7)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </motion.svg>
-      </button>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.26, ease }}
-            style={{ overflow: 'hidden' }}
-          >
-            <p style={{ ...BODY, fontSize: '14px', margin: '0 0 20px', maxWidth: '680px', color: 'rgba(255,255,255,0.82)' }}>{a}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+    <div style={{ borderTop: HAIR, padding: '28px 0' }}>
+      <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', margin: '0 0 10px' }}>
+        {label}
+      </p>
+      <p style={{ ...BODY, fontSize: '14px', color: 'rgba(255,255,255,0.8)', margin: 0, maxWidth: '480px', lineHeight: 1.68 }}>
+        {body}
+      </p>
     </div>
   )
 }
@@ -316,14 +294,14 @@ export default function UpcomingSummits() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
+      {/* ── NOTES ── */}
       <section style={{ padding: '0 40px 120px' }}>
         <div className="wrap-pad" style={wrap}>
-          <h2 style={{ ...HL, fontSize: 'clamp(22px,2.8vw,36px)', margin: '0 0 36px', letterSpacing: '-0.5px', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}>
-            Questions about the sessions.
-          </h2>
-          <div style={{ borderTop: HAIR }}>
-            {FAQS.map((item, i) => <FAQRow key={i} {...item} />)}
+          <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', margin: '0 0 48px' }}>
+            Good to know
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '0 80px' }}>
+            {NOTES.map((item, i) => <NoteItem key={i} {...item} />)}
           </div>
         </div>
       </section>
