@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import FadeUp from '../components/FadeUp'
 import BookingFlow from '../components/BookingFlow'
-import { notes as NOTES, conduct as CONDUCT } from '../data/summitsNotes'
+import NOTES from '../data/summitsNotes'
 import { getBookingByEmail } from '../lib/supabase'
 import { HOSTS } from '../data/summitSlots'
 
@@ -294,26 +294,14 @@ export default function UpcomingSummits() {
         </div>
       </section>
 
-      {/* ── SESSION POLICY ── */}
-      <section style={{ padding: '0 40px 80px' }}>
+      {/* ── POLICY ── */}
+      <section style={{ padding: '0 40px 120px' }}>
         <div className="wrap-pad" style={wrap}>
           <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', margin: '0 0 48px' }}>
-            Session policy
+            Policy
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '0 80px' }}>
             {NOTES.map((item, i) => <NoteItem key={i} {...item} />)}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CONDUCT ── */}
-      <section style={{ padding: '0 40px 120px', borderTop: HAIR }}>
-        <div className="wrap-pad" style={{ ...wrap, paddingTop: '64px' }}>
-          <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', margin: '0 0 48px' }}>
-            Conduct & expectations
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '0 80px' }}>
-            {CONDUCT.map((item, i) => <NoteItem key={i} {...item} />)}
           </div>
         </div>
       </section>
