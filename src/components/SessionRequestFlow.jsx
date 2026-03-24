@@ -235,7 +235,7 @@ export default function SessionRequestFlow({ guide, onClose }) {
               <textarea
                 value={notes}
                 onChange={e => setNotes(e.target.value)}
-                placeholder="e.g. "I have a calc 2 final in two weeks and I'm stuck on series convergence""
+                placeholder={'e.g. "I have a calc 2 final in two weeks and I\'m stuck on series convergence"'}
                 rows={3}
                 style={{ ...S.input, resize: 'vertical', lineHeight: 1.6 }}
               />
