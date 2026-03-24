@@ -65,33 +65,6 @@ export async function submitSessionRequest({ guide, topics, notes, windows, name
   }
 }
 
-export async function getSessionRequests() {
-  if (!supabase) return []
-  const { data, error } = await supabase
-    .from('guide_session_requests')
-    .select('*')
-    .order('created_at', { ascending: false })
-  if (error) return []
-  return data || []
-}
-
-export async function updateSessionStatus(id, status) {
-  if (!supabase) return
-  await supabase
-    .from('guide_session_requests')
-    .update({ status })
-    .eq('id', id)
-}
-
-export async function getSummitBookings() {
-  if (!supabase) return []
-  const { data, error } = await supabase
-    .from('bookings')
-    .select('*')
-    .order('date', { ascending: true })
-  if (error) return []
-  return data || []
-}
 
 export async function createBooking({ host, date, slot, name, email }) {
   if (!supabase) throw new Error('Booking is not configured yet. Check back soon.')

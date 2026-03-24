@@ -210,7 +210,7 @@ export default function SessionRequestFlow({ guide, onClose }) {
                 What do you want to work on?
               </h2>
               <p style={{ ...S.hint, margin: '0 0 20px' }}>
-                Select everything that applies. Sessions are built specifically around your goals and gaps — this helps Jeff prepare.
+                Select everything that applies. Sessions are built specifically around your goals and gaps — this helps {guide.name} prepare.
               </p>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '20px' }}>
@@ -239,7 +239,7 @@ export default function SessionRequestFlow({ guide, onClose }) {
                 rows={3}
                 style={{ ...S.input, resize: 'vertical', lineHeight: 1.6 }}
               />
-              <p style={{ ...S.hint, marginBottom: '20px' }}>The more context, the better prepared Jeff will be.</p>
+              <p style={{ ...S.hint, marginBottom: '20px' }}>The more context, the better prepared {guide.name} will be.</p>
 
               <button
                 onClick={() => setStep(2)}
@@ -264,7 +264,7 @@ export default function SessionRequestFlow({ guide, onClose }) {
                 Mark your open windows.
               </h2>
               <p style={{ ...S.hint, margin: '0 0 20px' }}>
-                Tap at least 3. Jeff picks the best overlap and emails you a confirmed time — usually within 24 hours.
+                Tap at least 3. {guide.name} picks the best overlap and emails you a confirmed time — usually within 24 hours.
               </p>
 
               {/* grid: rows = buckets, cols = days */}
@@ -351,7 +351,7 @@ export default function SessionRequestFlow({ guide, onClose }) {
                 Almost there.
               </h2>
               <p style={{ ...S.hint, margin: '0 0 22px' }}>
-                Jeff will email you at the address below with a confirmed time, a Zoom link, and anything he wants you to bring to the session.
+                {guide.name} will email you at the address below with a confirmed time, a Zoom link, and anything to bring to the session.
               </p>
 
               {err && <div style={S.errBox}>{err}</div>}
@@ -425,7 +425,7 @@ export default function SessionRequestFlow({ guide, onClose }) {
                   Request sent.
                 </h2>
                 <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, margin: '0 0 8px', maxWidth: '340px', marginLeft: 'auto', marginRight: 'auto' }}>
-                  Jeff reviews requests daily. He'll email <strong style={{ color: 'rgba(255,255,255,0.75)' }}>{email}</strong> with a confirmed time, Zoom link, and anything to bring.
+                  {guide.name} reviews requests daily. You'll receive a confirmation at <strong style={{ color: 'rgba(255,255,255,0.75)' }}>{email}</strong> with a confirmed time, Zoom link, and anything to bring.
                 </p>
                 <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.28)', margin: '0 0 28px' }}>
                   Usually within 24 hours. Check your spam folder if you don't hear back.
