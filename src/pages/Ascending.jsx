@@ -13,12 +13,12 @@ const HAIR = '1px solid rgba(255,255,255,0.18)'
 const wrap = { maxWidth: '1100px', margin: '0 auto', padding: '0 40px' }
 
 const SKILLS = [
-  'How to approach and break down complex math problems at any level',
-  'What it actually takes to start an education business with no external funding',
-  'How to price, structure, and sell tutoring services',
-  'Building and managing a team of instructors from scratch',
-  'Growing a client base from your very first student',
-  'Developing your own curriculum and teaching methodology',
+  'A structured method for breaking down math problems — one you can apply on your own after the session',
+  'The exact steps Jeff used to go from zero clients to one of the tri-state area\'s most recognized tutoring operations',
+  'How to price and package your services so students say yes without hesitation',
+  'How to hire, train, and hold instructors accountable without micromanaging',
+  'A client acquisition approach that works before you have a reputation to lean on',
+  'How to build curriculum that makes students better — not just temporarily prepared',
 ]
 
 export default function Ascending() {
@@ -42,10 +42,10 @@ export default function Ascending() {
               </span>
             </div>
             <p style={{ ...BODY, fontSize: 'clamp(16px,1.8vw,20px)', maxWidth: '580px', margin: '0 0 12px', color: 'rgba(255,255,255,0.92)', textShadow: '0 1px 8px rgba(0,0,0,0.18)' }}>
-              One Guide. One student. Forty minutes built for no one else.
+              Forty minutes of real instruction — not advice, not a pep talk. Skills you can use the same day.
             </p>
             <p style={{ ...BODY, maxWidth: '520px', margin: 0, color: 'rgba(255,255,255,0.72)' }}>
-              Pick a Guide. They build your curriculum from scratch before you ever meet — around your goals, your gaps, your situation. Nothing recycled.
+              Your Guide builds the curriculum before you ever meet — specific to your level, your gaps, and what you are trying to do. Then they connect with you directly so the conversation doesn't have to end when the session does.
             </p>
           </motion.div>
         </div>
@@ -103,16 +103,33 @@ export default function Ascending() {
                 <div>
                   {/* Skills */}
                   <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', margin: '0 0 16px' }}>
-                    What you will learn
+                    What you leave with
                   </p>
                   <ul style={{ margin: '0 0 36px', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '14px' }}>
                     {SKILLS.map((s, i) => (
                       <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
-                        <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'rgba(255,255,255,0.35)', flexShrink: 0, marginTop: '8px' }} />
+                        <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'rgba(43,91,255,0.7)', flexShrink: 0, marginTop: '8px' }} />
                         <span style={{ ...MUTED, fontSize: '14px', color: 'rgba(255,255,255,0.78)', lineHeight: 1.65 }}>{s}</span>
                       </li>
                     ))}
                   </ul>
+
+                  {/* Included connection callout */}
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: '6px', padding: '16px 20px', marginBottom: '32px' }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0, marginTop: '2px', opacity: 0.7 }}>
+                      <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                      <rect x="2" y="9" width="4" height="12" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="4" cy="4" r="2" stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <div>
+                      <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.85)', margin: '0 0 4px' }}>
+                        Included: a real connection
+                      </p>
+                      <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.5)', margin: 0, lineHeight: 1.6 }}>
+                        Every session ends with a direct LinkedIn connection to your Guide — not a follow request that goes nowhere, but an open line you can actually use.
+                      </p>
+                    </div>
+                  </div>
 
                   {/* CTA */}
                   <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
@@ -125,7 +142,7 @@ export default function Ascending() {
                       Book a session — $40
                     </Link>
                     <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.35)' }}>
-                      Curriculum is built fresh for you.
+                      Curriculum built fresh. Connection included.
                     </span>
                   </div>
                 </div>
