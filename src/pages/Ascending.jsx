@@ -13,11 +13,11 @@ const HAIR = '1px solid rgba(255,255,255,0.18)'
 const wrap = { maxWidth: '1100px', margin: '0 auto', padding: '0 40px' }
 
 const SKILLS = [
-  'How to actually understand math — not just memorize steps and hope they show up on the test',
+  'How to actually understand math, not just memorize steps and hope they show up on the test',
   'A method for working through problems when you\'re stuck, so you\'re not dependent on someone else to unblock you',
-  'What it looks like to build something real — from someone who started with nothing in high school age territory and made it work',
+  'What it looks like to build something real, from someone who started with nothing and made it work',
   'How to think about your future without it feeling abstract or out of reach',
-  'The difference between studying hard and studying right — and how to make that switch',
+  'The difference between studying hard and studying right, and how to make that switch',
   'How to walk into a high-stakes exam, an interview, or a conversation with someone important and actually feel ready',
 ]
 
@@ -40,7 +40,7 @@ export default function Ascending() {
               Book a session.
             </h1>
             <p style={{ ...BODY, maxWidth: '480px', margin: 0, color: 'rgba(255,255,255,0.65)', fontSize: '15px' }}>
-              Pick a Guide. Every session is built fresh for you — and ends with a direct connection to the person who ran it.
+              Pick a Guide. Every session is built fresh for you and ends with a direct connection to the person who ran it.
             </p>
           </motion.div>
         </div>
@@ -55,7 +55,7 @@ export default function Ascending() {
 
                 {/* Left col */}
                 <div>
-                  {/* Tags — max 2 */}
+                  {/* Tags */}
                   <div style={{ display: 'flex', gap: '8px', marginBottom: '20px' }}>
                     {['Mathematics', 'Education Business'].map(t => (
                       <span key={t} style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, color: 'rgba(255,255,255,0.6)', background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.16)', borderRadius: '100px', padding: '5px 12px', letterSpacing: '0.02em' }}>
@@ -94,7 +94,7 @@ export default function Ascending() {
                         Background
                       </p>
                       <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.6)', margin: 0, lineHeight: 1.75 }}>
-                        Founded E2 Services in Brooklyn in 2015 with no outside funding — no investors, no safety net. Built it into one of the tri-state area's most respected academic support organizations, working with students at every level from middle school through grad programs. He knows what it's like to be the student and what it takes to build something real.
+                        Founded E2 Services in Brooklyn in 2015 with no outside funding. No investors, no safety net. Built it into one of the tri-state area's most respected academic support organizations, working with students from middle school through grad programs. He knows what it's like to be the student and what it takes to build something real.
                       </p>
                     </div>
                     <div>
@@ -135,7 +135,7 @@ export default function Ascending() {
                         Included: a direct connection to your Guide
                       </p>
                       <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.5)', margin: 0, lineHeight: 1.6 }}>
-                        Every session ends with a LinkedIn connection to Jeff — a real one, not a form email. Most students your age don't have a line to someone who's built what he's built. Now you do.
+                        Every session ends with a LinkedIn connection to Jeff. A real one, not a form email. Most students your age don't have a line to someone who has built what he has built. Now you do.
                       </p>
                     </div>
                   </div>
@@ -148,7 +148,7 @@ export default function Ascending() {
                       onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(43,91,255,0.54)' }}
                       onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 4px 20px rgba(43,91,255,0.38)' }}
                     >
-                      Book a session — $40
+                      Book a session $40
                     </Link>
                     <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.35)' }}>
                       Curriculum built fresh. Connection included.
@@ -170,7 +170,7 @@ export default function Ascending() {
               Policy
             </p>
             <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '14px', color: 'rgba(255,255,255,0.55)', margin: '0 0 0', maxWidth: '480px', lineHeight: 1.6 }}>
-              Questions about cancellations, refunds, conduct, or accessibility — every policy has its own page.
+              Questions about cancellations, refunds, conduct, or accessibility. Every policy has its own page.
             </p>
           </FadeUp>
           <div style={{ marginTop: '8px' }}>
