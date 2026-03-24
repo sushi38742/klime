@@ -94,9 +94,39 @@ export default function Ascending() {
                   <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 500, color: 'rgba(255,255,255,0.72)', margin: '0 0 4px' }}>
                     Jeff Stern
                   </p>
-                  <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.4)', margin: 0 }}>
+                  <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.4)', margin: '0 0 32px' }}>
                     Founder &amp; Executive Director, E2 Services
                   </p>
+
+                  {/* Qualifications */}
+                  <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '28px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    <div>
+                      <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.13em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', margin: '0 0 10px' }}>
+                        Education
+                      </p>
+                      <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.6)', margin: 0, lineHeight: 1.75 }}>
+                        M.S. Mathematics<br />
+                        M.S. Specialized Engineering<br />
+                        M.S. Education
+                      </p>
+                    </div>
+                    <div>
+                      <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.13em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', margin: '0 0 10px' }}>
+                        Background
+                      </p>
+                      <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.6)', margin: 0, lineHeight: 1.75 }}>
+                        Founded E2 Services in Brooklyn in 2015 with no outside funding. Built it into one of the tri-state area's most respected academic support organizations — serving students from elementary school through graduate programs.
+                      </p>
+                    </div>
+                    <div>
+                      <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.13em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', margin: '0 0 10px' }}>
+                        Known for
+                      </p>
+                      <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.6)', margin: 0, lineHeight: 1.75 }}>
+                        Proprietary teaching methodologies and an award-winning mentorship program built entirely in-house.
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Right col */}
