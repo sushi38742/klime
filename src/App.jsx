@@ -11,6 +11,7 @@ import Ascending from './pages/Ascending'
 import Legal from './pages/Legal'
 import Contact from './pages/Contact'
 import PolicyDetail from './pages/PolicyDetail'
+import GuidesPortal from './pages/GuidesPortal'
 
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
 
@@ -47,6 +48,7 @@ export default function App() {
           <Route path="/legal"             element={<Legal />} />
           <Route path="/contact"           element={<Contact />} />
           <Route path="/policy/:slug"      element={<PolicyDetail />} />
+          <Route path="/portal"            element={<GuidesPortal />} />
         </Routes>
       </div>
     </>
