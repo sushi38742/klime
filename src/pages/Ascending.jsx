@@ -13,12 +13,12 @@ const HAIR = '1px solid rgba(255,255,255,0.18)'
 const wrap = { maxWidth: '1100px', margin: '0 auto', padding: '0 40px' }
 
 const SKILLS = [
-  'A structured method for breaking down math problems — one you can apply on your own after the session',
-  'The exact steps Jeff used to go from zero clients to one of the tri-state area\'s most recognized tutoring operations',
-  'How to price and package your services so students say yes without hesitation',
-  'How to hire, train, and hold instructors accountable without micromanaging',
-  'A client acquisition approach that works before you have a reputation to lean on',
-  'How to build curriculum that makes students better — not just temporarily prepared',
+  'How to actually understand math — not just memorize steps and hope they show up on the test',
+  'A method for working through problems when you\'re stuck, so you\'re not dependent on someone else to unblock you',
+  'What it looks like to build something real — from someone who started with nothing in high school age territory and made it work',
+  'How to think about your future without it feeling abstract or out of reach',
+  'The difference between studying hard and studying right — and how to make that switch',
+  'How to walk into a high-stakes exam, an interview, or a conversation with someone important and actually feel ready',
 ]
 
 export default function Ascending() {
@@ -42,10 +42,10 @@ export default function Ascending() {
               </span>
             </div>
             <p style={{ ...BODY, fontSize: 'clamp(16px,1.8vw,20px)', maxWidth: '580px', margin: '0 0 12px', color: 'rgba(255,255,255,0.92)', textShadow: '0 1px 8px rgba(0,0,0,0.18)' }}>
-              Forty minutes of real instruction — not advice, not a pep talk. Skills you can use the same day.
+              Forty minutes with someone who actually knows what they're doing — built around where you are right now.
             </p>
             <p style={{ ...BODY, maxWidth: '520px', margin: 0, color: 'rgba(255,255,255,0.72)' }}>
-              Your Guide builds the curriculum before you ever meet — specific to your level, your gaps, and what you are trying to do. Then they connect with you directly so the conversation doesn't have to end when the session does.
+              Your Guide studies your situation before you ever meet and builds the session around it. No generic slides. No recycled advice. And when it's over, you have a real connection to someone in the field — not just a memory of a call.
             </p>
           </motion.div>
         </div>
@@ -115,7 +115,7 @@ export default function Ascending() {
                         Background
                       </p>
                       <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.6)', margin: 0, lineHeight: 1.75 }}>
-                        Founded E2 Services in Brooklyn in 2015 with no outside funding. Built it into one of the tri-state area's most respected academic support organizations — serving students from elementary school through graduate programs.
+                        Founded E2 Services in Brooklyn in 2015 with no outside funding — no investors, no safety net. Built it into one of the tri-state area's most respected academic support organizations, working with students at every level from middle school through grad programs. He knows what it's like to be the student and what it takes to build something real.
                       </p>
                     </div>
                     <div>
@@ -153,10 +153,10 @@ export default function Ascending() {
                     </svg>
                     <div>
                       <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.85)', margin: '0 0 4px' }}>
-                        Included: a real connection
+                        Included: a direct connection to your Guide
                       </p>
                       <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.5)', margin: 0, lineHeight: 1.6 }}>
-                        Every session ends with a direct LinkedIn connection to your Guide — not a follow request that goes nowhere, but an open line you can actually use.
+                        Every session ends with a LinkedIn connection to Jeff — a real one, not a form email. Most students your age don't have a line to someone who's built what he's built. Now you do.
                       </p>
                     </div>
                   </div>
