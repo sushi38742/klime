@@ -25,45 +25,24 @@ export default function Ascending() {
   return (
     <main>
 
-      {/* ── HERO ── */}
-      <section style={{ minHeight: 'calc(55vh - 64px)', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '100px 40px 80px' }}>
+      {/* ── GUIDE DIRECTORY HEADER ── */}
+      <section style={{ padding: '100px 40px 0' }}>
         <div className="wrap-pad" style={wrap}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, ease }}
           >
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '28px' }}>
-              <span style={{ ...HL, fontSize: 'clamp(42px,6vw,80px)', lineHeight: 1, letterSpacing: '-2px', textShadow: '0 2px 24px rgba(0,0,0,0.28)' }}>
-                Ascending
-              </span>
-              <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: '#2B5BFF', border: '1.5px solid rgba(43,91,255,0.5)', borderRadius: '3px', padding: '6px 14px', background: 'rgba(43,91,255,0.12)', letterSpacing: '0.04em', alignSelf: 'flex-end', marginBottom: '12px' }}>
-                $40 / session
-              </span>
-            </div>
-            <p style={{ ...BODY, fontSize: 'clamp(16px,1.8vw,20px)', maxWidth: '580px', margin: '0 0 12px', color: 'rgba(255,255,255,0.92)', textShadow: '0 1px 8px rgba(0,0,0,0.18)' }}>
-              Forty minutes with someone who actually knows what they're doing — built around where you are right now.
+            <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', margin: '0 0 14px' }}>
+              Guide directory
             </p>
-            <p style={{ ...BODY, maxWidth: '520px', margin: 0, color: 'rgba(255,255,255,0.72)' }}>
-              Your Guide studies your situation before you ever meet and builds the session around it. No generic slides. No recycled advice. And when it's over, you have a real connection to someone in the field — not just a memory of a call.
+            <h1 style={{ ...HL, fontSize: 'clamp(32px,5vw,64px)', lineHeight: 1.05, letterSpacing: '-1.5px', margin: '0 0 20px', textShadow: '0 2px 24px rgba(0,0,0,0.28)' }}>
+              Book a session.
+            </h1>
+            <p style={{ ...BODY, maxWidth: '480px', margin: 0, color: 'rgba(255,255,255,0.65)', fontSize: '15px' }}>
+              Pick a Guide. Every session is built fresh for you — and ends with a direct connection to the person who ran it.
             </p>
           </motion.div>
-        </div>
-      </section>
-
-      {/* ── GUIDES HEADER ── */}
-      <section style={{ padding: '0 40px 0' }}>
-        <div className="wrap-pad" style={wrap}>
-          <FadeUp>
-            <div style={{ borderTop: HAIR, paddingTop: '52px', paddingBottom: '40px' }}>
-              <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', margin: '0 0 10px' }}>
-                Available now
-              </p>
-              <h2 style={{ ...HL, fontSize: 'clamp(24px,3vw,38px)', margin: 0, letterSpacing: '-0.5px', lineHeight: 1.1, textShadow: '0 2px 16px rgba(0,0,0,0.22)' }}>
-                Guides you can book today.
-              </h2>
-            </div>
-          </FadeUp>
         </div>
       </section>
 
