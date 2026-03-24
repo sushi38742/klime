@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import FadeUp from '../components/FadeUp'
-import { sendEmail, TEMPLATE } from '../lib/emailjs'
+import { sendEmail } from '../lib/emailjs'
 
 const ease = [0.16, 1, 0.3, 1]
 
@@ -34,9 +34,11 @@ export default function BecomeGuide() {
   const submit = e => {
     e.preventDefault()
     if (form.name && form.email) {
-      sendEmail(TEMPLATE.GUIDE_APPLY, {
-        to_name:  form.name,
-        to_email: form.email,
+      sendEmail({
+        subject:  `New Guide Application — ${form.name}`,
+        reply_to: form.email,
+        name:     form.name,
+        email:    form.email,
         field:    form.field,
         session:  form.session || 'Not specified',
         linkedin: form.linkedin || 'Not provided',

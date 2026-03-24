@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { submitSessionRequest } from '../lib/supabase'
-import { sendEmail, TEMPLATE } from '../lib/emailjs'
+import { sendEmail } from '../lib/emailjs'
 
 const ease = [0.16, 1, 0.3, 1]
 
@@ -160,7 +160,9 @@ export default function SessionRequestFlow({ guide, onClose }) {
         name:    name.trim(),
         email:   email.trim(),
       })
-      await sendEmail(TEMPLATE.SESSION_REQUEST, {
+      await sendEmail({
+        subject:       `New Session Request — ${name.trim()} wants to work with ${guide.name}`,
+        reply_to:      email.trim(),
         guide_name:    guide.name,
         student_name:  name.trim(),
         student_email: email.trim(),

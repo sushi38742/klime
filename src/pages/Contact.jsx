@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import FadeUp from '../components/FadeUp'
-import { sendEmail, TEMPLATE } from '../lib/emailjs'
+import { sendEmail } from '../lib/emailjs'
 
 const ease = [0.16, 1, 0.3, 1]
 
@@ -59,11 +59,12 @@ export default function Contact() {
     e.preventDefault()
     if (!form.name || !form.email || !form.type || !form.message) return
     setSending(true)
-    await sendEmail(TEMPLATE.CONTACT, {
-      from_name:    form.name,
-      from_email:   form.email,
-      type:         form.type,
-      message:      form.message,
+    await sendEmail({
+      subject:    `New Contact Message — ${form.type}`,
+      reply_to:   form.email,
+      from_name:  form.name,
+      type:       form.type,
+      message:    form.message,
     }).catch(() => {})
     setSending(false)
     setDone(true)
