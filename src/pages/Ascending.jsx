@@ -22,12 +22,12 @@ const FEATURES = [
 ]
 
 const E2_TOPICS = [
-  'SAT & ACT Preparation',
-  'Mathematics (Elementary → Graduate)',
-  'Sciences',
-  'Teacher Certification Exams',
-  'College Application Strategy',
-  'Academic Mentorship',
+  'Mathematics',
+  'Starting a small business',
+  'Building a tutoring organization',
+  'Education entrepreneurship',
+  'Growing a service-based business',
+  'Running a team',
 ]
 
 export default function Ascending() {
@@ -90,7 +90,7 @@ export default function Ascending() {
         </div>
       </section>
 
-      {/* ── E2 SERVICES GUIDE CARD ── */}
+      {/* ── JEFF STERN GUIDE CARD ── */}
       <section style={{ padding: '0 40px 100px' }}>
         <div className="wrap-pad" style={wrap}>
           <FadeUp>
@@ -100,31 +100,25 @@ export default function Ascending() {
                 {/* Left col */}
                 <div>
                   <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', margin: '0 0 16px' }}>
-                    Education · Tri-State Area
+                    Mathematics &amp; Education Business · Brooklyn, NY
                   </p>
-                  <h3 style={{ ...HL, fontSize: 'clamp(26px,3vw,40px)', lineHeight: 1.1, letterSpacing: '-0.7px', margin: '0 0 20px', textShadow: '0 2px 16px rgba(0,0,0,0.28)' }}>
-                    E2 Services
+                  <h3 style={{ ...HL, fontSize: 'clamp(26px,3vw,40px)', lineHeight: 1.1, letterSpacing: '-0.7px', margin: '0 0 6px', textShadow: '0 2px 16px rgba(0,0,0,0.28)' }}>
+                    Jeff Stern
                   </h3>
-                  <div style={{ marginBottom: '28px' }}>
-                    <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '11px', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)', margin: '0 0 6px' }}>
-                      Your Guide
-                    </p>
-                    <p style={{ ...BODY, fontSize: '14px', color: 'rgba(255,255,255,0.82)', margin: '0 0 4px' }}>
-                      Mr. Stern, Executive Director
-                    </p>
-                    <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.45)', margin: 0, lineHeight: 1.6 }}>
-                      M.S. Mathematics &nbsp;&middot;&nbsp; M.S. Specialized Engineering &nbsp;&middot;&nbsp; M.S. Education
-                    </p>
-                  </div>
-                  <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.14)', borderRadius: '4px', padding: '8px 16px' }}>
-                    <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.55)', letterSpacing: '0.04em' }}>Founded 2015 &nbsp;&middot;&nbsp; Brooklyn, NY</span>
-                  </div>
+                  <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', color: 'rgba(255,255,255,0.5)', margin: '0 0 24px' }}>
+                    Founder &amp; Executive Director, E2 Services
+                  </p>
+                  <p style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.4)', margin: 0, lineHeight: 1.7 }}>
+                    M.S. Mathematics<br />
+                    M.S. Specialized Engineering<br />
+                    M.S. Education
+                  </p>
                 </div>
 
                 {/* Right col */}
                 <div>
                   <p style={{ ...BODY, fontSize: '15px', margin: '0 0 28px', color: 'rgba(255,255,255,0.88)', lineHeight: 1.75 }}>
-                    E2 Services has spent a decade building one of the tri-state area's most respected academic support organizations. Under Mr. Stern — who holds three master's degrees across mathematics, engineering, and education — they have developed proprietary teaching methodologies that consistently move the needle for students from elementary school through graduate programs. Their award-winning mentorship model is built around peer-to-peer learning and individualized instruction.
+                    In 2015, Jeff Stern started E2 Services out of Brooklyn with a clear mission and no roadmap. A decade later it is one of the tri-state area's most respected academic support organizations, with proprietary teaching methodologies, an award-winning mentorship program, and a track record across every level from elementary school through graduate programs. A session with Jeff covers two things he knows from the inside: mathematics, and what it actually takes to build and run a small business in education.
                   </p>
 
                   {/* Topic pills */}
