@@ -52,6 +52,19 @@ export async function getBookingByEmail(email) {
   return data
 }
 
+export async function submitSessionRequest({ guide, topics, notes, windows, name, email }) {
+  if (!supabase) throw new Error('Session requests are not configured yet. Check back soon.')
+
+  const { error } = await supabase
+    .from('guide_session_requests')
+    .insert({ guide, topics, notes, windows, name, email })
+
+  if (error) {
+    if (error.code === '23505') throw new Error('A request with this email is already pending.')
+    throw new Error('Something went wrong. Please try again.')
+  }
+}
+
 export async function createBooking({ host, date, slot, name, email }) {
   if (!supabase) throw new Error('Booking is not configured yet. Check back soon.')
 

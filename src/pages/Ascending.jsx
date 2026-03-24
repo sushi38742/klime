@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import Footer from '../components/Footer'
-import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import FadeUp from '../components/FadeUp'
 import { POLICY_CARDS } from '../data/policyPages'
 import PolicyCard from '../components/PolicyCard'
+import SessionRequestFlow from '../components/SessionRequestFlow'
 
 const ease = [0.16, 1, 0.3, 1]
 const HL   = { fontFamily: '"DM Serif Display",serif', color: '#fff', fontWeight: 400 }
@@ -33,7 +33,8 @@ const JEFF = {
 }
 
 function GuideCard({ guide }) {
-  const [open, setOpen] = useState(false)
+  const [open,    setOpen]    = useState(false)
+  const [booking, setBooking] = useState(false)
 
   return (
     <div style={{ border: '1px solid rgba(255,255,255,0.13)', borderRadius: '10px', background: 'rgba(255,255,255,0.025)', overflow: 'hidden' }}>
@@ -120,18 +121,25 @@ function GuideCard({ guide }) {
 
             {/* CTA footer */}
             <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', padding: '18px 24px', display: 'flex', alignItems: 'center', gap: '18px', flexWrap: 'wrap' }}>
-              <Link
-                to="/contact"
-                style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: '#fff', background: '#2B5BFF', textDecoration: 'none', borderRadius: '4px', padding: '11px 26px', boxShadow: '0 4px 20px rgba(43,91,255,0.38)', transition: 'all 0.18s ease', display: 'inline-block' }}
+              <button
+                onClick={() => setBooking(true)}
+                style={{ fontFamily: 'Sora,sans-serif', fontSize: '13px', fontWeight: 600, color: '#fff', background: '#2B5BFF', border: 'none', cursor: 'pointer', borderRadius: '4px', padding: '11px 26px', boxShadow: '0 4px 20px rgba(43,91,255,0.38)', transition: 'all 0.18s ease' }}
                 onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(43,91,255,0.54)' }}
                 onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 4px 20px rgba(43,91,255,0.38)' }}
               >
                 Book a session
-              </Link>
+              </button>
               <span style={{ fontFamily: 'Sora,sans-serif', fontSize: '12px', color: 'rgba(255,255,255,0.28)' }}>
                 Curriculum built fresh. Connection included.
               </span>
             </div>
+
+            {/* Session request modal */}
+            <AnimatePresence>
+              {booking && (
+                <SessionRequestFlow guide={guide} onClose={() => setBooking(false)} />
+              )}
+            </AnimatePresence>
 
           </motion.div>
         )}
